@@ -35,14 +35,14 @@ async function putFile(data, sha) {
   }
 }
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, x-password");
   if (req.method === "OPTIONS") return res.status(200).end();
 
   console.log("PASSWORD env:", PASSWORD ? `definido (${PASSWORD.length} chars)` : "UNDEFINED");
-  console.log("x-password header:", req.headers["x-password"] ? `recebido (${req.headers["x-password"].length} chars)` : "AUSENTE");
+  console.log("x-password header:", req.headers["x-password"] || "AUSENTE");
   console.log("match:", req.headers["x-password"] === PASSWORD);
 
   const pwd = req.headers["x-password"];
