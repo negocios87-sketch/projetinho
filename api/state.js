@@ -6,14 +6,14 @@ const BRANCH       = "main";
 
 const BASE = `https://api.github.com/repos/${GITHUB_REPO}/contents/${FILE_PATH}`;
 
-const headers = {
+const ghHeaders = {
   Authorization: `token ${GITHUB_TOKEN}`,
   Accept: "application/vnd.github+json",
   "Content-Type": "application/json",
 };
 
 async function getFile() {
-  const res = await fetch(`${BASE}?ref=${BRANCH}`, { headers });
+  const res = await fetch(`${BASE}?ref=${BRANCH}`, { headers: ghHeaders });
   if (res.status === 404) return { content: null, sha: null };
   if (!res.ok) throw new Error(`GitHub GET error: ${res.status}`);
   const json = await res.json();
@@ -28,7 +28,7 @@ async function putFile(data, sha) {
     branch: BRANCH,
   };
   if (sha) body.sha = sha;
-  const res = await fetch(BASE, { method: "PUT", headers, body: JSON.stringify(body) });
+  const res = await fetch(BASE, { method: "PUT", headers: ghHeaders, body: JSON.stringify(body) });
   if (!res.ok) {
     const err = await res.text();
     throw new Error(`GitHub PUT error: ${res.status} ${err}`);
@@ -41,8 +41,22 @@ export default async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, x-password");
   if (req.method === "OPTIONS") return res.status(200).end();
 
+  console.log("PASSWORD env:", PASSWORD ? `definido (${PASSWORD.length} chars)` : "UNDEFINED");
+  console.log("x-password header:", req.headers["x-password"] ? `recebido (${req.headers["x-password"].length} chars)` : "AUSENTE");
+  console.log("match:", req.headers["x-password"] === PASSWORD);
+
   const pwd = req.headers["x-password"];
-  if (pwd !== PASSWORD) return res.status(401).json({ error: "Senha errada." });
+  if (pwd !== PASSWORD) {
+    return res.status(401).json({
+      error: "Senha errada.",
+      debug: {
+        envDefined: !!PASSWORD,
+        headerReceived: !!pwd,
+        envLength: PASSWORD?.length,
+        headerLength: pwd?.length,
+      }
+    });
+  }
 
   try {
     if (req.method === "GET") {
