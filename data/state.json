@@ -101,6 +101,16 @@
       "prio": "alta",
       "done": false,
       "ts": 1782681651538
+    },
+    {
+      "id": "mqyaojbnz4urhf7u7bq",
+      "title": "Abrir conta para conversão de dinheiro",
+      "answer": "Arq, wize ou outros",
+      "comment": "",
+      "resp": "Rodrigo",
+      "prio": "media",
+      "done": false,
+      "ts": 1782681741779
     }
   ],
   "estadia": [],
