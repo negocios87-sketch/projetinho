@@ -415,6 +415,7 @@ const POLL = 6000;
 let pwd='', curUser='', curTab='resumo', curFilter='todos';
 let state={ viagem:[], financeiro:[], estadia:[], 'deu-merda':[], _meta:{} };
 let editId=null, modalTab=null, saving=false;
+let openForums=new Set(); // fóruns abertos sobrevivem ao re-render
 
 function uid(){ return Date.now().toString(36)+Math.random().toString(36).slice(2); }
 
@@ -664,6 +665,7 @@ function renderCards(){
     document.getElementById('pb').style.width=pct+'%';
     document.getElementById('pb-lbl').textContent=total?`${done} de ${total} resolvidos (${pct}%)`:'';
   }
+  restoreForums();
 }
 
 function renderAll(){
@@ -830,15 +832,25 @@ async function delCard(sec,id){
 function toggleForum(id){
   const body=document.getElementById('forum-'+id);
   if(!body) return;
-  body.classList.toggle('open');
-  if(body.classList.contains('open')){
-    setTimeout(()=>{
-      const inp=document.getElementById('forum-input-'+id);
-      if(inp) inp.focus();
-      const msgs=document.getElementById('forum-msgs-'+id);
-      if(msgs) msgs.scrollTop=msgs.scrollHeight;
-    },50);
-  }
+  const isOpen=body.classList.contains('open');
+  if(isOpen){ body.classList.remove('open'); openForums.delete(id); }
+  else { body.classList.add('open'); openForums.add(id); focusForum(id); }
+}
+
+function focusForum(id){
+  setTimeout(()=>{
+    const inp=document.getElementById('forum-input-'+id);
+    if(inp) inp.focus();
+    const msgs=document.getElementById('forum-msgs-'+id);
+    if(msgs) msgs.scrollTop=msgs.scrollHeight;
+  },50);
+}
+
+function restoreForums(){
+  openForums.forEach(id=>{
+    const body=document.getElementById('forum-'+id);
+    if(body){ body.classList.add('open'); const msgs=document.getElementById('forum-msgs-'+id); if(msgs) msgs.scrollTop=msgs.scrollHeight; }
+  });
 }
 
 async function postComment(sec,id){
@@ -850,13 +862,10 @@ async function postComment(sec,id){
   if(!c) return;
   if(!c.forum) c.forum=[];
   c.forum.push({ autor:curUser, texto, ts:Date.now() });
+  openForums.add(id);
   inp.value='';
   renderAll();
-  // reabrir o fórum após re-render
-  setTimeout(()=>{
-    const body=document.getElementById('forum-'+id);
-    if(body){ body.classList.add('open'); const msgs=document.getElementById('forum-msgs-'+id); if(msgs) msgs.scrollTop=msgs.scrollHeight; }
-  },30);
+  focusForum(id);
   await persist();
 }
 
