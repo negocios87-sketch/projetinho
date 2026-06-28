@@ -1,6 +1,17 @@
 {
   "viagem": [],
-  "financeiro": [],
+  "financeiro": [
+    {
+      "id": "mqy7zvp9s212bzfx4np",
+      "title": "juntar R$1000",
+      "answer": "",
+      "comment": "",
+      "resp": "Samy",
+      "prio": "alta",
+      "done": false,
+      "ts": 1782677232189
+    }
+  ],
   "estadia": [],
   "deu-merda": [],
   "_meta": {
