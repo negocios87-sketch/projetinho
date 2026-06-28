@@ -8,7 +8,7 @@
       "comment": "",
       "resp": "Samy",
       "prio": "alta",
-      "done": false,
+      "done": true,
       "ts": 1782677232189
     },
     {
@@ -20,16 +20,6 @@
       "prio": "alta",
       "done": true,
       "ts": 1782677248343
-    },
-    {
-      "id": "mqy80st8gkkm6z2e1y",
-      "title": "mESMO PESO",
-      "answer": "",
-      "comment": "",
-      "resp": "Rodrigo",
-      "prio": "alta",
-      "done": true,
-      "ts": 1782677275100
     }
   ],
   "estadia": [],
