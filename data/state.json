@@ -91,6 +91,16 @@
       "prio": "alta",
       "done": false,
       "ts": 1782681577244
+    },
+    {
+      "id": "mqyamloyhoa1coiwjr4",
+      "title": "Reserva Financeira",
+      "answer": "Precisamos ter na conta reserva financeira minima permitida pelo país",
+      "comment": "",
+      "resp": "",
+      "prio": "alta",
+      "done": false,
+      "ts": 1782681651538
     }
   ],
   "estadia": [],
