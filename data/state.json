@@ -2,5 +2,9 @@
   "viagem": [],
   "financeiro": [],
   "estadia": [],
-  "deu-merda": []
+  "deu-merda": [],
+  "_meta": {
+    "partida": "2028-07-28",
+    "destino": "Itália"
+  }
 }
