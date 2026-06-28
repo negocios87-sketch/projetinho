@@ -144,7 +144,18 @@
     }
   ],
   "estadia": [],
-  "deu-merda": [],
+  "deu-merda": [
+    {
+      "id": "mqyasr26b9mwuj37i1w",
+      "title": "Não conseguir HO",
+      "answer": "Caso o Farias não permita o home office",
+      "comment": "",
+      "resp": "Rodrigo",
+      "prio": "alta",
+      "done": false,
+      "ts": 1782681938430
+    }
+  ],
   "_meta": {
     "partida": "2028-07-14",
     "destino": "Itália"
