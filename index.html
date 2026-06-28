@@ -146,6 +146,26 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
 .ci.disabled{color:#ccc;cursor:not-allowed}
 .ci.disabled:hover{background:none}
 
+/* ── FÓRUM ── */
+.forum-wrap{margin-top:10px;border-top:1px solid #f0f0ec;padding-top:10px}
+.forum-toggle{background:none;border:none;font-size:11px;color:#aaa;cursor:pointer;padding:0;display:flex;align-items:center;gap:4px}
+.forum-toggle:hover{color:#555}
+.forum-body{display:none;margin-top:8px}
+.forum-body.open{display:block}
+.forum-msgs{display:flex;flex-direction:column;gap:6px;margin-bottom:8px;max-height:180px;overflow-y:auto}
+.forum-msg{display:flex;gap:7px;align-items:flex-start}
+.forum-av{width:22px;height:22px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.forum-av-init{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;flex-shrink:0}
+.forum-bubble{background:#f5f5f0;border-radius:8px;padding:6px 9px;flex:1}
+.forum-meta{font-size:10px;color:#aaa;margin-bottom:2px;display:flex;gap:6px}
+.forum-author{font-weight:600;color:#777}
+.forum-text{font-size:12px;color:#444;line-height:1.4}
+.forum-input-row{display:flex;gap:6px;align-items:flex-end}
+.forum-input{flex:1;font-size:12px;padding:7px 10px;border:1px solid #e0e0d8;border-radius:8px;resize:none;min-height:32px;max-height:80px;font-family:inherit;outline:none;background:#fafaf8;width:auto}
+.forum-input:focus{border-color:#aaa;background:#fff}
+.forum-send{padding:7px 10px;background:#1a1a1a;color:#fff;border:none;border-radius:8px;font-size:12px;cursor:pointer;white-space:nowrap;flex-shrink:0}
+.forum-send:hover{background:#333}
+
 /* ── RESUMO ── */
 .resumo{padding:24px 28px;max-width:1100px}
 .resumo-pessoas{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px}
@@ -693,6 +713,35 @@ function cardHTML(c,sec){
     :`<div class="ci disabled" title="${lockTip}">✏️ Editar</div>
       <div class="ci disabled" title="${lockTip}">🗑️ Excluir</div>`;
 
+  const msgs = (c.forum||[]);
+  const msgCount = msgs.length;
+  const msgsHTML = msgs.map(m=>{
+    const color = COLORS[m.autor]||'#888';
+    const ts = m.ts ? new Date(m.ts).toLocaleString('pt-BR',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}) : '';
+    return `<div class="forum-msg">
+      <img class="forum-av" src="${FOTO[m.autor]||''}" onerror="this.style.display='none';this.nextSibling.style.display='flex'" alt="">
+      <span class="forum-av-init" style="display:none;background:${color}">${(m.autor||'?')[0]}</span>
+      <div class="forum-bubble">
+        <div class="forum-meta"><span class="forum-author">${esc(m.autor||'')}</span><span>${ts}</span></div>
+        <div class="forum-text">${esc(m.texto)}</div>
+      </div>
+    </div>`;
+  }).join('');
+
+  const forum = `<div class="forum-wrap">
+    <button class="forum-toggle" onclick="toggleForum('${c.id}')">
+      💬 ${msgCount ? msgCount+' comentário'+(msgCount>1?'s':'') : 'Comentar'}
+    </button>
+    <div class="forum-body" id="forum-${c.id}">
+      <div class="forum-msgs" id="forum-msgs-${c.id}">${msgsHTML}</div>
+      <div class="forum-input-row">
+        <textarea class="forum-input" id="forum-input-${c.id}" placeholder="Escreva um comentário..." rows="1"
+          onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();postComment('${sec}','${c.id}')}"></textarea>
+        <button class="forum-send" onclick="postComment('${sec}','${c.id}')">Enviar</button>
+      </div>
+    </div>
+  </div>`;
+
   return `<div class="card${c.done?' done':''}${isDM?' dm':''} ${c.prio?'prio-'+c.prio:''}">
     <div class="c-top">
       <div class="c-title">${esc(c.title)}</div>
@@ -703,6 +752,7 @@ function cardHTML(c,sec){
     </div>
     ${meta}${ans}${comment}
     <div class="c-actions">${acts}</div>
+    ${forum}
   </div>`;
 }
 
@@ -774,6 +824,40 @@ async function delCard(sec,id){
   if(!confirm('Excluir esse card?')) return;
   state[sec]=(state[sec]||[]).filter(x=>x.id!==id);
   renderAll(); await persist();
+}
+
+// ── FÓRUM ─────────────────────────────────────────
+function toggleForum(id){
+  const body=document.getElementById('forum-'+id);
+  if(!body) return;
+  body.classList.toggle('open');
+  if(body.classList.contains('open')){
+    setTimeout(()=>{
+      const inp=document.getElementById('forum-input-'+id);
+      if(inp) inp.focus();
+      const msgs=document.getElementById('forum-msgs-'+id);
+      if(msgs) msgs.scrollTop=msgs.scrollHeight;
+    },50);
+  }
+}
+
+async function postComment(sec,id){
+  const inp=document.getElementById('forum-input-'+id);
+  if(!inp) return;
+  const texto=inp.value.trim();
+  if(!texto) return;
+  const c=(state[sec]||[]).find(x=>x.id===id);
+  if(!c) return;
+  if(!c.forum) c.forum=[];
+  c.forum.push({ autor:curUser, texto, ts:Date.now() });
+  inp.value='';
+  renderAll();
+  // reabrir o fórum após re-render
+  setTimeout(()=>{
+    const body=document.getElementById('forum-'+id);
+    if(body){ body.classList.add('open'); const msgs=document.getElementById('forum-msgs-'+id); if(msgs) msgs.scrollTop=msgs.scrollHeight; }
+  },30);
+  await persist();
 }
 
 function showToast(msg){
