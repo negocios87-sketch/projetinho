@@ -12,7 +12,18 @@
     }
   ],
   "financeiro": [],
-  "estadia": [],
+  "estadia": [
+    {
+      "id": "mqy8dghvc5mhpkhzdzk",
+      "title": "Decidir AirBn das primeiras semanas",
+      "answer": "",
+      "comment": "Onde, bairro, etc",
+      "resp": "Rodrigo",
+      "prio": "alta",
+      "done": false,
+      "ts": 1782677865667
+    }
+  ],
   "deu-merda": [],
   "_meta": {
     "partida": "2028-07-28",
