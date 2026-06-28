@@ -1,18 +1,7 @@
 {
   "viagem": [],
   "financeiro": [],
-  "estadia": [
-    {
-      "id": "mqy81u0i3adduagewer",
-      "title": "Achar ap",
-      "answer": "",
-      "comment": "",
-      "resp": "Samy",
-      "prio": "media",
-      "done": false,
-      "ts": 1782677323316
-    }
-  ],
+  "estadia": [],
   "deu-merda": [],
   "_meta": {
     "partida": "2028-07-28",
