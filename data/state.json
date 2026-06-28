@@ -29,19 +29,20 @@
       "prio": "media",
       "done": false,
       "ts": 1782681422992
-    },
-    {
-      "id": "mqyaijgxa51q1e4iywe",
-      "title": "Pesquisar escola",
-      "answer": "",
-      "comment": "Decidir qual, localização, valores, etc",
-      "resp": "Samy",
-      "prio": "alta",
-      "done": false,
-      "ts": 1782681462033
     }
   ],
-  "financeiro": [],
+  "financeiro": [
+    {
+      "id": "mqyainfefwuy0l803kt",
+      "title": "Juntar R$ 1000,00",
+      "answer": "",
+      "comment": "",
+      "resp": "",
+      "prio": "alta",
+      "done": false,
+      "ts": 1782681467162
+    }
+  ],
   "estadia": [],
   "deu-merda": [],
   "_meta": {
