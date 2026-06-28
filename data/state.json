@@ -1,16 +1,5 @@
 {
-  "viagem": [
-    {
-      "id": "mqy8cn1ui3rs2ifzv7g",
-      "title": "Decidir País",
-      "answer": "Italia ou Malta",
-      "comment": "Estamos inclinado a aprender uma lingua nova",
-      "resp": "Rodrigo",
-      "prio": "alta",
-      "done": true,
-      "ts": 1782677827506
-    }
-  ],
+  "viagem": [],
   "financeiro": [],
   "estadia": [],
   "deu-merda": [],
