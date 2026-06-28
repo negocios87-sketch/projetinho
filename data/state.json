@@ -29,6 +29,16 @@
       "prio": "media",
       "done": false,
       "ts": 1782681422992
+    },
+    {
+      "id": "mqyak52efrfgkvm2m55",
+      "title": "Pesquisar escola",
+      "answer": "",
+      "comment": "Qual, valor, localização, etc.",
+      "resp": "Samy",
+      "prio": "alta",
+      "done": false,
+      "ts": 1782681536678
     }
   ],
   "financeiro": [
@@ -58,7 +68,7 @@
       "answer": "",
       "comment": "",
       "resp": "",
-      "prio": "alta",
+      "prio": "",
       "done": false,
       "ts": 1782681518039
     }
