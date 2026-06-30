@@ -484,6 +484,9 @@ async function apiFetch(method,body){
 
 async function doPoll(){
   if(saving) return;
+  // não re-renderiza se o usuário está digitando um comentário (perderia o texto)
+  const active = document.activeElement;
+  if(active && active.classList && active.classList.contains('forum-input')) return;
   try{
     const data=await apiFetch('GET');
     state={ viagem:[], financeiro:[], estadia:[], 'deu-merda':[], _meta:{}, ...data };
