@@ -162,16 +162,6 @@
       "prio": "alta",
       "done": false,
       "ts": 1782847902832
-    },
-    {
-      "id": "mr11mv1dynadrey7s4",
-      "title": "Bancos",
-      "answer": "",
-      "comment": "Tem banco que não funciona lá fora, pesquisar como serão feita as transições",
-      "resp": "Rodrigo",
-      "prio": "alta",
-      "done": false,
-      "ts": 1782847945633
     }
   ],
   "financeiro": [
