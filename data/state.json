@@ -261,6 +261,16 @@
       "prio": "alta",
       "done": false,
       "ts": 1782841640920
+    },
+    {
+      "id": "mr11oudnj866kj9x2gf",
+      "title": "Bancos",
+      "answer": "",
+      "comment": "Tem banco que não funciona (GOV), verificar como serão as transições",
+      "resp": "Rodrigo",
+      "prio": "alta",
+      "done": false,
+      "ts": 1782848038091
     }
   ],
   "estadia": [
