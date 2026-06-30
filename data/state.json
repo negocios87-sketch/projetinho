@@ -139,7 +139,9 @@
       "resp": "Ambos",
       "prio": "media",
       "done": false,
-      "ts": 1782841256141
+      "ts": 1782841256141,
+      "tipo": "acao",
+      "pais": "Todos"
     },
     {
       "id": "mr0xs1k3mmip7ewpozr",
