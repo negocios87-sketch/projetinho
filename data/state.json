@@ -209,6 +209,16 @@
       "prio": "media",
       "done": false,
       "ts": 1782841311312
+    },
+    {
+      "id": "mr0xvqagutdr47cg8pa",
+      "title": "Contratar Seguro Saúde",
+      "answer": "",
+      "comment": "Verificar períodicidade e países de cobertura\nFacilidades de pagamentos e etc.",
+      "resp": "Ambos",
+      "prio": "alta",
+      "done": false,
+      "ts": 1782841640920
     }
   ],
   "estadia": [
