@@ -181,7 +181,9 @@
       "resp": "Ambos",
       "prio": "baixa",
       "done": false,
-      "ts": 1782841788997
+      "ts": 1782841788997,
+      "tipo": "acao",
+      "pais": "Brasil"
     },
     {
       "id": "mr11logoeklz1reneud",
