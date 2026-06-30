@@ -575,9 +575,9 @@
       "title": "Furto/Perda de Documento",
       "answer": "",
       "comment": "",
-      "resp": "Rodrigo",
+      "resp": "Ambos",
       "prio": "alta",
-      "tipo": "acao",
+      "tipo": "info",
       "pais": "Todos",
       "done": false,
       "ts": 1782857376751
