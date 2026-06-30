@@ -75,7 +75,10 @@
       "resp": "Ambos",
       "prio": "alta",
       "done": false,
-      "ts": 1782747219215
+      "ts": 1782747219215,
+      "approvals": {
+        "Rodrigo": true
+      }
     }
   ],
   "financeiro": [
