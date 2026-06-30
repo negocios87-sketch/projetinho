@@ -348,7 +348,9 @@
       "resp": "Ambos",
       "prio": "alta",
       "done": false,
-      "ts": 1782681651538
+      "ts": 1782681651538,
+      "tipo": "acao",
+      "pais": "Malta"
     },
     {
       "id": "mqyaojbnz4urhf7u7bq",
