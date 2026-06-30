@@ -399,6 +399,18 @@
       "pais": "Malta",
       "done": true,
       "ts": 1782855338495
+    },
+    {
+      "id": "mr16id86rop84pc98bn",
+      "title": "Cartão sem IOF internacional",
+      "answer": "",
+      "comment": "C6, Nomad, etc.",
+      "resp": "Rodrigo",
+      "prio": "media",
+      "tipo": "acao",
+      "pais": "Todos",
+      "done": false,
+      "ts": 1782856134006
     }
   ],
   "estadia": [
