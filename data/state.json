@@ -217,7 +217,9 @@
       "resp": "Samy",
       "prio": "baixa",
       "done": false,
-      "ts": 1782848057281
+      "ts": 1782848057281,
+      "tipo": "info",
+      "pais": "Todos"
     },
     {
       "id": "mr11ydnkrv2yqk3qrrd",
