@@ -182,6 +182,16 @@
       "prio": "media",
       "done": false,
       "ts": 1782848482976
+    },
+    {
+      "id": "mr121ykuva2fxcs37gh",
+      "title": "Contratar uma VPN - Pesquisar custos e serviços",
+      "answer": "",
+      "comment": "É mais seguro e garante utilização dos serviços no Brasil",
+      "resp": "Rodrigo",
+      "prio": "alta",
+      "done": false,
+      "ts": 1782848650062
     }
   ],
   "financeiro": [
