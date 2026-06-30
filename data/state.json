@@ -410,6 +410,16 @@
           "ts": 1782850249641
         }
       ]
+    },
+    {
+      "id": "mr14fzhv0pca0d17mvn",
+      "title": "Decidir bairros/regiões de cada cidade",
+      "answer": "Ex: Malta (Sliema, St. Julian's, Valletta, ...)",
+      "comment": "",
+      "resp": "",
+      "prio": "alta",
+      "done": false,
+      "ts": 1782852663667
     }
   ],
   "deu-merda": [
