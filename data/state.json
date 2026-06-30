@@ -313,6 +313,16 @@
       "prio": "media",
       "done": false,
       "ts": 1782841758554
+    },
+    {
+      "id": "mr11xgqrq0g76b1cq4",
+      "title": "Adaptadores de tomadas",
+      "answer": "",
+      "comment": "Os países possuem diferentes padrões de tomada. Importante ter os adaptadores universais",
+      "resp": "Rodrigo",
+      "prio": "baixa",
+      "done": false,
+      "ts": 1782848440323
     }
   ],
   "deu-merda": [
