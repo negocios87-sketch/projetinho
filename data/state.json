@@ -665,6 +665,18 @@
       "cotacao": "1 CNY ≈ R$ 0,78",
       "obs": "",
       "id": "mr13e9b40osdu4x303h"
+    },
+    {
+      "id": "mr157dl431rm0lshj5o",
+      "nome": "Brasil",
+      "flag": "BR",
+      "schengen": "nao",
+      "tempo": "",
+      "visto": "",
+      "imigracao": "",
+      "custo": "",
+      "cotacao": "",
+      "obs": ""
     }
   ]
 }
