@@ -285,7 +285,7 @@
     {
       "id": "mr11oudnj866kj9x2gf",
       "title": "Bancos",
-      "answer": "",
+      "answer": "PIX é sistema do Banco Central brasileiro. Funciona perfeitamente entre contas brasileiras (C6 → BTG) independente de onde vocês estejam fisicamente, desde que tenham internet. Não tem bloqueio geográfico.",
       "comment": "Tem banco que não funciona (GOV), verificar como serão as transições",
       "resp": "Rodrigo",
       "prio": "alta",
