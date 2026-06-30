@@ -130,25 +130,6 @@
       ],
       "tipo": "info",
       "pais": "Brasil"
-    },
-    {
-      "id": "mr12h8xqkyu2r5if6k",
-      "title": "Encontrar grupo de Brasileiros",
-      "answer": "",
-      "comment": "É importante, pois assim temos facilidades com moradias, mercados, etc",
-      "resp": "Ambos",
-      "prio": "media",
-      "done": false,
-      "ts": 1782849363326,
-      "forum": [
-        {
-          "autor": "Rodrigo",
-          "texto": "Facebook, Whatsapp, Telegram, etc.",
-          "ts": 1782849441174
-        }
-      ],
-      "tipo": "acao",
-      "pais": "Malta"
     }
   ],
   "financeiro": [
@@ -421,6 +402,25 @@
       ],
       "tipo": "acao",
       "pais": "Todos"
+    },
+    {
+      "id": "mr12h8xqkyu2r5if6k",
+      "title": "Encontrar grupo de Brasileiros",
+      "answer": "",
+      "comment": "É importante, pois assim temos facilidades com moradias, mercados, etc",
+      "resp": "Ambos",
+      "prio": "media",
+      "done": false,
+      "ts": 1782849363326,
+      "forum": [
+        {
+          "autor": "Rodrigo",
+          "texto": "Facebook, Whatsapp, Telegram, etc.",
+          "ts": 1782849441174
+        }
+      ],
+      "tipo": "acao",
+      "pais": "Malta"
     }
   ],
   "saude": [],
