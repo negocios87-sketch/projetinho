@@ -387,7 +387,9 @@
       "resp": "Ambos",
       "prio": "alta",
       "done": false,
-      "ts": 1782841640920
+      "ts": 1782841640920,
+      "tipo": "acao",
+      "pais": "Brasil"
     },
     {
       "id": "mr11oudnj866kj9x2gf",
