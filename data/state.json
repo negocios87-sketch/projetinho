@@ -20,7 +20,9 @@
       "resp": "Ambos",
       "prio": "media",
       "done": false,
-      "ts": 1782681422992
+      "ts": 1782681422992,
+      "tipo": "acao",
+      "pais": "Malta"
     },
     {
       "id": "mqyak52efrfgkvm2m55",
