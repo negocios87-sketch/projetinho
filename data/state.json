@@ -37,22 +37,6 @@
       "pais": "Todos"
     },
     {
-      "id": "mqyaquxt7nbn2xvfpgg",
-      "title": "Pesquisar burocracia do visto (tipo D)",
-      "answer": "Nao sera necessaria para Visa Run",
-      "comment": "",
-      "resp": "Ambos",
-      "prio": "alta",
-      "done": true,
-      "ts": 1782681850146,
-      "approvals": {
-        "Rodrigo": true,
-        "Samy": true
-      },
-      "tipo": "acao",
-      "pais": "Todos"
-    },
-    {
       "id": "mqzdny1bekcjzezrwq",
       "title": "Matricular na Escola",
       "answer": "Nao sera necessario - Faremos Visa Run",
@@ -462,6 +446,22 @@
       "prio": "alta",
       "done": false,
       "ts": 1782679380865,
+      "tipo": "acao",
+      "pais": "Todos"
+    },
+    {
+      "id": "mqyaquxt7nbn2xvfpgg",
+      "title": "Pesquisar burocracia do visto (tipo D)",
+      "answer": "Nao sera necessaria para Visa Run",
+      "comment": "",
+      "resp": "Ambos",
+      "prio": "alta",
+      "done": true,
+      "ts": 1782681850146,
+      "approvals": {
+        "Rodrigo": true,
+        "Samy": true
+      },
       "tipo": "acao",
       "pais": "Todos"
     }
