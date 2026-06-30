@@ -37,34 +37,6 @@
       "pais": "Todos"
     },
     {
-      "id": "mr0xjwg7fh89o3ebo84",
-      "title": "Deicidir País inicial",
-      "answer": "Rodrigo: Malta",
-      "comment": "Decidir também o Tempo",
-      "resp": "Ambos",
-      "prio": "alta",
-      "done": true,
-      "ts": 1782841089031,
-      "forum": [
-        {
-          "autor": "Rodrigo",
-          "texto": "Malta é o ideal devido ao custo e também a facilidade de adptação",
-          "ts": 1782841104614
-        },
-        {
-          "autor": "Samy",
-          "texto": "Sobre o tempo: acho bom não ir até o limite de 90 dias. O ideal seria deixar pelo menos uma semana ou 10 dias de folga para emergências.",
-          "ts": 1782852911262
-        }
-      ],
-      "approvals": {
-        "Rodrigo": true,
-        "Samy": true
-      },
-      "tipo": "acao",
-      "pais": "Malta"
-    },
-    {
       "id": "mr0xywjpvpgb4vvm3ho",
       "title": "Malas",
       "answer": "",
@@ -459,6 +431,34 @@
       "ts": 1782841256141,
       "tipo": "acao",
       "pais": "Todos"
+    },
+    {
+      "id": "mr0xjwg7fh89o3ebo84",
+      "title": "Deicidir País inicial",
+      "answer": "Rodrigo: Malta",
+      "comment": "Decidir também o Tempo",
+      "resp": "Ambos",
+      "prio": "alta",
+      "done": true,
+      "ts": 1782841089031,
+      "forum": [
+        {
+          "autor": "Rodrigo",
+          "texto": "Malta é o ideal devido ao custo e também a facilidade de adptação",
+          "ts": 1782841104614
+        },
+        {
+          "autor": "Samy",
+          "texto": "Sobre o tempo: acho bom não ir até o limite de 90 dias. O ideal seria deixar pelo menos uma semana ou 10 dias de folga para emergências.",
+          "ts": 1782852911262
+        }
+      ],
+      "approvals": {
+        "Rodrigo": true,
+        "Samy": true
+      },
+      "tipo": "acao",
+      "pais": "Malta"
     }
   ],
   "brasil": [
