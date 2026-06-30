@@ -394,10 +394,12 @@
       "title": "Encontrar Airbnb Para 2 primeiras semanas",
       "answer": "",
       "comment": "",
-      "resp": "",
+      "resp": "Ambos",
       "prio": "alta",
       "done": false,
-      "ts": 1782682063383
+      "ts": 1782682063383,
+      "tipo": "acao",
+      "pais": "Malta"
     },
     {
       "id": "mr0xpqmpehcq3ngqlw",
