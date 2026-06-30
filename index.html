@@ -146,6 +146,13 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
 .ci.disabled{color:#ccc;cursor:not-allowed}
 .ci.disabled:hover{background:none}
 
+/* ── APROVAÇÕES (Ambos) ── */
+.approval-row{display:flex;gap:10px;margin:8px 0 4px;padding:8px 10px;background:#f8f8f5;border-radius:8px;border:1px solid #eee}
+.approval-item{display:flex;align-items:center;gap:5px;font-size:12px;color:#bbb;flex:1}
+.approval-item span{font-weight:600}
+.approval-item.appr-ok{color:#2e7d32}
+.approval-item.appr-ok span{color:#2e7d32}
+
 /* ── FÓRUM ── */
 .forum-wrap{margin-top:10px;border-top:1px solid #f0f0ec;padding-top:10px}
 .forum-toggle{background:none;border:none;font-size:11px;color:#aaa;cursor:pointer;padding:0;display:flex;align-items:center;gap:4px}
@@ -366,6 +373,7 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
           <option value="">— Nenhum —</option>
           <option value="Rodrigo">Rodrigo</option>
           <option value="Samy">Samy</option>
+          <option value="Ambos">👫 Ambos</option>
         </select>
       </div>
       <div>
@@ -695,25 +703,65 @@ function avatarHTML(resp,size=16){
 // ── CARD HTML ─────────────────────────────────────
 function cardHTML(c,sec){
   const isDM=sec==='deu-merda';
-  const isOwner=!c.resp||c.resp===curUser;
-  const ans=c.answer?`<div class="c-ans">${esc(c.answer)}</div>`:`<div class="c-ans empty">Sem resposta ainda</div>`;
-  const comment=c.comment?`<div class="c-comment">💬 ${esc(c.comment)}</div>`:'';
-  const prioBadge=c.prio?`<span class="prio-badge">${c.prio==='alta'?'🔴 Alta':c.prio==='media'?'🟡 Média':'🟢 Baixa'}</span>`:'';
-  const respChip=c.resp?`<span class="resp-chip">${avatarHTML(c.resp,16)} ${esc(c.resp)}</span>`:'';
-  const meta=(prioBadge||respChip)?`<div class="c-meta">${prioBadge}${respChip}</div>`:'';
-  const lockTip=isOwner?'':'Apenas '+esc(c.resp||'o responsável')+' pode editar';
+  const isAmbos = c.resp === 'Ambos';
+  const isOwner = !c.resp || c.resp === curUser || isAmbos;
+  const approvals = c.approvals || {}; // { Rodrigo: true, Samy: true }
+  const myApproval = approvals[curUser];
+  const bothApproved = approvals['Rodrigo'] && approvals['Samy'];
 
-  const acts=c.done
-    ?`<span class="badge-done">✓ Resolvido</span>
-      <button class="bsm" onclick="toggle('${sec}','${c.id}')" ${!isOwner?'disabled title="'+lockTip+'"':''}>Reabrir</button>`
-    :`<button class="bsm" onclick="openModal('${sec}','${c.id}')" ${!isOwner?'disabled title="'+lockTip+'"':''}>Responder</button>
+  // chip de responsável
+  let respChip = '';
+  if(isAmbos){
+    respChip = `<span class="resp-chip">${avatarHTML('Rodrigo',16)} Rodrigo &amp; ${avatarHTML('Samy',16)} Samy</span>`;
+  } else if(c.resp){
+    respChip = `<span class="resp-chip">${avatarHTML(c.resp,16)} ${esc(c.resp)}</span>`;
+  }
+
+  const prioBadge = c.prio ? `<span class="prio-badge">${c.prio==='alta'?'🔴 Alta':c.prio==='media'?'🟡 Média':'🟢 Baixa'}</span>` : '';
+  const meta = (prioBadge||respChip) ? `<div class="c-meta">${prioBadge}${respChip}</div>` : '';
+  const lockTip = isOwner ? '' : 'Apenas '+esc(c.resp||'o responsável')+' pode editar';
+
+  // aprovações visuais pra cards Ambos
+  let approvalHTML = '';
+  if(isAmbos && !c.done){
+    const rDone = approvals['Rodrigo'];
+    const sDone = approvals['Samy'];
+    approvalHTML = `<div class="approval-row">
+      <div class="approval-item ${rDone?'appr-ok':''}">
+        ${avatarHTML('Rodrigo',18)}
+        <span>${rDone?'✓':'…'}</span>
+      </div>
+      <div class="approval-item ${sDone?'appr-ok':''}">
+        ${avatarHTML('Samy',18)}
+        <span>${sDone?'✓':'…'}</span>
+      </div>
+    </div>`;
+  }
+
+  // ações
+  let acts = '';
+  if(c.done){
+    acts = `<span class="badge-done">✓ Resolvido</span>`;
+    if(!isAmbos || curUser==='Rodrigo')
+      acts += `<button class="bsm" onclick="toggle('${sec}','${c.id}')">Reabrir</button>`;
+  } else if(isAmbos){
+    const canApprove = curUser === 'Rodrigo' || curUser === 'Samy';
+    const alreadyApproved = myApproval;
+    acts = `<button class="bsm" onclick="openModal('${sec}','${c.id}')">Responder</button>`;
+    if(canApprove && !alreadyApproved)
+      acts += `<button class="bsm dark" onclick="approve('${sec}','${c.id}')">✓ Minha parte</button>`;
+    else if(canApprove && alreadyApproved)
+      acts += `<button class="bsm" onclick="approve('${sec}','${c.id}')" title="Clique para desfazer">✓ Aprovado por mim</button>`;
+  } else {
+    acts = `<button class="bsm" onclick="openModal('${sec}','${c.id}')" ${!isOwner?'disabled title="'+lockTip+'"':''}>Responder</button>
       <button class="bsm dark" onclick="toggle('${sec}','${c.id}')" ${!isOwner?'disabled title="'+lockTip+'"':''}>✓ Concluir</button>`;
+  }
 
-  const menuItems=isOwner
-    ?`<div class="ci" onclick="closeCtx();openModal('${sec}','${c.id}')">✏️ Editar</div>
-      <div class="ci danger" onclick="closeCtx();delCard('${sec}','${c.id}')">🗑️ Excluir</div>`
-    :`<div class="ci disabled" title="${lockTip}">✏️ Editar</div>
-      <div class="ci disabled" title="${lockTip}">🗑️ Excluir</div>`;
+  const menuItems = isOwner
+    ? `<div class="ci" onclick="closeCtx();openModal('${sec}','${c.id}')">✏️ Editar</div>
+       <div class="ci danger" onclick="closeCtx();delCard('${sec}','${c.id}')">🗑️ Excluir</div>`
+    : `<div class="ci disabled" title="${lockTip}">✏️ Editar</div>
+       <div class="ci disabled" title="${lockTip}">🗑️ Excluir</div>`;
 
   const msgs = (c.forum||[]);
   const msgCount = msgs.length;
@@ -753,6 +801,7 @@ function cardHTML(c,sec){
       </div>
     </div>
     ${meta}${ans}${comment}
+    ${approvalHTML}
     <div class="c-actions">${acts}</div>
     ${forum}
   </div>`;
@@ -819,6 +868,18 @@ async function saveCard(){
 async function toggle(sec,id){
   const c=(state[sec]||[]).find(x=>x.id===id);
   if(c) c.done=!c.done;
+  renderAll(); await persist();
+}
+
+async function approve(sec,id){
+  const c=(state[sec]||[]).find(x=>x.id===id);
+  if(!c||!curUser) return;
+  if(!c.approvals) c.approvals={};
+  // toggle própria aprovação
+  c.approvals[curUser] = !c.approvals[curUser];
+  // se os dois aprovaram, marca como done
+  if(c.approvals['Rodrigo'] && c.approvals['Samy']) c.done=true;
+  else c.done=false;
   renderAll(); await persist();
 }
 
