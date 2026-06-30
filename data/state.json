@@ -162,6 +162,16 @@
       "prio": "alta",
       "done": false,
       "ts": 1782847902832
+    },
+    {
+      "id": "mr11p96pd3fjgiv9jns",
+      "title": "Pesquisar sobre vacinas obrigatórias para cada país e prazo para elas",
+      "answer": "",
+      "comment": "",
+      "resp": "",
+      "prio": "baixa",
+      "done": false,
+      "ts": 1782848057281
     }
   ],
   "financeiro": [
