@@ -1,18 +1,6 @@
 {
   "viagem": [
     {
-      "id": "mqy99xmo3dy4moyf4qe",
-      "title": "Passaporte - Renovação",
-      "answer": "",
-      "comment": "",
-      "resp": "Ambos",
-      "prio": "alta",
-      "done": false,
-      "ts": 1782679380865,
-      "tipo": "acao",
-      "pais": "Todos"
-    },
-    {
       "id": "mqyahpcggsgttglvozn",
       "title": "Pesquisar passagem do primeiro destino e comprar",
       "answer": "Procurar sites de promoções e acompanhamentos",
@@ -492,6 +480,23 @@
       "pais": "Malta"
     }
   ],
+  "saude": [],
+  "documentos": [
+    {
+      "id": "mqy99xmo3dy4moyf4qe",
+      "title": "Passaporte - Renovação",
+      "answer": "",
+      "comment": "",
+      "resp": "Ambos",
+      "prio": "alta",
+      "done": false,
+      "ts": 1782679380865,
+      "tipo": "acao",
+      "pais": "Todos"
+    }
+  ],
+  "roteiro": [],
+  "brasil": [],
   "deu-merda": [
     {
       "id": "mqyat9qbf84v7g5fhp",
