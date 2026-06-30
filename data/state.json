@@ -77,18 +77,6 @@
       "pais": "Todos"
     },
     {
-      "id": "mr0xs1k3mmip7ewpozr",
-      "title": "Identificar o ultimo dia do contrato do aluguel - Guilhermina",
-      "answer": "",
-      "comment": "",
-      "resp": "Rodrigo",
-      "prio": "media",
-      "done": false,
-      "ts": 1782841468899,
-      "tipo": "info",
-      "pais": "Brasil"
-    },
-    {
       "id": "mr0xywjpvpgb4vvm3ho",
       "title": "Malas",
       "answer": "",
@@ -496,6 +484,18 @@
       ],
       "tipo": "acao",
       "pais": "Todos"
+    },
+    {
+      "id": "mr0xs1k3mmip7ewpozr",
+      "title": "Identificar o ultimo dia do contrato do aluguel - Guilhermina",
+      "answer": "",
+      "comment": "",
+      "resp": "Rodrigo",
+      "prio": "media",
+      "done": false,
+      "ts": 1782841468899,
+      "tipo": "info",
+      "pais": "Brasil"
     }
   ],
   "deu-merda": [
