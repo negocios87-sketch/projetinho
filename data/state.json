@@ -397,7 +397,7 @@
       "prio": "media",
       "tipo": "info",
       "pais": "Malta",
-      "done": false,
+      "done": true,
       "ts": 1782855338495
     }
   ],
