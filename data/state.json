@@ -579,7 +579,7 @@
       "prio": "alta",
       "tipo": "acao",
       "pais": "Todos",
-      "done": false,
+      "done": true,
       "ts": 1782857376751
     }
   ],
