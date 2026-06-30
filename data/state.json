@@ -217,6 +217,18 @@
       "pais": "Brasil",
       "done": false,
       "ts": 1782857475593
+    },
+    {
+      "id": "mr17ame8lj41lbtjywq",
+      "title": "Configurar 2FA dos bancos por app (não SMS)",
+      "answer": "",
+      "comment": "",
+      "resp": "Rodrigo",
+      "prio": "media",
+      "tipo": "acao",
+      "pais": "Brasil",
+      "done": false,
+      "ts": 1782857452256
     }
   ],
   "estadia": [
@@ -502,18 +514,6 @@
       ],
       "tipo": "acao",
       "pais": "Todos"
-    },
-    {
-      "id": "mr17ame8lj41lbtjywq",
-      "title": "Configurar 2FA dos bancos por app (não SMS)",
-      "answer": "",
-      "comment": "",
-      "resp": "Rodrigo",
-      "prio": "media",
-      "tipo": "acao",
-      "pais": "Brasil",
-      "done": false,
-      "ts": 1782857452256
     },
     {
       "id": "mr11ydnkrv2yqk3qrrd",
