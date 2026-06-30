@@ -77,7 +77,10 @@
       "resp": "Ambos",
       "prio": "alta",
       "done": false,
-      "ts": 1782681850146
+      "ts": 1782681850146,
+      "approvals": {
+        "Rodrigo": true
+      }
     },
     {
       "id": "mqzdny1bekcjzezrwq",
