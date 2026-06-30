@@ -74,10 +74,11 @@
       "comment": "",
       "resp": "Ambos",
       "prio": "alta",
-      "done": false,
+      "done": true,
       "ts": 1782747219215,
       "approvals": {
-        "Rodrigo": true
+        "Rodrigo": true,
+        "Samy": true
       }
     }
   ],
