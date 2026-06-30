@@ -29,10 +29,12 @@
       "title": "Pesquisar escola",
       "answer": "Nao será mais necessaria.. resolvemos fazer Visa Run",
       "comment": "Qual, valor, localização, etc.",
-      "resp": "",
+      "resp": "Rodrigo",
       "prio": "alta",
       "done": true,
-      "ts": 1782681536678
+      "ts": 1782681536678,
+      "tipo": "info",
+      "pais": "Todos"
     },
     {
       "id": "mqyaplxu3fxy9gr2upj",
