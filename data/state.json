@@ -138,7 +138,7 @@
       "title": "Reserva Financeira",
       "answer": "",
       "comment": "Precisamos ter na conta reserva financeira minima permitida pelo país",
-      "resp": "",
+      "resp": "Ambos",
       "prio": "alta",
       "done": false,
       "ts": 1782681651538
