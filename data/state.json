@@ -144,25 +144,6 @@
       "pais": "Brasil"
     },
     {
-      "id": "mr121ykuva2fxcs37gh",
-      "title": "Contratar uma VPN - Pesquisar custos e serviços",
-      "answer": "",
-      "comment": "É mais seguro e garante utilização dos serviços no Brasil",
-      "resp": "Rodrigo",
-      "prio": "alta",
-      "done": false,
-      "ts": 1782848650062,
-      "forum": [
-        {
-          "autor": "Rodrigo",
-          "texto": "Verificar possibilidade da VPN da BOARD",
-          "ts": 1782849320676
-        }
-      ],
-      "tipo": "acao",
-      "pais": "Todos"
-    },
-    {
       "id": "mr12h8xqkyu2r5if6k",
       "title": "Encontrar grupo de Brasileiros",
       "answer": "",
@@ -432,6 +413,25 @@
       "done": true,
       "ts": 1782847890456,
       "tipo": "info",
+      "pais": "Todos"
+    },
+    {
+      "id": "mr121ykuva2fxcs37gh",
+      "title": "Contratar uma VPN - Pesquisar custos e serviços",
+      "answer": "",
+      "comment": "É mais seguro e garante utilização dos serviços no Brasil",
+      "resp": "Rodrigo",
+      "prio": "alta",
+      "done": false,
+      "ts": 1782848650062,
+      "forum": [
+        {
+          "autor": "Rodrigo",
+          "texto": "Verificar possibilidade da VPN da BOARD",
+          "ts": 1782849320676
+        }
+      ],
+      "tipo": "acao",
       "pais": "Todos"
     }
   ],
