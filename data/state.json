@@ -448,7 +448,9 @@
           "texto": "Impossivel trabalhar sem segunda tela",
           "ts": 1782850249641
         }
-      ]
+      ],
+      "tipo": "acao",
+      "pais": "Todos"
     },
     {
       "id": "mr14fzhv0pca0d17mvn",
