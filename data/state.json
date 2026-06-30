@@ -257,7 +257,7 @@
     },
     {
       "id": "mr12h8xqkyu2r5if6k",
-      "title": "Encontrar grupo de Brasileiros em cada País",
+      "title": "Encontrar grupo de Brasileiros",
       "answer": "",
       "comment": "É importante, pois assim temos facilidades com moradias, mercados, etc",
       "resp": "Ambos",
@@ -270,7 +270,9 @@
           "texto": "Facebook, Whatsapp, Telegram, etc.",
           "ts": 1782849441174
         }
-      ]
+      ],
+      "tipo": "",
+      "pais": ""
     }
   ],
   "financeiro": [
