@@ -248,6 +248,16 @@
       "prio": "media",
       "done": false,
       "ts": 1782841361425
+    },
+    {
+      "id": "mr0xy92288neov7duho",
+      "title": "Pesquisar sobre uso da internet",
+      "answer": "",
+      "comment": "dependendo do país será necessário o uso da VPN. O mesmo ocorre para aplicativos de bancos e etc.",
+      "resp": "Rodrigo",
+      "prio": "media",
+      "done": false,
+      "ts": 1782841758554
     }
   ],
   "deu-merda": [
