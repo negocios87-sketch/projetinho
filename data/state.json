@@ -103,7 +103,9 @@
       "approvals": {
         "Rodrigo": true,
         "Samy": true
-      }
+      },
+      "tipo": "acao",
+      "pais": "Todos"
     },
     {
       "id": "mr0xjwg7fh89o3ebo84",
