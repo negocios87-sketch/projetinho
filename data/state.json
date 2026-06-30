@@ -203,6 +203,16 @@
           "ts": 1782849320676
         }
       ]
+    },
+    {
+      "id": "mr12h8xqkyu2r5if6k",
+      "title": "Encontrar grupo de Brasileiros em cada País",
+      "answer": "",
+      "comment": "É importante, pois assim temos facilidades com moradias, mercados, etc",
+      "resp": "Ambos",
+      "prio": "media",
+      "done": false,
+      "ts": 1782849363326
     }
   ],
   "financeiro": [
