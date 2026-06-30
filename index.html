@@ -156,6 +156,29 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
 .approval-item.appr-ok{color:#2e7d32;font-weight:600}
 .approval-total{font-size:10px;color:#999;text-align:right;margin-top:5px;font-weight:600}
 
+/* ── TAGS (tipo / país) ── */
+.tag-chip{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px}
+.tag-info{background:#e8f0ff;color:#3b5fc0}
+.tag-acao{background:#fff0e0;color:#c97a1a}
+.tag-pais{background:#f0f0ec;color:#666}
+.tag-pais .flag{font-size:12px}
+
+/* ── PAÍSES TAB ── */
+.paises-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:13px}
+.pais-card{background:#fff;border:1px solid #e8e8e3;border-radius:12px;padding:16px;position:relative}
+.pais-card.schengen{border-top:3px solid #6b9bd1}
+.pais-card.nao-schengen{border-top:3px solid #e8b84b}
+.pais-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.pais-name{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700}
+.pais-name .flag{font-size:22px}
+.pais-row{display:flex;justify-content:space-between;font-size:12px;color:#666;padding:4px 0;border-bottom:1px solid #f5f5f0}
+.pais-row:last-child{border-bottom:none}
+.pais-row .lbl{color:#aaa}
+.pais-row .val{font-weight:600;color:#333;text-align:right}
+.pais-card-count{font-size:10px;color:#bbb;margin-top:8px;text-align:center}
+.add-pais-card{display:flex;align-items:center;justify-content:center;border:2px dashed #e0e0d8;border-radius:12px;min-height:160px;cursor:pointer;color:#bbb;font-size:13px;font-weight:500;transition:all .15s}
+.add-pais-card:hover{border-color:#aaa;color:#888;background:#fafaf8}
+
 /* ── FÓRUM ── */
 .forum-wrap{margin-top:10px;border-top:1px solid #f0f0ec;padding-top:10px}
 .forum-toggle{background:none;border:none;font-size:11px;color:#aaa;cursor:pointer;padding:0;display:flex;align-items:center;gap:4px}
@@ -302,6 +325,7 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
     <div class="tab" data-tab="financeiro">💰 Financeiro</div>
     <div class="tab" data-tab="estadia">🏨 Estadia</div>
     <div class="tab tab-dm" data-tab="deu-merda">🔥 Deu Merda</div>
+    <div class="tab" data-tab="paises">🌍 Países</div>
   </div>
 
   <div class="filter-bar" id="filter-bar">
@@ -316,6 +340,12 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
       <span class="mini-av-init" style="display:none;background:#b05080">S</span>Samy
     </button>
     <button class="filter-btn" id="f-prio-alta" onclick="setFilter('prio-alta')" style="color:#e05555">🔴 Alta prioridade</button>
+    <span style="width:1px;height:18px;background:#e0e0d8;margin:0 2px"></span>
+    <button class="filter-btn" id="f-tipo-acao" onclick="setFilter('tipo-acao')" style="color:#c97a1a">⚡ Requer ação</button>
+    <button class="filter-btn" id="f-tipo-info" onclick="setFilter('tipo-info')" style="color:#3b5fc0">ℹ️ Informativo</button>
+    <select id="f-pais-select" onchange="setFilter(this.value?'pais:'+this.value:'todos')" style="width:auto;padding:5px 28px 5px 10px;font-size:12px;border-radius:20px;border:1px solid #e0e0d8;background-position:right 10px center">
+      <option value="">🌍 Filtrar por país...</option>
+    </select>
   </div>
 
   <!-- RESUMO TAB -->
@@ -357,6 +387,16 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
       <div class="empty-state" id="empty" style="display:none"></div>
     </div>
   </div>
+
+  <!-- PAÍSES TAB -->
+  <div id="tab-paises" style="display:none">
+    <div class="content">
+      <div class="sec-hdr">
+        <span class="sec-title">🌍 Países no radar</span>
+      </div>
+      <div class="paises-grid" id="paises-grid"></div>
+    </div>
+  </div>
 </div>
 
 <!-- MODAL CARD -->
@@ -389,9 +429,88 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
         </select>
       </div>
     </div>
+    <div class="m-grid">
+      <div>
+        <label class="lbl" style="margin-top:0">Tipo</label>
+        <select id="m-tipo">
+          <option value="">— Sem tipo —</option>
+          <option value="acao">⚡ Requer ação</option>
+          <option value="info">ℹ️ Informativo</option>
+        </select>
+      </div>
+      <div>
+        <label class="lbl" style="margin-top:0">País</label>
+        <select id="m-pais">
+          <option value="">— Nenhum —</option>
+          <option value="Todos">🌍 Todos os países</option>
+        </select>
+      </div>
+    </div>
     <div class="m-row">
       <button class="btn btn-ghost" onclick="closeModal()">Cancelar</button>
       <button class="btn btn-dark" id="m-save" onclick="saveCard()">Criar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL PAÍS -->
+<div class="overlay" id="pais-overlay">
+  <div class="modal" style="width:440px">
+    <h2 id="p-title">🌍 Novo país</h2>
+    <div class="m-grid" style="margin-top:0">
+      <div>
+        <label class="lbl" style="margin-top:0">Nome do país</label>
+        <input id="p-nome" placeholder="Ex: Malta, Geórgia...">
+      </div>
+      <div>
+        <label class="lbl" style="margin-top:0">Bandeira (emoji)</label>
+        <input id="p-flag" placeholder="🇲🇹 cole aqui" maxlength="6">
+      </div>
+    </div>
+    <div class="m-grid">
+      <div>
+        <label class="lbl" style="margin-top:0">Schengen?</label>
+        <select id="p-schengen">
+          <option value="nao">Não</option>
+          <option value="sim">Sim</option>
+        </select>
+      </div>
+      <div>
+        <label class="lbl" style="margin-top:0">Tempo turista</label>
+        <input id="p-tempo" placeholder="Ex: 90 dias">
+      </div>
+    </div>
+    <div class="m-grid">
+      <div>
+        <label class="lbl" style="margin-top:0">Burocracia de visto</label>
+        <input id="p-visto" placeholder="Ex: Nenhuma, E-visa...">
+      </div>
+      <div>
+        <label class="lbl" style="margin-top:0">Imigração</label>
+        <select id="p-imigracao">
+          <option value="">—</option>
+          <option value="Facílima">Facílima</option>
+          <option value="Tranquila">Tranquila</option>
+          <option value="Média">Média</option>
+          <option value="Rigorosa">Rigorosa</option>
+        </select>
+      </div>
+    </div>
+    <div class="m-grid">
+      <div>
+        <label class="lbl" style="margin-top:0">Custo médio/mês casal</label>
+        <input id="p-custo" placeholder="Ex: R$ 9.000">
+      </div>
+      <div>
+        <label class="lbl" style="margin-top:0">Cotação aprox. (moeda local)</label>
+        <input id="p-cotacao" placeholder="Ex: 1 EUR = R$ 6,00">
+      </div>
+    </div>
+    <label class="lbl">Observações <span style="font-weight:400;text-transform:none">(opcional)</span></label>
+    <textarea id="p-obs" placeholder="Internet, idioma, qualquer detalhe extra..." style="min-height:50px"></textarea>
+    <div class="m-row">
+      <button class="btn btn-ghost" onclick="closePaisModal()">Cancelar</button>
+      <button class="btn btn-dark" id="p-save" onclick="savePais()">Salvar</button>
     </div>
   </div>
 </div>
@@ -423,10 +542,31 @@ const FOTO = {
 const COLORS = { Rodrigo:'#3a3a6e', Samy:'#b05080' };
 const POLL = 6000;
 
+// países pré-cadastrados (do guia de destinos)
+const PAISES_SEED = [
+  { nome:'Malta', flag:'🇲🇹', schengen:'sim', tempo:'90 dias', visto:'Nenhuma', imigracao:'Tranquila', custo:'R$ 9.000', cotacao:'1 EUR = R$ 6,00', obs:'' },
+  { nome:'França', flag:'🇫🇷', schengen:'sim', tempo:'90 dias', visto:'Nenhuma', imigracao:'Rigorosa', custo:'R$ 13.000 - 16.000', cotacao:'1 EUR = R$ 6,00', obs:'' },
+  { nome:'Portugal', flag:'🇵🇹', schengen:'sim', tempo:'90 dias', visto:'Nenhuma', imigracao:'Tranquila', custo:'R$ 10.800', cotacao:'1 EUR = R$ 6,00', obs:'' },
+  { nome:'Espanha', flag:'🇪🇸', schengen:'sim', tempo:'90 dias', visto:'Nenhuma', imigracao:'Tranquila', custo:'R$ 10.800', cotacao:'1 EUR = R$ 6,00', obs:'' },
+  { nome:'Itália', flag:'🇮🇹', schengen:'sim', tempo:'90 dias', visto:'Nenhuma', imigracao:'Tranquila', custo:'R$ 10.800', cotacao:'1 EUR = R$ 6,00', obs:'' },
+  { nome:'Escócia (UK)', flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿', schengen:'nao', tempo:'180 dias', visto:'ETA online (~R$70)', imigracao:'Rigorosa', custo:'R$ 12.000 - 15.000', cotacao:'1 GBP = R$ 7,00', obs:'' },
+  { nome:'Irlanda', flag:'🇮🇪', schengen:'nao', tempo:'90 dias', visto:'Nenhuma', imigracao:'Média', custo:'R$ 13.000', cotacao:'1 EUR = R$ 6,00', obs:'' },
+  { nome:'Geórgia', flag:'🇬🇪', schengen:'nao', tempo:'365 dias', visto:'Nenhuma', imigracao:'Facílima', custo:'R$ 5.400', cotacao:'1 GEL ≈ R$ 2,20', obs:'' },
+  { nome:'Sérvia', flag:'🇷🇸', schengen:'nao', tempo:'90 dias', visto:'Nenhuma', imigracao:'Facílima', custo:'R$ 6.000', cotacao:'1 RSD ≈ R$ 0,055', obs:'' },
+  { nome:'Montenegro', flag:'🇲🇪', schengen:'nao', tempo:'90 dias', visto:'Nenhuma', imigracao:'Facílima', custo:'R$ 6.000', cotacao:'1 EUR = R$ 6,00', obs:'' },
+  { nome:'Albânia', flag:'🇦🇱', schengen:'nao', tempo:'90 dias', visto:'Nenhuma', imigracao:'Facílima', custo:'R$ 4.800', cotacao:'1 ALL ≈ R$ 0,06', obs:'' },
+  { nome:'Marrocos', flag:'🇲🇦', schengen:'nao', tempo:'90 dias', visto:'Nenhuma', imigracao:'Tranquila', custo:'R$ 4.800', cotacao:'1 MAD ≈ R$ 0,55', obs:'' },
+  { nome:'Tailândia', flag:'🇹🇭', schengen:'nao', tempo:'60 dias', visto:'Nenhuma', imigracao:'Tranquila', custo:'R$ 5.400', cotacao:'1 THB ≈ R$ 0,16', obs:'' },
+  { nome:'Vietnã', flag:'🇻🇳', schengen:'nao', tempo:'45 dias', visto:'E-visa (~R$55)', imigracao:'Tranquila', custo:'R$ 4.200', cotacao:'1 VND ≈ R$ 0,00022', obs:'' },
+  { nome:'Bali (Indonésia)', flag:'🇮🇩', schengen:'nao', tempo:'30+30 dias', visto:'Nenhuma', imigracao:'Tranquila', custo:'R$ 6.600', cotacao:'1 IDR ≈ R$ 0,00034', obs:'' },
+  { nome:'China', flag:'🇨🇳', schengen:'nao', tempo:'30 dias*', visto:'Nenhuma (até dez/26)', imigracao:'Média', custo:'R$ 5.000 - 7.000', cotacao:'1 CNY ≈ R$ 0,78', obs:'*Isenção de visto até 31/dez/2026' },
+];
+
 let pwd='', curUser='', curTab='resumo', curFilter='todos';
-let state={ viagem:[], financeiro:[], estadia:[], 'deu-merda':[], _meta:{} };
+let state={ viagem:[], financeiro:[], estadia:[], 'deu-merda':[], _meta:{}, paises:[] };
 let editId=null, modalTab=null, saving=false;
 let openForums=new Set(); // fóruns abertos sobrevivem ao re-render
+let editPaisId=null;
 
 function uid(){ return Date.now().toString(36)+Math.random().toString(36).slice(2); }
 
@@ -442,7 +582,11 @@ function tryLogin(){
   if(!pwd){ showToast('Coloca a senha aí!'); return; }
   setSyncBadge('ing','Verificando...');
   apiFetch('GET').then(data=>{
-    state={ viagem:[], financeiro:[], estadia:[], 'deu-merda':[], _meta:{}, ...data };
+    state={ viagem:[], financeiro:[], estadia:[], 'deu-merda':[], _meta:{}, paises:[], ...data };
+    if(!state.paises || !state.paises.length){
+      state.paises = PAISES_SEED.map(p=>({...p, id:uid()}));
+    }
+    populatePaisSelects();
     showScreen('who-screen');
     setSyncBadge('ok','● Sync');
   }).catch(e=>{
@@ -492,7 +636,8 @@ async function doPoll(){
   if(active && active.classList && active.classList.contains('forum-input')) return;
   try{
     const data=await apiFetch('GET');
-    state={ viagem:[], financeiro:[], estadia:[], 'deu-merda':[], _meta:{}, ...data };
+    state={ viagem:[], financeiro:[], estadia:[], 'deu-merda':[], _meta:{}, paises:[], ...data };
+    populatePaisSelects();
     renderAll(); updateCountdown();
   }catch{}
 }
@@ -564,9 +709,12 @@ document.querySelectorAll('.tab').forEach(t=>{
     document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
     t.classList.add('active');
     curTab=t.dataset.tab;
-    document.getElementById('filter-bar').style.display=curTab==='resumo'?'none':'flex';
-    document.getElementById('tab-resumo').style.display=curTab==='resumo'?'block':'none';
-    document.getElementById('tab-cards').style.display=curTab==='resumo'?'none':'block';
+    const isResumo = curTab==='resumo';
+    const isPaises = curTab==='paises';
+    document.getElementById('filter-bar').style.display=(isResumo||isPaises)?'none':'flex';
+    document.getElementById('tab-resumo').style.display=isResumo?'block':'none';
+    document.getElementById('tab-cards').style.display=(!isResumo&&!isPaises)?'block':'none';
+    document.getElementById('tab-paises').style.display=isPaises?'block':'none';
     renderAll();
   });
 });
@@ -575,17 +723,51 @@ document.querySelectorAll('.tab').forEach(t=>{
 function setFilter(f){
   curFilter=f;
   document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('factive','factive-samy'));
-  const btn=document.getElementById('f-'+f);
-  if(btn){ btn.classList.add(f==='Samy'?'factive-samy':'factive'); }
-  if(curTab!=='resumo') renderAll();
+  if(f.startsWith('pais:')){
+    // filtro de país via select, não tem botão dedicado
+  } else {
+    document.getElementById('f-pais-select').value='';
+    const btn=document.getElementById('f-'+f);
+    if(btn){ btn.classList.add(f==='Samy'?'factive-samy':'factive'); }
+  }
+  if(curTab!=='resumo' && curTab!=='paises') renderAll();
 }
 
 function applyFilter(cards){
   if(curFilter==='todos') return cards;
   if(curFilter==='prio-alta') return cards.filter(c=>c.prio==='alta');
+  if(curFilter==='tipo-acao') return cards.filter(c=>c.tipo==='acao');
+  if(curFilter==='tipo-info') return cards.filter(c=>c.tipo==='info');
+  if(curFilter.startsWith('pais:')){
+    const pais=curFilter.slice(5);
+    return cards.filter(c=>c.pais===pais || c.pais==='Todos');
+  }
   // cards "Ambos" contam pros dois filtros (Rodrigo e Samy)
   return cards.filter(c=>c.resp===curFilter || c.resp==='Ambos');
 }
+
+// ── PAÍSES: selects e helpers ─────────────────────
+function populatePaisSelects(){
+  const paises=(state.paises||[]).slice().sort((a,b)=>a.nome.localeCompare(b.nome,'pt-BR'));
+  // select do modal de card
+  const mSel=document.getElementById('m-pais');
+  if(mSel){
+    const cur=mSel.value;
+    mSel.innerHTML='<option value="">— Nenhum —</option><option value="Todos">🌍 Todos os países</option>'
+      + paises.map(p=>`<option value="${esc(p.nome)}">${p.flag||'🏳️'} ${esc(p.nome)}</option>`).join('');
+    mSel.value=cur;
+  }
+  // select de filtro
+  const fSel=document.getElementById('f-pais-select');
+  if(fSel){
+    const cur=fSel.value;
+    fSel.innerHTML='<option value="">🌍 Filtrar por país...</option>'
+      + paises.map(p=>`<option value="${esc(p.nome)}">${p.flag||'🏳️'} ${esc(p.nome)}</option>`).join('');
+    fSel.value=cur;
+  }
+}
+
+function findPais(nome){ return (state.paises||[]).find(p=>p.nome===nome); }
 
 // ── RENDER RESUMO ─────────────────────────────────
 function renderResumo(){
@@ -691,12 +873,152 @@ function renderAll(){
     document.getElementById('filter-bar').style.display='none';
     document.getElementById('tab-resumo').style.display='block';
     document.getElementById('tab-cards').style.display='none';
+    document.getElementById('tab-paises').style.display='none';
     renderResumo();
+  } else if(curTab==='paises'){
+    document.getElementById('filter-bar').style.display='none';
+    document.getElementById('tab-resumo').style.display='none';
+    document.getElementById('tab-cards').style.display='none';
+    document.getElementById('tab-paises').style.display='block';
+    populatePaisSelects();
+    renderPaises();
   } else {
     document.getElementById('filter-bar').style.display='flex';
     document.getElementById('tab-resumo').style.display='none';
     document.getElementById('tab-cards').style.display='block';
+    document.getElementById('tab-paises').style.display='none';
     renderCards();
+  }
+}
+
+// ── RENDER PAÍSES ──────────────────────────────────
+function countCardsByPais(nome){
+  let n=0;
+  SECTIONS.forEach(s=>{ n += (state[s]||[]).filter(c=>c.pais===nome).length; });
+  return n;
+}
+
+function renderPaises(){
+  const grid=document.getElementById('paises-grid');
+  const paises=(state.paises||[]).slice().sort((a,b)=>a.nome.localeCompare(b.nome,'pt-BR'));
+  const cardsHTML = paises.map(p=>{
+    const qtd=countCardsByPais(p.nome);
+    return `<div class="pais-card ${p.schengen==='sim'?'schengen':'nao-schengen'}">
+      <div class="pais-top">
+        <div class="pais-name"><span class="flag">${p.flag||'🏳️'}</span>${esc(p.nome)}</div>
+        <div class="menu-wrap">
+          <button class="menu-btn" onclick="togglePaisCtx(event,'${p.id}')">⋯</button>
+          <div class="ctx" id="pctx-${p.id}">
+            <div class="ci" onclick="closeCtx();openPaisModal('${p.id}')">✏️ Editar</div>
+            <div class="ci danger" onclick="closeCtx();delPais('${p.id}')">🗑️ Excluir</div>
+          </div>
+        </div>
+      </div>
+      <div class="pais-row"><span class="lbl">Schengen</span><span class="val">${p.schengen==='sim'?'Sim':'Não'}</span></div>
+      <div class="pais-row"><span class="lbl">Tempo turista</span><span class="val">${esc(p.tempo||'—')}</span></div>
+      <div class="pais-row"><span class="lbl">Visto</span><span class="val">${esc(p.visto||'—')}</span></div>
+      <div class="pais-row"><span class="lbl">Imigração</span><span class="val">${esc(p.imigracao||'—')}</span></div>
+      <div class="pais-row"><span class="lbl">Custo/mês casal</span><span class="val">${esc(p.custo||'—')}</span></div>
+      <div class="pais-row"><span class="lbl">Cotação aprox.</span><span class="val">${esc(p.cotacao||'—')}</span></div>
+      ${p.obs?`<div class="c-comment" style="margin-top:8px">${esc(p.obs)}</div>`:''}
+      <div class="pais-card-count">${qtd} card${qtd!==1?'s':''} vinculado${qtd!==1?'s':''}</div>
+    </div>`;
+  }).join('');
+  grid.innerHTML = cardsHTML + `<div class="add-pais-card" onclick="openPaisModal()">+ Adicionar país</div>`;
+}
+
+function togglePaisCtx(e,id){
+  e.stopPropagation();
+  const ctx=document.getElementById('pctx-'+id);
+  const was=ctx.classList.contains('open');
+  closeCtx();
+  if(!was) ctx.classList.add('open');
+}
+
+function openPaisModal(id=null){
+  editPaisId=id;
+  if(id){
+    const p=findPaisById(id);
+    document.getElementById('p-title').textContent='✏️ Editar país';
+    document.getElementById('p-nome').value=p.nome||'';
+    document.getElementById('p-flag').value=p.flag||'';
+    document.getElementById('p-schengen').value=p.schengen||'nao';
+    document.getElementById('p-tempo').value=p.tempo||'';
+    document.getElementById('p-visto').value=p.visto||'';
+    document.getElementById('p-imigracao').value=p.imigracao||'';
+    document.getElementById('p-custo').value=p.custo||'';
+    document.getElementById('p-cotacao').value=p.cotacao||'';
+    document.getElementById('p-obs').value=p.obs||'';
+  } else {
+    document.getElementById('p-title').textContent='🌍 Novo país';
+    ['p-nome','p-flag','p-tempo','p-visto','p-custo','p-cotacao','p-obs'].forEach(id=>document.getElementById(id).value='');
+    document.getElementById('p-schengen').value='nao';
+    document.getElementById('p-imigracao').value='';
+  }
+  document.getElementById('pais-overlay').classList.add('open');
+  setTimeout(()=>document.getElementById('p-nome').focus(),80);
+}
+
+function closePaisModal(){ document.getElementById('pais-overlay').classList.remove('open'); editPaisId=null; }
+document.getElementById('pais-overlay').addEventListener('click',e=>{ if(e.target===document.getElementById('pais-overlay'))closePaisModal(); });
+
+function findPaisById(id){ return (state.paises||[]).find(p=>p.id===id); }
+
+async function savePais(){
+  const nome=document.getElementById('p-nome').value.trim();
+  if(!nome){ document.getElementById('p-nome').style.borderColor='#e05555'; return; }
+  document.getElementById('p-nome').style.borderColor='#e0e0d8';
+  const data={
+    nome,
+    flag:document.getElementById('p-flag').value.trim(),
+    schengen:document.getElementById('p-schengen').value,
+    tempo:document.getElementById('p-tempo').value.trim(),
+    visto:document.getElementById('p-visto').value.trim(),
+    imigracao:document.getElementById('p-imigracao').value,
+    custo:document.getElementById('p-custo').value.trim(),
+    cotacao:document.getElementById('p-cotacao').value.trim(),
+    obs:document.getElementById('p-obs').value.trim(),
+  };
+  if(!state.paises) state.paises=[];
+  if(editPaisId){
+    const oldNome=findPaisById(editPaisId)?.nome;
+    const p=findPaisById(editPaisId);
+    if(p) Object.assign(p,data);
+    // se o nome mudou, atualiza referências nos cards
+    if(oldNome && oldNome!==nome){
+      SECTIONS.forEach(s=>{ (state[s]||[]).forEach(c=>{ if(c.pais===oldNome) c.pais=nome; }); });
+    }
+  } else {
+    state.paises.push({ id:uid(), ...data });
+  }
+  closePaisModal();
+  populatePaisSelects();
+  renderAll();
+  await persist();
+}
+
+async function delPais(id){
+  const p=findPaisById(id);
+  if(!p) return;
+  const qtd=countCardsByPais(p.nome);
+  const msg = qtd>0
+    ? `Esse país tem ${qtd} card(s) vinculado(s). Excluir mesmo assim? Os cards ficarão sem país definido.`
+    : 'Excluir esse país?';
+  if(!confirm(msg)) return;
+  state.paises=(state.paises||[]).filter(x=>x.id!==id);
+  // limpa referência nos cards
+  SECTIONS.forEach(s=>{ (state[s]||[]).forEach(c=>{ if(c.pais===p.nome) c.pais=''; }); });
+  populatePaisSelects();
+  renderAll();
+  await persist();
+}
+
+// auto-cria país (vazio) se um card referenciar um país inexistente
+function ensurePaisExists(nome){
+  if(!nome || nome==='Todos') return;
+  if(!state.paises) state.paises=[];
+  if(!findPais(nome)){
+    state.paises.push({ id:uid(), nome, flag:'', schengen:'nao', tempo:'', visto:'', imigracao:'', custo:'', cotacao:'', obs:'' });
   }
 }
 
@@ -729,7 +1051,11 @@ function cardHTML(c,sec){
   }
 
   const prioBadge = c.prio ? `<span class="prio-badge">${c.prio==='alta'?'🔴 Alta':c.prio==='media'?'🟡 Média':'🟢 Baixa'}</span>` : '';
-  const meta = (prioBadge||respChip) ? `<div class="c-meta">${prioBadge}${respChip}</div>` : '';
+  const tipoBadge = c.tipo ? `<span class="tag-chip ${c.tipo==='acao'?'tag-acao':'tag-info'}">${c.tipo==='acao'?'⚡ Ação':'ℹ️ Info'}</span>` : '';
+  const paisInfo = c.pais ? findPais(c.pais) : null;
+  const paisFlag = c.pais==='Todos' ? '🌍' : (paisInfo?.flag || '🏳️');
+  const paisBadge = c.pais ? `<span class="tag-chip tag-pais"><span class="flag">${paisFlag}</span> ${esc(c.pais)}</span>` : '';
+  const meta = (prioBadge||respChip||tipoBadge||paisBadge) ? `<div class="c-meta">${prioBadge}${tipoBadge}${paisBadge}${respChip}</div>` : '';
   const lockTip = isOwner ? '' : 'Apenas '+esc(c.resp||'o responsável')+' pode editar';
 
   // aprovações visuais pra cards Ambos
@@ -846,6 +1172,7 @@ function openModal(tabArg,id=null){
   const isDM=modalTab==='deu-merda';
   document.getElementById('m-title').textContent=id?'Editar card':(isDM?'Registrar problema':'Novo card');
   document.getElementById('m-save').textContent=id?'Salvar':'Criar';
+  populatePaisSelects();
   if(id){
     const c=(state[modalTab]||[]).find(x=>x.id===id);
     document.getElementById('m-q').value=c?.title||'';
@@ -853,12 +1180,16 @@ function openModal(tabArg,id=null){
     document.getElementById('m-c').value=c?.comment||'';
     document.getElementById('m-resp').value=c?.resp||'';
     document.getElementById('m-prio').value=c?.prio||'';
+    document.getElementById('m-tipo').value=c?.tipo||'';
+    document.getElementById('m-pais').value=c?.pais||'';
   } else {
     document.getElementById('m-q').value='';
     document.getElementById('m-a').value='';
     document.getElementById('m-c').value='';
     document.getElementById('m-resp').value=curUser||'';
     document.getElementById('m-prio').value='';
+    document.getElementById('m-tipo').value='';
+    document.getElementById('m-pais').value=curFilter.startsWith('pais:')?curFilter.slice(5):'';
   }
   document.getElementById('overlay').classList.add('open');
   setTimeout(()=>document.getElementById('m-q').focus(),80);
@@ -875,14 +1206,17 @@ async function saveCard(){
   const comment=document.getElementById('m-c').value.trim();
   const resp=document.getElementById('m-resp').value;
   const prio=document.getElementById('m-prio').value;
+  const tipo=document.getElementById('m-tipo').value;
+  const pais=document.getElementById('m-pais').value;
+  ensurePaisExists(pais);
   if(editId){
     const c=(state[modalTab]||[]).find(x=>x.id===editId);
-    if(c){ c.title=title; c.answer=answer; c.comment=comment; c.resp=resp; c.prio=prio; }
+    if(c){ c.title=title; c.answer=answer; c.comment=comment; c.resp=resp; c.prio=prio; c.tipo=tipo; c.pais=pais; }
   } else {
     if(!state[modalTab]) state[modalTab]=[];
-    state[modalTab].push({ id:uid(), title, answer, comment, resp, prio, done:false, ts:Date.now() });
+    state[modalTab].push({ id:uid(), title, answer, comment, resp, prio, tipo, pais, done:false, ts:Date.now() });
   }
-  closeModal(); renderAll(); await persist();
+  closeModal(); populatePaisSelects(); renderAll(); await persist();
 }
 
 async function toggle(sec,id){
