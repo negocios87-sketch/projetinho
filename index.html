@@ -620,10 +620,11 @@ function tryLogin(){
   pwd=document.getElementById('pwd').value;
   if(!pwd){ showToast('Coloca a senha aí!'); return; }
   setSyncBadge('ing','Verificando...');
-  apiFetch('GET').then(data=>{
+  apiFetch('GET').then(async data=>{
     state={ viagem:[], financeiro:[], estadia:[], 'deu-merda':[], _meta:{}, paises:[], ...data };
     if(!state.paises || !state.paises.length){
       state.paises = PAISES_SEED.map(p=>({...p, id:uid()}));
+      await persist(); // salva o seed no GitHub AGORA, senão o próximo poll apaga ele
     }
     populatePaisSelects();
     showScreen('who-screen');
