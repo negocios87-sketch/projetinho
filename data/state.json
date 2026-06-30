@@ -433,6 +433,18 @@
       },
       "tipo": "acao",
       "pais": "Todos"
+    },
+    {
+      "id": "mr179rg4fhbn1z4bkad",
+      "title": "Pesquisar ETIAS",
+      "answer": "",
+      "comment": "",
+      "resp": "Ambos",
+      "prio": "alta",
+      "tipo": "info",
+      "pais": "Malta",
+      "done": false,
+      "ts": 1782857412148
     }
   ],
   "roteiro": [],
