@@ -94,7 +94,7 @@
       "answer": "",
       "comment": "Decidir também o Tempo",
       "resp": "Ambos",
-      "prio": "",
+      "prio": "alta",
       "done": false,
       "ts": 1782841089031,
       "forum": [
