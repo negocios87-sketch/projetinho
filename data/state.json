@@ -126,7 +126,7 @@
       "comment": "Decidir também o Tempo",
       "resp": "Ambos",
       "prio": "alta",
-      "done": false,
+      "done": true,
       "ts": 1782841089031,
       "forum": [
         {
@@ -141,7 +141,8 @@
         }
       ],
       "approvals": {
-        "Rodrigo": true
+        "Rodrigo": true,
+        "Samy": true
       },
       "tipo": "acao",
       "pais": ""
