@@ -415,5 +415,199 @@
   "_meta": {
     "partida": "2028-07-14",
     "destino": "Malta"
-  }
+  },
+  "paises": [
+    {
+      "nome": "Malta",
+      "flag": "🇲🇹",
+      "schengen": "sim",
+      "tempo": "90 dias",
+      "visto": "Nenhuma",
+      "imigracao": "Tranquila",
+      "custo": "R$ 9.000",
+      "cotacao": "1 EUR = R$ 6,00",
+      "obs": "",
+      "id": "mr13e9b461gwse9dfdi"
+    },
+    {
+      "nome": "França",
+      "flag": "🇫🇷",
+      "schengen": "sim",
+      "tempo": "90 dias",
+      "visto": "Nenhuma",
+      "imigracao": "Rigorosa",
+      "custo": "R$ 13.000 - 16.000",
+      "cotacao": "1 EUR = R$ 6,00",
+      "obs": "",
+      "id": "mr13e9b4sxmzn30p9ik"
+    },
+    {
+      "nome": "Portugal",
+      "flag": "🇵🇹",
+      "schengen": "sim",
+      "tempo": "90 dias",
+      "visto": "Nenhuma",
+      "imigracao": "Tranquila",
+      "custo": "R$ 10.800",
+      "cotacao": "1 EUR = R$ 6,00",
+      "obs": "",
+      "id": "mr13e9b43ma9i5ge5vb"
+    },
+    {
+      "nome": "Espanha",
+      "flag": "🇪🇸",
+      "schengen": "sim",
+      "tempo": "90 dias",
+      "visto": "Nenhuma",
+      "imigracao": "Tranquila",
+      "custo": "R$ 10.800",
+      "cotacao": "1 EUR = R$ 6,00",
+      "obs": "",
+      "id": "mr13e9b4jevyivkx1x"
+    },
+    {
+      "nome": "Itália",
+      "flag": "🇮🇹",
+      "schengen": "sim",
+      "tempo": "90 dias",
+      "visto": "Nenhuma",
+      "imigracao": "Tranquila",
+      "custo": "R$ 10.800",
+      "cotacao": "1 EUR = R$ 6,00",
+      "obs": "",
+      "id": "mr13e9b40055iy5umdhab"
+    },
+    {
+      "nome": "Escócia (UK)",
+      "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+      "schengen": "nao",
+      "tempo": "180 dias",
+      "visto": "ETA online (~R$70)",
+      "imigracao": "Rigorosa",
+      "custo": "R$ 12.000 - 15.000",
+      "cotacao": "1 GBP = R$ 7,00",
+      "obs": "",
+      "id": "mr13e9b4rce1uxb285"
+    },
+    {
+      "nome": "Irlanda",
+      "flag": "🇮🇪",
+      "schengen": "nao",
+      "tempo": "90 dias",
+      "visto": "Nenhuma",
+      "imigracao": "Média",
+      "custo": "R$ 13.000",
+      "cotacao": "1 EUR = R$ 6,00",
+      "obs": "",
+      "id": "mr13e9b4nqqa4d453fg"
+    },
+    {
+      "nome": "Geórgia",
+      "flag": "🇬🇪",
+      "schengen": "nao",
+      "tempo": "365 dias",
+      "visto": "Nenhuma",
+      "imigracao": "Facílima",
+      "custo": "R$ 5.400",
+      "cotacao": "1 GEL ≈ R$ 2,20",
+      "obs": "",
+      "id": "mr13e9b43jsljje0k5h"
+    },
+    {
+      "nome": "Sérvia",
+      "flag": "🇷🇸",
+      "schengen": "nao",
+      "tempo": "90 dias",
+      "visto": "Nenhuma",
+      "imigracao": "Facílima",
+      "custo": "R$ 6.000",
+      "cotacao": "1 RSD ≈ R$ 0,055",
+      "obs": "",
+      "id": "mr13e9b4rb38esph09c"
+    },
+    {
+      "nome": "Montenegro",
+      "flag": "🇲🇪",
+      "schengen": "nao",
+      "tempo": "90 dias",
+      "visto": "Nenhuma",
+      "imigracao": "Facílima",
+      "custo": "R$ 6.000",
+      "cotacao": "1 EUR = R$ 6,00",
+      "obs": "",
+      "id": "mr13e9b4dgwdr22xlws"
+    },
+    {
+      "nome": "Albânia",
+      "flag": "🇦🇱",
+      "schengen": "nao",
+      "tempo": "90 dias",
+      "visto": "Nenhuma",
+      "imigracao": "Facílima",
+      "custo": "R$ 4.800",
+      "cotacao": "1 ALL ≈ R$ 0,06",
+      "obs": "",
+      "id": "mr13e9b4l45e0obrcd8"
+    },
+    {
+      "nome": "Marrocos",
+      "flag": "🇲🇦",
+      "schengen": "nao",
+      "tempo": "90 dias",
+      "visto": "Nenhuma",
+      "imigracao": "Tranquila",
+      "custo": "R$ 4.800",
+      "cotacao": "1 MAD ≈ R$ 0,55",
+      "obs": "",
+      "id": "mr13e9b459xaz6x2mk"
+    },
+    {
+      "nome": "Tailândia",
+      "flag": "🇹🇭",
+      "schengen": "nao",
+      "tempo": "60 dias",
+      "visto": "Nenhuma",
+      "imigracao": "Tranquila",
+      "custo": "R$ 5.400",
+      "cotacao": "1 THB ≈ R$ 0,16",
+      "obs": "",
+      "id": "mr13e9b4zotazpbwkno"
+    },
+    {
+      "nome": "Vietnã",
+      "flag": "🇻🇳",
+      "schengen": "nao",
+      "tempo": "45 dias",
+      "visto": "E-visa (~R$55)",
+      "imigracao": "Tranquila",
+      "custo": "R$ 4.200",
+      "cotacao": "1 VND ≈ R$ 0,00022",
+      "obs": "",
+      "id": "mr13e9b41ay4qwbv2pz"
+    },
+    {
+      "nome": "Bali (Indonésia)",
+      "flag": "🇮🇩",
+      "schengen": "nao",
+      "tempo": "30+30 dias",
+      "visto": "Nenhuma",
+      "imigracao": "Tranquila",
+      "custo": "R$ 6.600",
+      "cotacao": "1 IDR ≈ R$ 0,00034",
+      "obs": "",
+      "id": "mr13e9b47196bf4l8d"
+    },
+    {
+      "nome": "China",
+      "flag": "🇨🇳",
+      "schengen": "nao",
+      "tempo": "30 dias*",
+      "visto": "Nenhuma (até dez/26)",
+      "imigracao": "Média",
+      "custo": "R$ 5.000 - 7.000",
+      "cotacao": "1 CNY ≈ R$ 0,78",
+      "obs": "*Isenção de visto até 31/dez/2026",
+      "id": "mr13e9b40osdu4x303h"
+    }
+  ]
 }
