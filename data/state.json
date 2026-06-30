@@ -65,18 +65,6 @@
       "pais": "Malta"
     },
     {
-      "id": "mr0xnhe52b8k4xy8zmc",
-      "title": "Mapear outros países possiveis para o Visa Run",
-      "answer": "",
-      "comment": "Malta, Italia, França, Geórgia, Escócia, Irlanda, Vietnã, Thailandia, Amsterdam, Indonesia",
-      "resp": "Ambos",
-      "prio": "media",
-      "done": false,
-      "ts": 1782841256141,
-      "tipo": "acao",
-      "pais": "Todos"
-    },
-    {
       "id": "mr0xywjpvpgb4vvm3ho",
       "title": "Malas",
       "answer": "",
@@ -459,7 +447,20 @@
       "ts": 1782857412148
     }
   ],
-  "roteiro": [],
+  "roteiro": [
+    {
+      "id": "mr0xnhe52b8k4xy8zmc",
+      "title": "Mapear outros países possiveis para o Visa Run",
+      "answer": "",
+      "comment": "Malta, Italia, França, Geórgia, Escócia, Irlanda, Vietnã, Thailandia, Amsterdam, Indonesia",
+      "resp": "Ambos",
+      "prio": "media",
+      "done": false,
+      "ts": 1782841256141,
+      "tipo": "acao",
+      "pais": "Todos"
+    }
+  ],
   "brasil": [
     {
       "id": "mqyaplxu3fxy9gr2upj",
