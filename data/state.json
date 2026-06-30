@@ -125,7 +125,9 @@
       ],
       "approvals": {
         "Rodrigo": true
-      }
+      },
+      "tipo": "acao",
+      "pais": ""
     },
     {
       "id": "mr0xnhe52b8k4xy8zmc",
