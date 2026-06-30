@@ -708,6 +708,8 @@ function cardHTML(c,sec){
   const approvals = c.approvals || {}; // { Rodrigo: true, Samy: true }
   const myApproval = approvals[curUser];
   const bothApproved = approvals['Rodrigo'] && approvals['Samy'];
+  const ans = c.answer ? `<div class="c-ans">${esc(c.answer)}</div>` : `<div class="c-ans empty">Sem resposta ainda</div>`;
+  const comment = c.comment ? `<div class="c-comment">💬 ${esc(c.comment)}</div>` : '';
 
   // chip de responsável
   let respChip = '';
