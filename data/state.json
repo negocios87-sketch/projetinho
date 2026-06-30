@@ -13,18 +13,6 @@
       "pais": "Malta"
     },
     {
-      "id": "mqyak52efrfgkvm2m55",
-      "title": "Pesquisar escola",
-      "answer": "Nao será mais necessaria.. resolvemos fazer Visa Run",
-      "comment": "Qual, valor, localização, etc.",
-      "resp": "Rodrigo",
-      "prio": "alta",
-      "done": true,
-      "ts": 1782681536678,
-      "tipo": "info",
-      "pais": "Todos"
-    },
-    {
       "id": "mqyaplxu3fxy9gr2upj",
       "title": "Conseguir o home office",
       "answer": "Conversar com o Farias sobre a possibilidade",
@@ -478,6 +466,18 @@
       "ts": 1782852663667,
       "tipo": "info",
       "pais": "Malta"
+    },
+    {
+      "id": "mqyak52efrfgkvm2m55",
+      "title": "Pesquisar escola",
+      "answer": "Nao será mais necessaria.. resolvemos fazer Visa Run",
+      "comment": "Qual, valor, localização, etc.",
+      "resp": "Rodrigo",
+      "prio": "alta",
+      "done": true,
+      "ts": 1782681536678,
+      "tipo": "info",
+      "pais": "Todos"
     }
   ],
   "saude": [],
