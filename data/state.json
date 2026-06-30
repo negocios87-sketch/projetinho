@@ -169,7 +169,9 @@
       "resp": "Rodrigo",
       "prio": "media",
       "done": false,
-      "ts": 1782841468899
+      "ts": 1782841468899,
+      "tipo": "info",
+      "pais": "Brasil"
     },
     {
       "id": "mr0xywjpvpgb4vvm3ho",
