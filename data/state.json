@@ -8,7 +8,9 @@
       "resp": "Ambos",
       "prio": "alta",
       "done": false,
-      "ts": 1782679380865
+      "ts": 1782679380865,
+      "tipo": "acao",
+      "pais": "Todos"
     },
     {
       "id": "mqyahpcggsgttglvozn",
