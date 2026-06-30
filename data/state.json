@@ -505,6 +505,11 @@
           "autor": "Rodrigo",
           "texto": "Acredito que o seguro vai cobrar",
           "ts": 1782855744236
+        },
+        {
+          "autor": "Rodrigo",
+          "texto": "Cobrir*",
+          "ts": 1782855749707
         }
       ]
     }
