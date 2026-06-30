@@ -104,6 +104,16 @@
           "ts": 1782841104614
         }
       ]
+    },
+    {
+      "id": "mr0xnhe52b8k4xy8zmc",
+      "title": "Mapear outros países possiveis para o Visa Run",
+      "answer": "",
+      "comment": "Malta, Italia, França, Geórgia, Escócia, Irlanda, Vietnã, Thailandia, Amsterdam, Indonesia",
+      "resp": "Ambos",
+      "prio": "alta",
+      "done": false,
+      "ts": 1782841256141
     }
   ],
   "financeiro": [
