@@ -71,25 +71,6 @@
       "ts": 1782848057281,
       "tipo": "info",
       "pais": "Todos"
-    },
-    {
-      "id": "mr11ydnkrv2yqk3qrrd",
-      "title": "Onde deixar os móveis e eletrodomésticos",
-      "answer": "",
-      "comment": "Não vou vender, preciso que eles fiquem em algum lugar",
-      "resp": "Rodrigo",
-      "prio": "media",
-      "done": false,
-      "ts": 1782848482976,
-      "forum": [
-        {
-          "autor": "Samy",
-          "texto": "Minha casa é uma opção! Só preciso verificar os planos dos meus pais em relação a continuar na mesma casa e etc. De qualquer forma, não é muita coisa, então mesmo com uma mudança, seria possível.",
-          "ts": 1782853059230
-        }
-      ],
-      "tipo": "info",
-      "pais": "Brasil"
     }
   ],
   "financeiro": [
@@ -533,6 +514,25 @@
       "pais": "Brasil",
       "done": false,
       "ts": 1782857452256
+    },
+    {
+      "id": "mr11ydnkrv2yqk3qrrd",
+      "title": "Onde deixar os móveis e eletrodomésticos",
+      "answer": "",
+      "comment": "Não vou vender, preciso que eles fiquem em algum lugar",
+      "resp": "Rodrigo",
+      "prio": "media",
+      "done": false,
+      "ts": 1782848482976,
+      "forum": [
+        {
+          "autor": "Samy",
+          "texto": "Minha casa é uma opção! Só preciso verificar os planos dos meus pais em relação a continuar na mesma casa e etc. De qualquer forma, não é muita coisa, então mesmo com uma mudança, seria possível.",
+          "ts": 1782853059230
+        }
+      ],
+      "tipo": "info",
+      "pais": "Brasil"
     }
   ],
   "deu-merda": [
