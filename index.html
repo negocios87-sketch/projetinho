@@ -179,6 +179,27 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
 .add-pais-card{display:flex;align-items:center;justify-content:center;border:2px dashed #e0e0d8;border-radius:12px;min-height:160px;cursor:pointer;color:#bbb;font-size:13px;font-weight:500;transition:all .15s}
 .add-pais-card:hover{border-color:#aaa;color:#888;background:#fafaf8}
 
+/* ── TABELA DE PAÍSES ── */
+.paises-table-wrap{background:#fff;border:1px solid #e8e8e3;border-radius:12px;overflow-x:auto}
+.paises-table{width:100%;border-collapse:collapse;font-size:13px;white-space:nowrap}
+.paises-table th{text-align:left;font-size:10px;font-weight:600;color:#aaa;text-transform:uppercase;letter-spacing:.4px;padding:11px 14px;border-bottom:2px solid #f0f0ec;background:#fafaf8}
+.paises-table td{padding:11px 14px;border-bottom:1px solid #f5f5f0;color:#333}
+.paises-table tbody tr{transition:background .12s}
+.paises-table tbody tr:hover{background:#fafaf8}
+.paises-table tbody tr:last-child td{border-bottom:none}
+.pt-pais{display:flex;align-items:center;gap:8px;font-weight:600}
+.pt-pais .flag{font-size:18px}
+.pt-badge{display:inline-block;font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px}
+.pt-badge.sim{background:#e8f0ff;color:#3b5fc0}
+.pt-badge.nao{background:#fff8ee;color:#c9921a}
+.pt-count{font-size:11px;color:#bbb;text-align:center}
+.pt-actions{display:flex;gap:4px}
+.pt-actions button{background:none;border:none;cursor:pointer;padding:4px 6px;border-radius:5px;color:#ccc;font-size:13px}
+.pt-actions button:hover{background:#f0f0ec;color:#888}
+.pt-actions button.pt-del:hover{background:#fff0f0;color:#e05555}
+.pt-add-row{padding:14px;text-align:center}
+.pt-obs-cell{max-width:200px;white-space:normal;color:#999;font-size:12px}
+
 /* ── FÓRUM ── */
 .forum-wrap{margin-top:10px;border-top:1px solid #f0f0ec;padding-top:10px}
 .forum-toggle{background:none;border:none;font-size:11px;color:#aaa;cursor:pointer;padding:0;display:flex;align-items:center;gap:4px}
@@ -394,7 +415,25 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
       <div class="sec-hdr">
         <span class="sec-title">🌍 Países no radar</span>
       </div>
-      <div class="paises-grid" id="paises-grid"></div>
+      <div class="paises-table-wrap">
+        <table class="paises-table">
+          <thead>
+            <tr>
+              <th>País</th>
+              <th>Schengen</th>
+              <th>Tempo turista</th>
+              <th>Visto</th>
+              <th>Imigração</th>
+              <th>Custo/mês casal</th>
+              <th>Cotação aprox.</th>
+              <th>Obs.</th>
+              <th>Cards</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="paises-tbody"></tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
@@ -899,40 +938,29 @@ function countCardsByPais(nome){
 }
 
 function renderPaises(){
-  const grid=document.getElementById('paises-grid');
+  const tbody=document.getElementById('paises-tbody');
   const paises=(state.paises||[]).slice().sort((a,b)=>a.nome.localeCompare(b.nome,'pt-BR'));
-  const cardsHTML = paises.map(p=>{
+  const rowsHTML = paises.map(p=>{
     const qtd=countCardsByPais(p.nome);
-    return `<div class="pais-card ${p.schengen==='sim'?'schengen':'nao-schengen'}">
-      <div class="pais-top">
-        <div class="pais-name"><span class="flag">${p.flag||'🏳️'}</span>${esc(p.nome)}</div>
-        <div class="menu-wrap">
-          <button class="menu-btn" onclick="togglePaisCtx(event,'${p.id}')">⋯</button>
-          <div class="ctx" id="pctx-${p.id}">
-            <div class="ci" onclick="closeCtx();openPaisModal('${p.id}')">✏️ Editar</div>
-            <div class="ci danger" onclick="closeCtx();delPais('${p.id}')">🗑️ Excluir</div>
-          </div>
+    return `<tr>
+      <td><div class="pt-pais"><span class="flag">${p.flag||'🏳️'}</span>${esc(p.nome)}</div></td>
+      <td><span class="pt-badge ${p.schengen==='sim'?'sim':'nao'}">${p.schengen==='sim'?'Sim':'Não'}</span></td>
+      <td>${esc(p.tempo||'—')}</td>
+      <td>${esc(p.visto||'—')}</td>
+      <td>${esc(p.imigracao||'—')}</td>
+      <td>${esc(p.custo||'—')}</td>
+      <td>${esc(p.cotacao||'—')}</td>
+      <td class="pt-obs-cell">${esc(p.obs||'')}</td>
+      <td class="pt-count">${qtd}</td>
+      <td>
+        <div class="pt-actions">
+          <button onclick="openPaisModal('${p.id}')" title="Editar">✏️</button>
+          <button class="pt-del" onclick="delPais('${p.id}')" title="Excluir">🗑️</button>
         </div>
-      </div>
-      <div class="pais-row"><span class="lbl">Schengen</span><span class="val">${p.schengen==='sim'?'Sim':'Não'}</span></div>
-      <div class="pais-row"><span class="lbl">Tempo turista</span><span class="val">${esc(p.tempo||'—')}</span></div>
-      <div class="pais-row"><span class="lbl">Visto</span><span class="val">${esc(p.visto||'—')}</span></div>
-      <div class="pais-row"><span class="lbl">Imigração</span><span class="val">${esc(p.imigracao||'—')}</span></div>
-      <div class="pais-row"><span class="lbl">Custo/mês casal</span><span class="val">${esc(p.custo||'—')}</span></div>
-      <div class="pais-row"><span class="lbl">Cotação aprox.</span><span class="val">${esc(p.cotacao||'—')}</span></div>
-      ${p.obs?`<div class="c-comment" style="margin-top:8px">${esc(p.obs)}</div>`:''}
-      <div class="pais-card-count">${qtd} card${qtd!==1?'s':''} vinculado${qtd!==1?'s':''}</div>
-    </div>`;
+      </td>
+    </tr>`;
   }).join('');
-  grid.innerHTML = cardsHTML + `<div class="add-pais-card" onclick="openPaisModal()">+ Adicionar país</div>`;
-}
-
-function togglePaisCtx(e,id){
-  e.stopPropagation();
-  const ctx=document.getElementById('pctx-'+id);
-  const was=ctx.classList.contains('open');
-  closeCtx();
-  if(!was) ctx.classList.add('open');
+  tbody.innerHTML = rowsHTML + `<tr><td colspan="10" class="pt-add-row"><button class="btn btn-ghost" onclick="openPaisModal()">+ Adicionar país</button></td></tr>`;
 }
 
 function openPaisModal(id=null){
