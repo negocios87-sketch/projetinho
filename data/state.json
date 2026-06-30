@@ -87,6 +87,16 @@
         "Rodrigo": true,
         "Samy": true
       }
+    },
+    {
+      "id": "mr0xjwg7fh89o3ebo84",
+      "title": "Deicidir País inicial",
+      "answer": "",
+      "comment": "Decidir também o Tempo",
+      "resp": "Ambos",
+      "prio": "",
+      "done": false,
+      "ts": 1782841089031
     }
   ],
   "financeiro": [
