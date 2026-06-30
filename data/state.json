@@ -511,7 +511,9 @@
           "texto": "Cobrir*",
           "ts": 1782855749707
         }
-      ]
+      ],
+      "tipo": "info",
+      "pais": "Todos"
     }
   ],
   "_meta": {
