@@ -179,7 +179,9 @@
       "resp": "Rodrigo",
       "prio": "alta",
       "done": false,
-      "ts": 1782847902832
+      "ts": 1782847902832,
+      "tipo": "info",
+      "pais": "Todos"
     },
     {
       "id": "mr11p96pd3fjgiv9jns",
