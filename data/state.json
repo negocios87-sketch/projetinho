@@ -13,35 +13,6 @@
       "pais": "Malta"
     },
     {
-      "id": "mqyaplxu3fxy9gr2upj",
-      "title": "Conseguir o home office",
-      "answer": "Conversar com o Farias sobre a possibilidade",
-      "comment": "",
-      "resp": "Rodrigo",
-      "prio": "alta",
-      "done": false,
-      "ts": 1782681791826,
-      "forum": [
-        {
-          "autor": "Rodrigo",
-          "texto": "Aparentemente sim",
-          "ts": 1782830921183
-        },
-        {
-          "autor": "Rodrigo",
-          "texto": "Só comentei sobre e desccobri que ja fizeram isso",
-          "ts": 1782842484724
-        },
-        {
-          "autor": "Samy",
-          "texto": "Boa!!",
-          "ts": 1782852745009
-        }
-      ],
-      "tipo": "acao",
-      "pais": "Todos"
-    },
-    {
       "id": "mqyaqmksvhy4p6ihwv",
       "title": "Decidir data",
       "answer": "O mês exato",
@@ -496,7 +467,37 @@
     }
   ],
   "roteiro": [],
-  "brasil": [],
+  "brasil": [
+    {
+      "id": "mqyaplxu3fxy9gr2upj",
+      "title": "Conseguir o home office",
+      "answer": "Conversar com o Farias sobre a possibilidade",
+      "comment": "",
+      "resp": "Rodrigo",
+      "prio": "alta",
+      "done": false,
+      "ts": 1782681791826,
+      "forum": [
+        {
+          "autor": "Rodrigo",
+          "texto": "Aparentemente sim",
+          "ts": 1782830921183
+        },
+        {
+          "autor": "Rodrigo",
+          "texto": "Só comentei sobre e desccobri que ja fizeram isso",
+          "ts": 1782842484724
+        },
+        {
+          "autor": "Samy",
+          "texto": "Boa!!",
+          "ts": 1782852745009
+        }
+      ],
+      "tipo": "acao",
+      "pais": "Todos"
+    }
+  ],
   "deu-merda": [
     {
       "id": "mqyat9qbf84v7g5fhp",
