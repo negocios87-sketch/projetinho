@@ -218,7 +218,9 @@
           "texto": "Verificar possibilidade da VPN da BOARD",
           "ts": 1782849320676
         }
-      ]
+      ],
+      "tipo": "acao",
+      "pais": "Todos"
     },
     {
       "id": "mr12h8xqkyu2r5if6k",
