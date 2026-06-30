@@ -421,7 +421,9 @@
       "resp": "Rodrigo",
       "prio": "media",
       "done": false,
-      "ts": 1782841758554
+      "ts": 1782841758554,
+      "tipo": "info",
+      "pais": "Todos"
     },
     {
       "id": "mr11xgqrq0g76b1cq4",
