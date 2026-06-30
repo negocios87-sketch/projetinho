@@ -398,6 +398,18 @@
       "prio": "alta",
       "done": false,
       "ts": 1782848038091
+    },
+    {
+      "id": "mr161ben309ynxw9whs",
+      "title": "Pesquisar Reserva Financeira Necessária no País",
+      "answer": "",
+      "comment": "",
+      "resp": "Rodrigo",
+      "prio": "media",
+      "tipo": "info",
+      "pais": "Malta",
+      "done": false,
+      "ts": 1782855338495
     }
   ],
   "estadia": [
