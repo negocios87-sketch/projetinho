@@ -180,16 +180,27 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
 .add-pais-card:hover{border-color:#aaa;color:#888;background:#fafaf8}
 
 /* ── TABELA DE PAÍSES ── */
-.paises-table-wrap{background:#fff;border:1px solid #e8e8e3;border-radius:12px;overflow-x:auto}
-.paises-table{width:100%;border-collapse:collapse;font-size:13px;white-space:nowrap}
-.paises-table th{text-align:left;font-size:10px;font-weight:600;color:#aaa;text-transform:uppercase;letter-spacing:.4px;padding:11px 14px;border-bottom:2px solid #f0f0ec;background:#fafaf8}
-.paises-table td{padding:11px 14px;border-bottom:1px solid #f5f5f0;color:#333}
+.content-wide{max-width:none}
+.paises-table-wrap{background:#fff;border:1px solid #e8e8e3;border-radius:12px;overflow:hidden}
+.paises-table{width:100%;table-layout:fixed;border-collapse:collapse;font-size:13px}
+.paises-table th{text-align:left;font-size:10px;font-weight:600;color:#aaa;text-transform:uppercase;letter-spacing:.4px;padding:11px 12px;border-bottom:2px solid #f0f0ec;background:#fafaf8;white-space:normal}
+.paises-table td{padding:11px 12px;border-bottom:1px solid #f5f5f0;color:#333;white-space:normal;word-break:break-word;vertical-align:middle}
 .paises-table tbody tr{transition:background .12s}
 .paises-table tbody tr:hover{background:#fafaf8}
 .paises-table tbody tr:last-child td{border-bottom:none}
+.paises-table th:nth-child(1),.paises-table td:nth-child(1){width:15%}
+.paises-table th:nth-child(2),.paises-table td:nth-child(2){width:8%}
+.paises-table th:nth-child(3),.paises-table td:nth-child(3){width:10%}
+.paises-table th:nth-child(4),.paises-table td:nth-child(4){width:12%}
+.paises-table th:nth-child(5),.paises-table td:nth-child(5){width:9%}
+.paises-table th:nth-child(6),.paises-table td:nth-child(6){width:12%}
+.paises-table th:nth-child(7),.paises-table td:nth-child(7){width:12%}
+.paises-table th:nth-child(8),.paises-table td:nth-child(8){width:14%}
+.paises-table th:nth-child(9),.paises-table td:nth-child(9){width:5%}
+.paises-table th:nth-child(10),.paises-table td:nth-child(10){width:5%}
 .pt-pais{display:flex;align-items:center;gap:8px;font-weight:600}
-.pt-pais .flag{font-size:18px}
-.pt-badge{display:inline-block;font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px}
+.pt-pais .flag{font-size:18px;flex-shrink:0}
+.pt-badge{display:inline-block;font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;white-space:nowrap}
 .pt-badge.sim{background:#e8f0ff;color:#3b5fc0}
 .pt-badge.nao{background:#fff8ee;color:#c9921a}
 .pt-count{font-size:11px;color:#bbb;text-align:center}
@@ -198,7 +209,14 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
 .pt-actions button:hover{background:#f0f0ec;color:#888}
 .pt-actions button.pt-del:hover{background:#fff0f0;color:#e05555}
 .pt-add-row{padding:14px;text-align:center}
-.pt-obs-cell{max-width:200px;white-space:normal;color:#999;font-size:12px}
+.pt-obs-cell{color:#999;font-size:12px}
+
+@media(max-width:900px){
+  .paises-table-wrap{overflow-x:auto}
+  .paises-table{table-layout:auto;white-space:nowrap;min-width:900px}
+  .paises-table td,.paises-table th{white-space:nowrap}
+  .pt-obs-cell{white-space:normal;max-width:200px}
+}
 
 /* ── FÓRUM ── */
 .forum-wrap{margin-top:10px;border-top:1px solid #f0f0ec;padding-top:10px}
@@ -324,6 +342,10 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
         <div class="countdown-days" id="countdown-days">—</div>
         <div class="countdown-label">dias para<span id="countdown-dest">a viagem</span></div>
       </div>
+      <div style="display:flex;gap:6px">
+        <button class="btn-logout" onclick="exportBackup()" title="Exportar backup JSON">💾 Backup</button>
+        <label class="btn-logout" title="Importar backup JSON" style="cursor:pointer">📂 Importar<input type="file" accept=".json" onchange="importBackup(event)" style="display:none"></label>
+      </div>
       <div class="user-chip" id="user-chip">
         <img class="user-chip-avatar" id="chip-av" src="" onerror="this.style.display='none';document.getElementById('chip-init').style.display='flex'" alt="">
         <span class="user-chip-init" id="chip-init" style="display:none"></span>
@@ -411,7 +433,7 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
 
   <!-- PAÍSES TAB -->
   <div id="tab-paises" style="display:none">
-    <div class="content">
+    <div class="content content-wide">
       <div class="sec-hdr">
         <span class="sec-title">🌍 Países no radar</span>
       </div>
@@ -1311,6 +1333,44 @@ async function postComment(sec,id){
   renderAll();
   focusForum(id);
   await persist();
+}
+
+// ── BACKUP / RESTORE ──────────────────────────────
+function exportBackup(){
+  const data = JSON.stringify(state, null, 2);
+  const blob = new Blob([data], { type:'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  const date = new Date().toISOString().slice(0,10);
+  a.href = url;
+  a.download = `viagem-backup-${date}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast('Backup salvo! 💾');
+}
+
+async function importBackup(event){
+  const file = event.target.files[0];
+  if(!file) return;
+  try {
+    const text = await file.text();
+    const data = JSON.parse(text);
+    // validação básica
+    if(typeof data !== 'object' || Array.isArray(data)) throw new Error('Formato inválido');
+    if(!confirm(`Importar backup de ${file.name}?\n\nIsso vai SUBSTITUIR todos os dados atuais. Tem certeza?`)){
+      event.target.value = '';
+      return;
+    }
+    state = { viagem:[], financeiro:[], estadia:[], 'deu-merda':[], _meta:{}, paises:[], ...data };
+    populatePaisSelects();
+    renderAll();
+    updateCountdown();
+    await persist();
+    showToast('Backup importado com sucesso! ✅');
+  } catch(e) {
+    showToast('Erro ao importar: arquivo inválido.');
+  }
+  event.target.value = '';
 }
 
 function showToast(msg){
