@@ -583,7 +583,8 @@ function setFilter(f){
 function applyFilter(cards){
   if(curFilter==='todos') return cards;
   if(curFilter==='prio-alta') return cards.filter(c=>c.prio==='alta');
-  return cards.filter(c=>c.resp===curFilter);
+  // cards "Ambos" contam pros dois filtros (Rodrigo e Samy)
+  return cards.filter(c=>c.resp===curFilter || c.resp==='Ambos');
 }
 
 // ── RENDER RESUMO ─────────────────────────────────
@@ -595,12 +596,14 @@ function renderResumo(){
   pessoas.innerHTML=['Rodrigo','Samy'].map(nome=>{
     const cor=COLORS[nome];
     const barClass=nome==='Rodrigo'?'stat-bar-r':'stat-bar-s';
-    const meuCards=SECTIONS.flatMap(s=>(state[s]||[]).filter(c=>c.resp===nome));
-    const total=meuCards.length, done=meuCards.filter(c=>c.done).length;
+    // cards "Ambos" contam pros dois; conclusão individual = própria aprovação (ou done geral se não-Ambos)
+    const meuCards=SECTIONS.flatMap(s=>(state[s]||[]).filter(c=>c.resp===nome||c.resp==='Ambos'));
+    const isMinhaConclusao=c=> c.resp==='Ambos' ? !!(c.approvals&&c.approvals[nome]) : c.done;
+    const total=meuCards.length, done=meuCards.filter(isMinhaConclusao).length;
     const pct=total?Math.round((done/total)*100):0;
     const bySec=SECTIONS.map(s=>{
-      const sc=(state[s]||[]).filter(c=>c.resp===nome);
-      const sd=sc.filter(c=>c.done).length;
+      const sc=(state[s]||[]).filter(c=>c.resp===nome||c.resp==='Ambos');
+      const sd=sc.filter(isMinhaConclusao).length;
       const sp=sc.length?Math.round((sd/sc.length)*100):null;
       return sc.length?`<div class="stat-row"><span>${LABELS[s]}</span><span>${sd}/${sc.length}</span></div>
         <div class="stat-bar-wrap"><div class="stat-bar ${barClass}" style="width:${sp}%"></div></div>`:''
