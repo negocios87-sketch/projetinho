@@ -360,7 +360,9 @@
       "resp": "Ambos",
       "prio": "media",
       "done": false,
-      "ts": 1782681741779
+      "ts": 1782681741779,
+      "tipo": "acao",
+      "pais": "Brasil"
     },
     {
       "id": "mr0xonyow3q14kesf8n",
