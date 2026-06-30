@@ -208,6 +208,16 @@
       "prio": "alta",
       "done": false,
       "ts": 1782682063383
+    },
+    {
+      "id": "mr0xpqmpehcq3ngqlw",
+      "title": "Pesquisar facilidades perto da moradia",
+      "answer": "",
+      "comment": "Mercado, farmacia, etc.",
+      "resp": "Ambos",
+      "prio": "media",
+      "done": false,
+      "ts": 1782841361425
     }
   ],
   "deu-merda": [
