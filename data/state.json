@@ -127,6 +127,16 @@
       "prio": "media",
       "done": false,
       "ts": 1782841468899
+    },
+    {
+      "id": "mr0xywjpvpgb4vvm3ho",
+      "title": "Malas",
+      "answer": "",
+      "comment": "Comprar malas? Pegar emprestado?",
+      "resp": "Ambos",
+      "prio": "baixa",
+      "done": false,
+      "ts": 1782841788997
     }
   ],
   "financeiro": [
