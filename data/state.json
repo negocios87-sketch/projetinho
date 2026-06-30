@@ -172,6 +172,16 @@
       "prio": "baixa",
       "done": false,
       "ts": 1782848057281
+    },
+    {
+      "id": "mr11ydnkrv2yqk3qrrd",
+      "title": "Onde deixar os móveis e eletrodomésticos",
+      "answer": "",
+      "comment": "Não vou vender, preciso que eles fiquem em algum lugar",
+      "resp": "Rodrigo",
+      "prio": "media",
+      "done": false,
+      "ts": 1782848482976
     }
   ],
   "financeiro": [
