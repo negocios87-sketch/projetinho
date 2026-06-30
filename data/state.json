@@ -195,7 +195,14 @@
       "resp": "Rodrigo",
       "prio": "alta",
       "done": false,
-      "ts": 1782848650062
+      "ts": 1782848650062,
+      "forum": [
+        {
+          "autor": "Rodrigo",
+          "texto": "Verificar possibilidade da VPN da BOARD",
+          "ts": 1782849320676
+        }
+      ]
     }
   ],
   "financeiro": [
