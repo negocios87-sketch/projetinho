@@ -653,6 +653,18 @@
       "pais": "Todos",
       "done": false,
       "ts": 1782857376751
+    },
+    {
+      "id": "mr2cxxxwbll5yc2653d",
+      "title": "Bagagem extraviada",
+      "answer": "",
+      "comment": "O que fazer, quais documentos solicitar da companhia aérea, planos para caso aconteça, etc.",
+      "resp": "Ambos",
+      "prio": "media",
+      "tipo": "info",
+      "pais": "Todos",
+      "done": false,
+      "ts": 1782927404564
     }
   ],
   "_meta": {
