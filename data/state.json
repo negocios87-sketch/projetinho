@@ -468,7 +468,7 @@
       "tipo": "acao",
       "pais": "Todos",
       "approvals": {
-        "Rodrigo": true
+        "Rodrigo": false
       }
     },
     {
