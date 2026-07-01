@@ -432,7 +432,14 @@
       "ts": 1782857412148,
       "approvals": {
         "Samy": true
-      }
+      },
+      "forum": [
+        {
+          "autor": "Samy",
+          "texto": "Tem uma taxa para emitir o ETIAS de 20 euros",
+          "ts": 1782906583032
+        }
+      ]
     }
   ],
   "roteiro": [
