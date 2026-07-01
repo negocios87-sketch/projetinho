@@ -388,6 +388,18 @@
       "pais": "Todos",
       "done": false,
       "ts": 1782859205535
+    },
+    {
+      "id": "mr2eguqx12mpa7becagl",
+      "title": "Fazer comparativo de seguro viagem",
+      "answer": "",
+      "comment": "Pesquisar melhores seguradoras (ex: Allianz)",
+      "resp": "Ambos",
+      "prio": "media",
+      "tipo": "info",
+      "pais": "Todos",
+      "done": false,
+      "ts": 1782929966505
     }
   ],
   "documentos": [
