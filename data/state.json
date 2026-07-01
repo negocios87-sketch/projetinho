@@ -428,10 +428,11 @@
       "prio": "alta",
       "tipo": "info",
       "pais": "Malta",
-      "done": false,
+      "done": true,
       "ts": 1782857412148,
       "approvals": {
-        "Samy": true
+        "Samy": true,
+        "Rodrigo": true
       },
       "forum": [
         {
