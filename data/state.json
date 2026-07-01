@@ -567,7 +567,14 @@
       "tipo": "acao",
       "pais": "Todos",
       "done": false,
-      "ts": 1782876691352
+      "ts": 1782876691352,
+      "forum": [
+        {
+          "autor": "Samy",
+          "texto": "Meu pc é de mesa, então é impossível de levar",
+          "ts": 1782876732911
+        }
+      ]
     }
   ],
   "deu-merda": [
