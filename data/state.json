@@ -429,7 +429,10 @@
       "tipo": "info",
       "pais": "Malta",
       "done": false,
-      "ts": 1782857412148
+      "ts": 1782857412148,
+      "approvals": {
+        "Samy": true
+      }
     }
   ],
   "roteiro": [
