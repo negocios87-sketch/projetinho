@@ -468,8 +468,15 @@
       "tipo": "acao",
       "pais": "Todos",
       "approvals": {
-        "Rodrigo": false
-      }
+        "Rodrigo": true
+      },
+      "forum": [
+        {
+          "autor": "Rodrigo",
+          "texto": "Se pensar em mais algum, inserir naaba: Países",
+          "ts": 1782926322032
+        }
+      ]
     },
     {
       "id": "mr0xjwg7fh89o3ebo84",
