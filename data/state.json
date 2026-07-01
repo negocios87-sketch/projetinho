@@ -31,6 +31,11 @@
           "autor": "Samy",
           "texto": "Sim! Podemos pensar em algum mês dentro do primeiro semestre de 2028",
           "ts": 1782852809047
+        },
+        {
+          "autor": "Rodrigo",
+          "texto": "OU um mês no segundo semestre de 2027",
+          "ts": 1782946771395
         }
       ],
       "tipo": "info",
