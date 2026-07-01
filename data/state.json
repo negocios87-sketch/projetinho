@@ -463,12 +463,13 @@
       "comment": "Malta, Italia, França, Geórgia, Escócia, Irlanda, Vietnã, Thailandia, Amsterdam, Indonesia",
       "resp": "Ambos",
       "prio": "media",
-      "done": false,
+      "done": true,
       "ts": 1782841256141,
       "tipo": "acao",
       "pais": "Todos",
       "approvals": {
-        "Rodrigo": true
+        "Rodrigo": true,
+        "Samy": true
       },
       "forum": [
         {
