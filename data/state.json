@@ -525,6 +525,18 @@
       },
       "tipo": "acao",
       "pais": "Malta"
+    },
+    {
+      "id": "mr2h32d2e5wzgckz3yi",
+      "title": "Planejar roteiro",
+      "answer": "",
+      "comment": "Ordem dos países e tempo de estadia em cada um",
+      "resp": "Ambos",
+      "prio": "alta",
+      "tipo": "acao",
+      "pais": "Todos",
+      "done": false,
+      "ts": 1782934362038
     }
   ],
   "brasil": [
