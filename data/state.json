@@ -92,7 +92,14 @@
       "pais": "Brasil",
       "approvals": {
         "Rodrigo": true
-      }
+      },
+      "forum": [
+        {
+          "autor": "Rodrigo",
+          "texto": "Separei 1000",
+          "ts": 1783000390232
+        }
+      ]
     },
     {
       "id": "mqyaj3t8q4ktsc5f23j",
