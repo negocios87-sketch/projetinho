@@ -556,7 +556,14 @@
       "tipo": "acao",
       "pais": "Todos",
       "done": false,
-      "ts": 1782934362038
+      "ts": 1782934362038,
+      "forum": [
+        {
+          "autor": "Samy",
+          "texto": "Opção 1: Malta → Geórgia → Itália → Vietnã → Tailândia → Bali",
+          "ts": 1783029510203
+        }
+      ]
     }
   ],
   "brasil": [
