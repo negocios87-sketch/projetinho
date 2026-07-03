@@ -36,6 +36,11 @@
           "autor": "Rodrigo",
           "texto": "OU um mês no segundo semestre de 2027",
           "ts": 1782946771395
+        },
+        {
+          "autor": "Rodrigo",
+          "texto": "Outubro de 2027 (Meu contrato de aluguel vai até essa data)",
+          "ts": 1783110002965
         }
       ],
       "tipo": "info",
