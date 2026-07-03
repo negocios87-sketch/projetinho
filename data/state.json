@@ -317,7 +317,14 @@
       "done": false,
       "ts": 1782852663667,
       "tipo": "info",
-      "pais": "Malta"
+      "pais": "Malta",
+      "forum": [
+        {
+          "autor": "Rodrigo",
+          "texto": "Olhar o bairro para decidir a casa ou olhar as casas para decidir o bairro?",
+          "ts": 1783102552712
+        }
+      ]
     },
     {
       "id": "mqyak52efrfgkvm2m55",
