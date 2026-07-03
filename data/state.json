@@ -44,7 +44,10 @@
         }
       ],
       "tipo": "info",
-      "pais": "Todos"
+      "pais": "Todos",
+      "approvals": {
+        "Rodrigo": true
+      }
     },
     {
       "id": "mr0xywjpvpgb4vvm3ho",
