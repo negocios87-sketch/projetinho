@@ -41,6 +41,11 @@
           "autor": "Rodrigo",
           "texto": "Outubro de 2027 (Meu contrato de aluguel vai até essa data)",
           "ts": 1783110002965
+        },
+        {
+          "autor": "Rodrigo",
+          "texto": "Italia",
+          "ts": 1783349950234
         }
       ],
       "tipo": "info",
