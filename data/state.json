@@ -72,18 +72,6 @@
       "ts": 1782847902832,
       "tipo": "info",
       "pais": "Todos"
-    },
-    {
-      "id": "mr11p96pd3fjgiv9jns",
-      "title": "Pesquisar sobre vacinas obrigatórias para cada país e prazo para elas",
-      "answer": "Para Malta, Geórgia, Indonésia (Bali), Vietnã e Itália (Perugia), não há vacinas obrigatórias de rotina para viajantes brasileiros. No entanto, é recomendado manter a carteira de vacinação atualizada. Além disso, como a viagem tem origem no Brasil (país com risco de transmissão de febre amarela), é importante tomar a vacina contra a febre amarela e emitir o Certificado Internacional de Vacinação ou Profilaxia (CIVP), pois ele pode ser exigido por alguns países ou conforme o itinerário da viagem.",
-      "comment": "",
-      "resp": "Samy",
-      "prio": "baixa",
-      "done": true,
-      "ts": 1782848057281,
-      "tipo": "info",
-      "pais": "Todos"
     }
   ],
   "financeiro": [
@@ -449,6 +437,18 @@
           "ts": 1782946832296
         }
       ]
+    },
+    {
+      "id": "mr11p96pd3fjgiv9jns",
+      "title": "Pesquisar sobre vacinas obrigatórias para cada país e prazo para elas",
+      "answer": "Para Malta, Geórgia, Indonésia (Bali), Vietnã e Itália (Perugia), não há vacinas obrigatórias de rotina para viajantes brasileiros. No entanto, é recomendado manter a carteira de vacinação atualizada. Além disso, como a viagem tem origem no Brasil (país com risco de transmissão de febre amarela), é importante tomar a vacina contra a febre amarela e emitir o Certificado Internacional de Vacinação ou Profilaxia (CIVP), pois ele pode ser exigido por alguns países ou conforme o itinerário da viagem.",
+      "comment": "",
+      "resp": "Samy",
+      "prio": "baixa",
+      "done": true,
+      "ts": 1782848057281,
+      "tipo": "info",
+      "pais": "Todos"
     }
   ],
   "documentos": [
