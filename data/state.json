@@ -10,7 +10,10 @@
       "done": false,
       "ts": 1782681422992,
       "tipo": "acao",
-      "pais": "Malta"
+      "pais": "Malta",
+      "approvals": {
+        "Rodrigo": true
+      }
     },
     {
       "id": "mqyaqmksvhy4p6ihwv",
