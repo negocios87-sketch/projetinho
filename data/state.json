@@ -583,7 +583,7 @@
         }
       ],
       "approvals": {
-        "Rodrigo": false,
+        "Rodrigo": true,
         "Samy": false
       },
       "tipo": "acao",
