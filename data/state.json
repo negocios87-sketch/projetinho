@@ -700,13 +700,18 @@
       "comment": "Não vou vender, preciso que eles fiquem em algum lugar",
       "resp": "Rodrigo",
       "prio": "media",
-      "done": true,
+      "done": false,
       "ts": 1782848482976,
       "forum": [
         {
           "autor": "Samy",
           "texto": "Minha casa é uma opção! Só preciso verificar os planos dos meus pais em relação a continuar na mesma casa e etc. De qualquer forma, não é muita coisa, então mesmo com uma mudança, seria possível.",
           "ts": 1782853059230
+        },
+        {
+          "autor": "Rodrigo",
+          "texto": "Ok",
+          "ts": 1783351046313
         }
       ],
       "tipo": "info",
