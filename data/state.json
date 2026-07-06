@@ -315,14 +315,14 @@
     {
       "id": "mr14fzhv0pca0d17mvn",
       "title": "Decidir bairros/regiões",
-      "answer": "Ex: Malta (Sliema, St. Julian's, Valletta, ...)",
+      "answer": "Olhar cidades e decidir",
       "comment": "",
       "resp": "Ambos",
       "prio": "alta",
       "done": false,
       "ts": 1782852663667,
       "tipo": "info",
-      "pais": "Itália",
+      "pais": "Malta",
       "forum": [
         {
           "autor": "Rodrigo",
