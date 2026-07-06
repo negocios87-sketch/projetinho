@@ -563,7 +563,7 @@
       "comment": "Decidir também o Tempo",
       "resp": "Ambos",
       "prio": "alta",
-      "done": true,
+      "done": false,
       "ts": 1782841089031,
       "forum": [
         {
