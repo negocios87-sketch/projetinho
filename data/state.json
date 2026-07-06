@@ -569,7 +569,7 @@
         }
       ],
       "approvals": {
-        "Rodrigo": true,
+        "Rodrigo": false,
         "Samy": true
       },
       "tipo": "acao",
