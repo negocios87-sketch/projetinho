@@ -197,7 +197,7 @@
       "comment": "Tem banco que não funciona (GOV), verificar como serão as transições",
       "resp": "Rodrigo",
       "prio": "alta",
-      "done": false,
+      "done": true,
       "ts": 1782848038091,
       "tipo": "acao",
       "pais": "Itália"
