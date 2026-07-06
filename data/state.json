@@ -12,7 +12,7 @@
       "tipo": "acao",
       "pais": "Itália",
       "approvals": {
-        "Rodrigo": false
+        "Rodrigo": true
       }
     },
     {
@@ -610,6 +610,11 @@
           "autor": "Samy",
           "texto": "Mas tenho interesse na Albânia tbm, então daria para encaixar antes/depois de Georgia ou depois da Itália",
           "ts": 1783030121364
+        },
+        {
+          "autor": "Samy",
+          "texto": "Parte 1: Itália - Albânia - Itália/Malta",
+          "ts": 1783350169852
         }
       ]
     }
