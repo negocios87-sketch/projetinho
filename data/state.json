@@ -476,7 +476,10 @@
       "done": false,
       "ts": 1782679380865,
       "tipo": "acao",
-      "pais": "Todos"
+      "pais": "Todos",
+      "approvals": {
+        "Rodrigo": true
+      }
     },
     {
       "id": "mqyaquxt7nbn2xvfpgg",
