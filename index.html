@@ -218,6 +218,44 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
   .pt-obs-cell{white-space:normal;max-width:200px}
 }
 
+/* ── DECISÃO ── */
+.decisao-header{display:flex;align-items:flex-end;gap:24px;margin-bottom:20px;flex-wrap:wrap}
+.decisao-select-wrap{display:flex;flex-direction:column}
+.btn-decisao{padding:7px 14px;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;border:1px solid #e0e0d8;background:#fff;color:#555;transition:all .15s}
+.btn-decisao:hover{background:#f5f5f0}
+.btn-decisao.ativo-vai{background:#e8f5e9;color:#2e7d32;border-color:#a5d6a7;font-weight:700}
+.btn-decisao.ativo-analise{background:#fff8e1;color:#f57f17;border-color:#ffe082;font-weight:700}
+.btn-decisao.ativo-nao{background:#fff0f0;color:#e05555;border-color:#ffcdd2;font-weight:700}
+.decisao-pais-info{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.dp-info-card{background:#fff;border:1px solid #e8e8e3;border-radius:10px;padding:10px 14px;font-size:12px;min-width:120px}
+.dp-info-lbl{color:#aaa;font-size:10px;text-transform:uppercase;letter-spacing:.4px;font-weight:600;margin-bottom:3px}
+.dp-info-val{font-weight:600;color:#333}
+.placar-wrap{display:flex;align-items:center;justify-content:center;gap:20px;background:#fff;border:1px solid #e8e8e3;border-radius:12px;padding:16px 28px}
+.placar-item{text-align:center}
+.placar-num{display:block;font-size:36px;font-weight:700;line-height:1}
+.placar-lbl{font-size:12px;color:#aaa;font-weight:500}
+.placar-pro .placar-num{color:#2e7d32}
+.placar-contra .placar-num{color:#e05555}
+.placar-vs{font-size:18px;font-weight:700;color:#ddd}
+.decisao-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.decisao-col{background:#fff;border:1px solid #e8e8e3;border-radius:12px;overflow:hidden}
+.col-pro{border-top:3px solid #4caf50}
+.col-contra{border-top:3px solid #e05555}
+.col-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid #f0f0ec}
+.col-title{font-size:14px;font-weight:700}
+.decisao-list{padding:12px;display:flex;flex-direction:column;gap:8px;min-height:80px}
+.dc-card{background:#fafaf8;border:1px solid #f0f0ec;border-radius:9px;padding:12px 14px;position:relative}
+.dc-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:6px}
+.dc-card-text{font-size:13px;color:#333;line-height:1.4;flex:1}
+.dc-del{background:none;border:none;cursor:pointer;color:#ddd;font-size:13px;padding:0 2px;flex-shrink:0}
+.dc-del:hover{color:#e05555}
+.dc-meta{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.dc-cat{font-size:10px;font-weight:600;padding:2px 7px;border-radius:20px;background:#f0f0ec;color:#777}
+.dc-resp-chip{display:flex;align-items:center;gap:3px;font-size:10px;color:#999}
+.dc-empty{text-align:center;padding:24px 12px;color:#ddd;font-size:12px}
+
+@media(max-width:700px){.decisao-grid{grid-template-columns:1fr}}
+
 /* ── FÓRUM ── */
 .forum-wrap{margin-top:10px;border-top:1px solid #f0f0ec;padding-top:10px}
 .forum-toggle{background:none;border:none;font-size:11px;color:#aaa;cursor:pointer;padding:0;display:flex;align-items:center;gap:4px}
@@ -373,6 +411,7 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
     <div class="tab" data-tab="brasil">🇧🇷 Brasil</div>
     <div class="tab tab-dm" data-tab="deu-merda">🔥 Deu Merda</div>
     <div class="tab" data-tab="paises">🌍 Países</div>
+    <div class="tab" data-tab="decisao">⚖️ Decisão</div>
   </div>
 
   <div class="filter-bar" id="filter-bar">
@@ -460,6 +499,73 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
           <tbody id="paises-tbody"></tbody>
         </table>
       </div>
+    </div>
+  </div>
+
+  <!-- DECISÃO TAB -->
+  <div id="tab-decisao" style="display:none">
+    <div class="content content-wide">
+
+      <!-- filtro de país + status decisão -->
+      <div class="decisao-header">
+        <div class="decisao-select-wrap">
+          <label style="font-size:11px;font-weight:600;color:#aaa;text-transform:uppercase;letter-spacing:.4px">País em análise</label>
+          <select id="decisao-pais-sel" onchange="selectDecisaoPais(this.value)" style="margin-top:6px;max-width:260px">
+            <option value="">— Selecione um país —</option>
+          </select>
+        </div>
+        <div id="decisao-status-wrap" style="display:none">
+          <label style="font-size:11px;font-weight:600;color:#aaa;text-transform:uppercase;letter-spacing:.4px">Decisão final</label>
+          <div style="display:flex;gap:8px;margin-top:6px">
+            <button class="btn-decisao" id="btn-dec-vai" onclick="setDecisao('vai')">✅ Vamos!</button>
+            <button class="btn-decisao" id="btn-dec-analise" onclick="setDecisao('analise')">🤔 Em análise</button>
+            <button class="btn-decisao" id="btn-dec-nao" onclick="setDecisao('nao')">❌ Descartado</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- summary cards do país -->
+      <div id="decisao-pais-info" style="display:none;margin-bottom:20px"></div>
+
+      <!-- placar prós x contras -->
+      <div id="decisao-placar" style="display:none;margin-bottom:20px">
+        <div class="placar-wrap">
+          <div class="placar-item placar-pro">
+            <span class="placar-num" id="placar-pro-n">0</span>
+            <span class="placar-lbl">Prós</span>
+          </div>
+          <div class="placar-vs">VS</div>
+          <div class="placar-item placar-contra">
+            <span class="placar-num" id="placar-contra-n">0</span>
+            <span class="placar-lbl">Contras</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- colunas prós / contras -->
+      <div id="decisao-cols" style="display:none">
+        <div class="decisao-grid">
+          <div class="decisao-col col-pro">
+            <div class="col-header">
+              <span class="col-title">👍 Prós</span>
+              <button class="btn btn-dark" style="font-size:12px;padding:5px 12px" onclick="openDecisaoModal('pro')">+ Adicionar</button>
+            </div>
+            <div id="pros-list" class="decisao-list"></div>
+          </div>
+          <div class="decisao-col col-contra">
+            <div class="col-header">
+              <span class="col-title">👎 Contras</span>
+              <button class="btn btn-red" style="font-size:12px;padding:5px 12px" onclick="openDecisaoModal('contra')">+ Adicionar</button>
+            </div>
+            <div id="contras-list" class="decisao-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="decisao-empty" style="text-align:center;padding:60px 20px;color:#ccc;font-size:14px">
+        Selecione um país para começar a análise 🌍
+      </div>
+
     </div>
   </div>
 </div>
@@ -580,6 +686,44 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
   </div>
 </div>
 
+<!-- MODAL DECISÃO CARD -->
+<div class="overlay" id="decisao-overlay">
+  <div class="modal" style="width:400px">
+    <h2 id="decisao-modal-title">👍 Novo Pró</h2>
+    <label class="lbl">Descrição</label>
+    <textarea id="dc-texto" placeholder="Descreva o pró ou contra..." style="min-height:72px"></textarea>
+    <div class="m-grid" style="margin-top:14px">
+      <div>
+        <label class="lbl" style="margin-top:0">Categoria</label>
+        <select id="dc-cat">
+          <option value="">— Sem categoria —</option>
+          <option value="Financeira">💰 Financeira</option>
+          <option value="Burocracia">📋 Burocracia</option>
+          <option value="Alimentação">🍽️ Alimentação</option>
+          <option value="Locomoção">🚌 Locomoção</option>
+          <option value="Visto">🛂 Visto</option>
+          <option value="Clima">☀️ Clima</option>
+          <option value="Cultura">🎭 Cultura</option>
+          <option value="Segurança">🔒 Segurança</option>
+        </select>
+      </div>
+      <div>
+        <label class="lbl" style="margin-top:0">Levantado por</label>
+        <select id="dc-resp">
+          <option value="">— Nenhum —</option>
+          <option value="Rodrigo">Rodrigo</option>
+          <option value="Samy">Samy</option>
+          <option value="Ambos">👫 Ambos</option>
+        </select>
+      </div>
+    </div>
+    <div class="m-row">
+      <button class="btn btn-ghost" onclick="closeDecisaoModal()">Cancelar</button>
+      <button class="btn btn-dark" id="dc-save" onclick="saveDecisaoCard()">Adicionar</button>
+    </div>
+  </div>
+</div>
+
 <!-- MODAL MOVER CARD -->
 <div class="overlay" id="move-overlay">
   <div class="modal" style="width:320px">
@@ -640,7 +784,7 @@ const PAISES_SEED = [
 ];
 
 let pwd='', curUser='', curTab='resumo', curFilter='todos';
-let state={ viagem:[], financeiro:[], estadia:[], saude:[], documentos:[], roteiro:[], brasil:[], 'deu-merda':[], _meta:{}, paises:[] };
+let state={ viagem:[], financeiro:[], estadia:[], saude:[], documentos:[], roteiro:[], brasil:[], 'deu-merda':[], _meta:{}, paises:[], decisao:{} };
 let editId=null, modalTab=null, saving=false;
 let openForums=new Set(); // fóruns abertos sobrevivem ao re-render
 let editPaisId=null;
@@ -665,7 +809,7 @@ function tryLogin(){
   if(!pwd){ showToast('Coloca a senha aí!'); return; }
   setSyncBadge('ing','Verificando...');
   apiFetch('GET').then(async data=>{
-    state={ viagem:[], financeiro:[], estadia:[], saude:[], documentos:[], roteiro:[], brasil:[], 'deu-merda':[], _meta:{}, paises:[], ...data };
+    state={ viagem:[], financeiro:[], estadia:[], saude:[], documentos:[], roteiro:[], brasil:[], 'deu-merda':[], _meta:{}, paises:[], decisao:{}, ...data };
     if(!state.paises || !state.paises.length){
       state.paises = PAISES_SEED.map(p=>({...p, id:uid()}));
       await persist(); // salva o seed no GitHub AGORA, senão o próximo poll apaga ele
@@ -720,7 +864,7 @@ async function doPoll(){
   if(active && active.classList && active.classList.contains('forum-input')) return;
   try{
     const data=await apiFetch('GET');
-    state={ viagem:[], financeiro:[], estadia:[], saude:[], documentos:[], roteiro:[], brasil:[], 'deu-merda':[], _meta:{}, paises:[], ...data };
+    state={ viagem:[], financeiro:[], estadia:[], saude:[], documentos:[], roteiro:[], brasil:[], 'deu-merda':[], _meta:{}, paises:[], decisao:{}, ...data };
     populatePaisSelects();
     renderAll(); updateCountdown();
   }catch{}
@@ -793,12 +937,16 @@ document.querySelectorAll('.tab').forEach(t=>{
     document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
     t.classList.add('active');
     curTab=t.dataset.tab;
-    const isResumo = curTab==='resumo';
-    const isPaises = curTab==='paises';
-    document.getElementById('filter-bar').style.display=(isResumo||isPaises)?'none':'flex';
+    const isResumo  = curTab==='resumo';
+    const isPaises  = curTab==='paises';
+    const isDecisao = curTab==='decisao';
+    const isSpecial = isResumo||isPaises||isDecisao;
+    document.getElementById('filter-bar').style.display=isSpecial?'none':'flex';
     document.getElementById('tab-resumo').style.display=isResumo?'block':'none';
-    document.getElementById('tab-cards').style.display=(!isResumo&&!isPaises)?'block':'none';
+    document.getElementById('tab-cards').style.display=(!isSpecial)?'block':'none';
     document.getElementById('tab-paises').style.display=isPaises?'block':'none';
+    document.getElementById('tab-decisao').style.display=isDecisao?'block':'none';
+    if(isDecisao){ populateDecisaoSelect(); renderDecisao(); }
     renderAll();
   });
 });
@@ -953,25 +1101,20 @@ function renderCards(){
 
 function renderAll(){
   updateGlobalProgress();
+  const hide = (id)=>{ const el=document.getElementById(id); if(el) el.style.display='none'; };
+  const show = (id,d='block')=>{ const el=document.getElementById(id); if(el) el.style.display=d; };
+  // esconde tudo
+  hide('tab-resumo'); hide('tab-cards'); hide('tab-paises'); hide('tab-decisao');
+  document.getElementById('filter-bar').style.display='none';
+
   if(curTab==='resumo'){
-    document.getElementById('filter-bar').style.display='none';
-    document.getElementById('tab-resumo').style.display='block';
-    document.getElementById('tab-cards').style.display='none';
-    document.getElementById('tab-paises').style.display='none';
-    renderResumo();
+    show('tab-resumo'); renderResumo();
   } else if(curTab==='paises'){
-    document.getElementById('filter-bar').style.display='none';
-    document.getElementById('tab-resumo').style.display='none';
-    document.getElementById('tab-cards').style.display='none';
-    document.getElementById('tab-paises').style.display='block';
-    populatePaisSelects();
-    renderPaises();
+    show('tab-paises'); populatePaisSelects(); renderPaises();
+  } else if(curTab==='decisao'){
+    show('tab-decisao'); populateDecisaoSelect(); renderDecisao();
   } else {
-    document.getElementById('filter-bar').style.display='flex';
-    document.getElementById('tab-resumo').style.display='none';
-    document.getElementById('tab-cards').style.display='block';
-    document.getElementById('tab-paises').style.display='none';
-    renderCards();
+    show('filter-bar','flex'); show('tab-cards'); renderCards();
   }
 }
 
@@ -987,8 +1130,12 @@ function renderPaises(){
   const paises=(state.paises||[]).slice().sort((a,b)=>a.nome.localeCompare(b.nome,'pt-BR'));
   const rowsHTML = paises.map(p=>{
     const qtd=countCardsByPais(p.nome);
+    const dec = state.decisao && state.decisao[p.nome];
+    const decBadge = dec?.status==='vai'    ? '<span class="pt-badge" style="background:#e8f5e9;color:#2e7d32;margin-left:6px">✅ Vamos</span>'
+                   : dec?.status==='nao'    ? '<span class="pt-badge" style="background:#fff0f0;color:#e05555;margin-left:6px">❌ Descartado</span>'
+                   : dec?.status==='analise'? '<span class="pt-badge" style="background:#fff8e1;color:#f57f17;margin-left:6px">🤔 Em análise</span>' : '';
     return `<tr>
-      <td><div class="pt-pais">${flagImg(p,22)} ${esc(p.nome)}</div></td>
+      <td><div class="pt-pais">${flagImg(p,22)} ${esc(p.nome)}${decBadge}</div></td>
       <td><span class="pt-badge ${p.schengen==='sim'?'sim':'nao'}">${p.schengen==='sim'?'Sim':'Não'}</span></td>
       <td>${esc(p.tempo||'—')}</td>
       <td>${esc(p.visto||'—')}</td>
@@ -1384,7 +1531,7 @@ async function importBackup(event){
       event.target.value = '';
       return;
     }
-    state = { viagem:[], financeiro:[], estadia:[], saude:[], documentos:[], roteiro:[], brasil:[], 'deu-merda':[], _meta:{}, paises:[], ...data };
+    state = { viagem:[], financeiro:[], estadia:[], saude:[], documentos:[], roteiro:[], brasil:[], 'deu-merda':[], _meta:{}, paises:[], decisao:{}, ...data };
     populatePaisSelects();
     renderAll();
     updateCountdown();
@@ -1394,6 +1541,156 @@ async function importBackup(event){
     showToast('Erro ao importar: arquivo inválido.');
   }
   event.target.value = '';
+}
+
+// ── DECISÃO ───────────────────────────────────────
+const CAT_ICONS = { Financeira:'💰', Burocracia:'📋', 'Alimentação':'🍽️', 'Locomoção':'🚌', Visto:'🛂', Clima:'☀️', Cultura:'🎭', 'Segurança':'🔒' };
+let decisaoPaisAtual = '';
+let decisaoTipo = 'pro'; // 'pro' ou 'contra'
+let decisaoEditId = null;
+
+function getDecisao(pais){ return (state.decisao && state.decisao[pais]) || { pros:[], contras:[], status:'' }; }
+function setDecisaoState(pais, d){ if(!state.decisao) state.decisao={}; state.decisao[pais]=d; }
+
+function populateDecisaoSelect(){
+  const sel = document.getElementById('decisao-pais-sel');
+  if(!sel) return;
+  const cur = sel.value;
+  const paises = (state.paises||[]).slice().sort((a,b)=>a.nome.localeCompare(b.nome,'pt-BR'));
+  sel.innerHTML = '<option value="">— Selecione um país —</option>'
+    + paises.map(p=>`<option value="${esc(p.nome)}">${p.iso?'':''}${esc(p.nome)}</option>`).join('');
+  if(cur) sel.value = cur;
+}
+
+function selectDecisaoPais(nome){
+  decisaoPaisAtual = nome;
+  renderDecisao();
+}
+
+function renderDecisao(){
+  const empty = document.getElementById('decisao-empty');
+  const cols  = document.getElementById('decisao-cols');
+  const placar= document.getElementById('decisao-placar');
+  const infoEl= document.getElementById('decisao-pais-info');
+  const swrap = document.getElementById('decisao-status-wrap');
+
+  if(!decisaoPaisAtual){
+    empty.style.display='block'; cols.style.display='none';
+    placar.style.display='none'; infoEl.style.display='none'; swrap.style.display='none';
+    return;
+  }
+  empty.style.display='none'; cols.style.display='block';
+  placar.style.display='block'; infoEl.style.display='block'; swrap.style.display='flex';
+
+  const d = getDecisao(decisaoPaisAtual);
+  const p = findPais(decisaoPaisAtual);
+
+  // info rápida do país
+  if(p){
+    infoEl.innerHTML=`<div class="decisao-pais-info">
+      <div class="dp-info-card"><div class="dp-info-lbl">Schengen</div><div class="dp-info-val">${p.schengen==='sim'?'Sim':'Não'}</div></div>
+      <div class="dp-info-card"><div class="dp-info-lbl">Tempo turista</div><div class="dp-info-val">${esc(p.tempo||'—')}</div></div>
+      <div class="dp-info-card"><div class="dp-info-lbl">Custo/mês</div><div class="dp-info-val">${esc(p.custo||'—')}</div></div>
+      <div class="dp-info-card"><div class="dp-info-lbl">Visto</div><div class="dp-info-val">${esc(p.visto||'—')}</div></div>
+      <div class="dp-info-card"><div class="dp-info-lbl">Imigração</div><div class="dp-info-val">${esc(p.imigracao||'—')}</div></div>
+    </div>`;
+  }
+
+  // status buttons
+  ['vai','analise','nao'].forEach(s=>{
+    const btn=document.getElementById('btn-dec-'+s);
+    btn.className='btn-decisao'+(d.status===s?' ativo-'+s:'');
+  });
+
+  // placar
+  document.getElementById('placar-pro-n').textContent = (d.pros||[]).length;
+  document.getElementById('placar-contra-n').textContent = (d.contras||[]).length;
+
+  // listas
+  document.getElementById('pros-list').innerHTML    = renderDcList(d.pros||[], 'pro');
+  document.getElementById('contras-list').innerHTML = renderDcList(d.contras||[], 'contra');
+}
+
+function renderDcList(items, tipo){
+  if(!items.length) return `<div class="dc-empty">${tipo==='pro'?'Nenhum pró ainda':'Nenhum contra ainda'}</div>`;
+  return items.map(item=>{
+    const catIcon = CAT_ICONS[item.cat]||'';
+    const catBadge = item.cat ? `<span class="dc-cat">${catIcon} ${esc(item.cat)}</span>` : '';
+    const respChip = item.resp ? `<span class="dc-resp-chip">${avatarHTML(item.resp,13)} ${esc(item.resp)}</span>` : '';
+    return `<div class="dc-card">
+      <div class="dc-card-top">
+        <div class="dc-card-text">${esc(item.texto)}</div>
+        <button class="dc-del" onclick="delDcCard('${tipo}','${item.id}')">✕</button>
+      </div>
+      <div class="dc-meta">${catBadge}${respChip}</div>
+    </div>`;
+  }).join('');
+}
+
+async function setDecisao(status){
+  if(!decisaoPaisAtual) return;
+  const d = getDecisao(decisaoPaisAtual);
+  d.status = d.status === status ? '' : status; // toggle
+  setDecisaoState(decisaoPaisAtual, d);
+  // sincroniza status no objeto do país
+  const p = (state.paises||[]).find(x=>x.nome===decisaoPaisAtual);
+  if(p) p.decisao = d.status;
+  renderDecisao();
+  renderPaises();
+  await persist();
+}
+
+function openDecisaoModal(tipo, id=null){
+  decisaoTipo=tipo; decisaoEditId=id;
+  const isEdit = id!==null;
+  document.getElementById('decisao-modal-title').textContent = isEdit ? '✏️ Editar' : (tipo==='pro'?'👍 Novo Pró':'👎 Novo Contra');
+  document.getElementById('dc-save').textContent = isEdit ? 'Salvar' : 'Adicionar';
+  if(isEdit){
+    const d=getDecisao(decisaoPaisAtual);
+    const list=tipo==='pro'?d.pros:d.contras;
+    const item=list.find(x=>x.id===id);
+    if(item){ document.getElementById('dc-texto').value=item.texto||''; document.getElementById('dc-cat').value=item.cat||''; document.getElementById('dc-resp').value=item.resp||''; }
+  } else {
+    document.getElementById('dc-texto').value='';
+    document.getElementById('dc-cat').value='';
+    document.getElementById('dc-resp').value=curUser||'';
+  }
+  document.getElementById('decisao-overlay').classList.add('open');
+  setTimeout(()=>document.getElementById('dc-texto').focus(),80);
+}
+
+function closeDecisaoModal(){ document.getElementById('decisao-overlay').classList.remove('open'); decisaoEditId=null; }
+document.getElementById('decisao-overlay').addEventListener('click',e=>{ if(e.target===document.getElementById('decisao-overlay'))closeDecisaoModal(); });
+
+async function saveDecisaoCard(){
+  const texto=document.getElementById('dc-texto').value.trim();
+  if(!texto){ document.getElementById('dc-texto').style.borderColor='#e05555'; return; }
+  document.getElementById('dc-texto').style.borderColor='#e0e0d8';
+  const cat=document.getElementById('dc-cat').value;
+  const resp=document.getElementById('dc-resp').value;
+  const d=getDecisao(decisaoPaisAtual);
+  const list=decisaoTipo==='pro'?d.pros:d.contras;
+  if(decisaoEditId){
+    const item=list.find(x=>x.id===decisaoEditId);
+    if(item){ item.texto=texto; item.cat=cat; item.resp=resp; }
+  } else {
+    list.push({ id:uid(), texto, cat, resp, ts:Date.now() });
+  }
+  setDecisaoState(decisaoPaisAtual, d);
+  closeDecisaoModal();
+  renderDecisao();
+  await persist();
+}
+
+async function delDcCard(tipo, id){
+  const d=getDecisao(decisaoPaisAtual);
+  const list=tipo==='pro'?d.pros:d.contras;
+  const idx=list.findIndex(x=>x.id===id);
+  if(idx===-1) return;
+  list.splice(idx,1);
+  setDecisaoState(decisaoPaisAtual, d);
+  renderDecisao();
+  await persist();
 }
 
 // ── MOVER CARD ────────────────────────────────────
