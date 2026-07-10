@@ -1033,7 +1033,15 @@
   ],
   "decisao": {
     "Malta": {
-      "pros": [],
+      "pros": [
+        {
+          "id": "mrevzdturxzxxrr9qqp",
+          "texto": "Idioma falado é o Ingles",
+          "cat": "Cultura",
+          "resp": "Rodrigo",
+          "ts": 1783684978626
+        }
+      ],
       "contras": [
         {
           "id": "mrevz1954h718q1qayg",
