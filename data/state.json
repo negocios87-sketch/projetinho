@@ -1105,6 +1105,13 @@
           "cat": "Financeira",
           "resp": "Rodrigo",
           "ts": 1783684962329
+        },
+        {
+          "id": "mrfla68q1lm31ruut69",
+          "texto": "Passagem de volta comprada",
+          "cat": "Burocracia",
+          "resp": "Rodrigo",
+          "ts": 1783727472410
         }
       ],
       "status": ""
