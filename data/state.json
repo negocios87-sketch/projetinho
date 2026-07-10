@@ -1030,5 +1030,20 @@
       "cotacao": "",
       "obs": ""
     }
-  ]
+  ],
+  "decisao": {
+    "Malta": {
+      "pros": [],
+      "contras": [
+        {
+          "id": "mrevz1954h718q1qayg",
+          "texto": "Moradia Mais Cara",
+          "cat": "Financeira",
+          "resp": "Rodrigo",
+          "ts": 1783684962329
+        }
+      ],
+      "status": ""
+    }
+  }
 }
