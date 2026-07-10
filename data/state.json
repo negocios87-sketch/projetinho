@@ -1119,6 +1119,13 @@
           "cat": "Burocracia",
           "resp": "Rodrigo",
           "ts": 1783727497467
+        },
+        {
+          "id": "mrflbacwsgzeknc0h5s",
+          "texto": "Comprovação financeira",
+          "cat": "Financeira",
+          "resp": "Rodrigo",
+          "ts": 1783727524402
         }
       ],
       "status": ""
