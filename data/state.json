@@ -630,6 +630,18 @@
           "ts": 1783351015248
         }
       ]
+    },
+    {
+      "id": "mrevgnvxpk34pygi8xq",
+      "title": "Criar Prós e Contras de cada pais",
+      "answer": "",
+      "comment": "Tá difícil escolher o inicial, esse estudo vai ajudar",
+      "resp": "Ambos",
+      "prio": "alta",
+      "tipo": "acao",
+      "pais": "Todos",
+      "done": false,
+      "ts": 1783684105197
     }
   ],
   "brasil": [
