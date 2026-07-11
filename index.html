@@ -876,18 +876,20 @@ function tryLogin(){
   if(!pwd){ showToast('Coloca a senha aí!'); return; }
   setSyncBadge('ing','Verificando...');
   apiFetch('GET').then(async data=>{
-    state={ viagem:[], financeiro:[], estadia:[], saude:[], documentos:[], roteiro:[], brasil:[], 'deu-merda':[], _meta:{}, paises:[], decisao:{}, ...data };
-    if(!state.paises || !state.paises.length){
-      state.paises = PAISES_SEED.map(p=>({...p, id:uid()}));
-      await persist(); // salva o seed no GitHub AGORA, senão o próximo poll apaga ele
-    }
-    populatePaisSelects();
+    try{
+      state={ viagem:[], financeiro:[], estadia:[], saude:[], documentos:[], roteiro:[], brasil:[], 'deu-merda':[], _meta:{}, paises:[], decisao:{}, ...data };
+      if(!state.paises || !state.paises.length){
+        state.paises = PAISES_SEED.map(p=>({...p, id:uid()}));
+        try{ await persist(); } catch(e){ console.warn('seed persist failed:', e); }
+      }
+      populatePaisSelects();
+    } catch(e){ console.warn('state init error:', e); }
     showScreen('who-screen');
     setSyncBadge('ok','● Sync');
   }).catch(e=>{
     setSyncBadge('ok','● Sync');
     const err=document.getElementById('lerr');
-    err.textContent=e.message.includes('401')?'Senha errada, meu chapa. 🙃':'Erro de conexão.';
+    err.textContent=e.message.includes('401')?'Senha errada, meu chapa. 🙃':'Erro de conexão. Tenta de novo.';
     err.style.display='block';
     setTimeout(()=>err.style.display='none',3000);
   });
