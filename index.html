@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -34,7 +35,7 @@ body{font-family:system-ui,'Segoe UI',sans-serif;background:#f5f5f0;color:#2a2a2
 input,textarea,select{width:100%;border:1px solid #e0e0d8;border-radius:8px;padding:10px 13px;font-size:14px;font-family:inherit;outline:none;color:#1a1a1a;background:#fafaf8;transition:border-color .15s;box-sizing:border-box}
 input:focus,textarea:focus,select:focus{border-color:#999;background:#fff}
 textarea{min-height:64px;resize:vertical}
-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23999' d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px}
+select{appearance:none;background-image:url(“data:image/svg+xml,%3Csvg xmlns=‘http://www.w3.org/2000/svg’ width=‘12’ height=‘12’ viewBox=‘0 0 12 12’%3E%3Cpath fill=’%23999’ d=‘M6 8L1 3h10z’/%3E%3C/svg%3E”);background-repeat:no-repeat;background-position:right 12px center;padding-right:32px}
 
 /* ── BUTTONS ── */
 .btn{padding:9px 16px;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;border:none;transition:opacity .15s}
@@ -212,10 +213,10 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
 .pt-obs-cell{color:#999;font-size:12px}
 
 @media(max-width:900px){
-  .paises-table-wrap{overflow-x:auto}
-  .paises-table{table-layout:auto;white-space:nowrap;min-width:900px}
-  .paises-table td,.paises-table th{white-space:nowrap}
-  .pt-obs-cell{white-space:normal;max-width:200px}
+.paises-table-wrap{overflow-x:auto}
+.paises-table{table-layout:auto;white-space:nowrap;min-width:900px}
+.paises-table td,.paises-table th{white-space:nowrap}
+.pt-obs-cell{white-space:normal;max-width:200px}
 }
 
 /* ── DECISÃO ── */
@@ -230,13 +231,40 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
 .dp-info-card{background:#fff;border:1px solid #e8e8e3;border-radius:10px;padding:10px 14px;font-size:12px;min-width:120px}
 .dp-info-lbl{color:#aaa;font-size:10px;text-transform:uppercase;letter-spacing:.4px;font-weight:600;margin-bottom:3px}
 .dp-info-val{font-weight:600;color:#333}
-.placar-wrap{display:flex;align-items:center;justify-content:center;gap:20px;background:#fff;border:1px solid #e8e8e3;border-radius:12px;padding:16px 28px}
+/* ── PESO SELECTOR ── */
+.peso-selector{display:flex;gap:6px;margin-bottom:4px}
+.peso-btn{flex:1;padding:8px 4px;border:2px solid #e0e0d8;border-radius:8px;background:#fff;cursor:pointer;font-size:15px;font-weight:700;color:#bbb;display:flex;flex-direction:column;align-items:center;gap:2px;transition:all .15s;font-family:inherit}
+.peso-btn span{font-size:9px;font-weight:500;text-transform:uppercase;letter-spacing:.3px}
+.peso-btn:hover{border-color:#aaa;color:#555}
+.peso-btn.selected-1{border-color:#90caf9;background:#e3f2fd;color:#1565c0}
+.peso-btn.selected-2{border-color:#a5d6a7;background:#e8f5e9;color:#2e7d32}
+.peso-btn.selected-3{border-color:#ffe082;background:#fffde7;color:#f57f17}
+.peso-btn.selected-4{border-color:#ffcc80;background:#fff3e0;color:#e65100}
+.peso-btn.selected-5{border-color:#ef9a9a;background:#ffebee;color:#c62828}
+
+/* ── PLACAR PONDERADO ── */
+.placar-wrap{display:flex;flex-direction:column;gap:12px;background:#fff;border:1px solid #e8e8e3;border-radius:12px;padding:18px 24px}
+.placar-scores{display:flex;align-items:center;justify-content:center;gap:20px}
 .placar-item{text-align:center}
 .placar-num{display:block;font-size:36px;font-weight:700;line-height:1}
-.placar-lbl{font-size:12px;color:#aaa;font-weight:500}
+.placar-sub{font-size:11px;color:#bbb;margin-top:2px}
+.placar-lbl{font-size:12px;color:#aaa;font-weight:500;margin-top:4px}
 .placar-pro .placar-num{color:#2e7d32}
 .placar-contra .placar-num{color:#e05555}
 .placar-vs{font-size:18px;font-weight:700;color:#ddd}
+.placar-bar-wrap{position:relative;background:#fce4ec;border-radius:999px;height:10px;overflow:hidden}
+.placar-bar-pro{position:absolute;left:0;top:0;height:100%;background:#4caf50;border-radius:999px;transition:width .5s}
+.placar-bar-label{display:flex;justify-content:space-between;font-size:10px;color:#aaa;margin-top:4px}
+.placar-result{text-align:center;font-size:13px;font-weight:600;padding:6px 0 0}
+
+/* peso badge no card */
+.dc-peso-badge{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;font-size:10px;font-weight:700;flex-shrink:0}
+.dc-peso-1{background:#e3f2fd;color:#1565c0}
+.dc-peso-2{background:#e8f5e9;color:#2e7d32}
+.dc-peso-3{background:#fffde7;color:#f57f17}
+.dc-peso-4{background:#fff3e0;color:#e65100}
+.dc-peso-5{background:#ffebee;color:#c62828}
+
 .decisao-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .decisao-col{background:#fff;border:1px solid #e8e8e3;border-radius:12px;overflow:hidden}
 .col-pro{border-top:3px solid #4caf50}
@@ -328,15 +356,17 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1a1a1a;color:#fff;padding:10px 20px;border-radius:10px;font-size:13px;z-index:9999;display:none;white-space:nowrap}
 
 @media(max-width:500px){
-  .resumo-pessoas{grid-template-columns:1fr}
-  header{padding:12px 16px}
-  .content,.resumo,.filter-bar{padding-left:16px;padding-right:16px}
+.resumo-pessoas{grid-template-columns:1fr}
+header{padding:12px 16px}
+.content,.resumo,.filter-bar{padding-left:16px;padding-right:16px}
 }
 </style>
+
 </head>
 <body>
 
 <!-- LOGIN -->
+
 <div class="screen active" id="login-screen">
   <div class="lbox">
     <div class="ico">✈️</div>
@@ -349,6 +379,7 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
 </div>
 
 <!-- WHO ARE YOU -->
+
 <div class="screen" id="who-screen">
   <div class="who-box">
     <div style="font-size:30px;margin-bottom:10px">👋</div>
@@ -372,6 +403,7 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
 </div>
 
 <!-- APP -->
+
 <div class="screen" id="app-screen">
   <header>
     <h1>✈️ Planejamento de Viagem</h1>
@@ -435,30 +467,34 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
   </div>
 
   <!-- RESUMO TAB -->
+
   <div id="tab-resumo" class="resumo">
 
-    <div class="countdown-big" id="countdown-big" onclick="openDateModal()" style="cursor:pointer">
-      <div class="countdown-big-num" id="cb-days">—</div>
-      <div class="countdown-big-lbl">dias para a viagem</div>
-      <div class="countdown-big-dest" id="cb-dest"></div>
-      <div style="font-size:11px;color:#ccc;margin-top:8px">clique para definir a data</div>
-    </div>
+```
+<div class="countdown-big" id="countdown-big" onclick="openDateModal()" style="cursor:pointer">
+  <div class="countdown-big-num" id="cb-days">—</div>
+  <div class="countdown-big-lbl">dias para a viagem</div>
+  <div class="countdown-big-dest" id="cb-dest"></div>
+  <div style="font-size:11px;color:#ccc;margin-top:8px">clique para definir a data</div>
+</div>
 
-    <div class="resumo-pessoas" id="resumo-pessoas"></div>
+<div class="resumo-pessoas" id="resumo-pessoas"></div>
 
-    <div class="resumo-section">
-      <h3>📁 Progresso por assunto</h3>
-      <div class="resumo-cats" id="resumo-cats"></div>
-    </div>
+<div class="resumo-section">
+  <h3>📁 Progresso por assunto</h3>
+  <div class="resumo-cats" id="resumo-cats"></div>
+</div>
 
-    <div class="resumo-section" id="alta-section">
-      <h3>🔴 Alta prioridade pendentes</h3>
-      <div class="alta-prio-list" id="alta-list"></div>
-    </div>
+<div class="resumo-section" id="alta-section">
+  <h3>🔴 Alta prioridade pendentes</h3>
+  <div class="alta-prio-list" id="alta-list"></div>
+</div>
+```
 
   </div>
 
   <!-- CARDS TABS -->
+
   <div id="tab-cards" style="display:none">
     <div class="content">
       <div class="sec-hdr">
@@ -475,6 +511,7 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
   </div>
 
   <!-- PAÍSES TAB -->
+
   <div id="tab-paises" style="display:none">
     <div class="content content-wide">
       <div class="sec-hdr">
@@ -503,74 +540,91 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
   </div>
 
   <!-- DECISÃO TAB -->
+
   <div id="tab-decisao" style="display:none">
     <div class="content content-wide">
 
-      <!-- filtro de país + status decisão -->
-      <div class="decisao-header">
-        <div class="decisao-select-wrap">
-          <label style="font-size:11px;font-weight:600;color:#aaa;text-transform:uppercase;letter-spacing:.4px">País em análise</label>
-          <select id="decisao-pais-sel" onchange="selectDecisaoPais(this.value)" style="margin-top:6px;max-width:260px">
-            <option value="">— Selecione um país —</option>
-          </select>
-        </div>
-        <div id="decisao-status-wrap" style="display:none">
-          <label style="font-size:11px;font-weight:600;color:#aaa;text-transform:uppercase;letter-spacing:.4px">Decisão final</label>
-          <div style="display:flex;gap:8px;margin-top:6px">
-            <button class="btn-decisao" id="btn-dec-vai" onclick="setDecisao('vai')">✅ Vamos!</button>
-            <button class="btn-decisao" id="btn-dec-analise" onclick="setDecisao('analise')">🤔 Em análise</button>
-            <button class="btn-decisao" id="btn-dec-nao" onclick="setDecisao('nao')">❌ Descartado</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- summary cards do país -->
-      <div id="decisao-pais-info" style="display:none;margin-bottom:20px"></div>
-
-      <!-- placar prós x contras -->
-      <div id="decisao-placar" style="display:none;margin-bottom:20px">
-        <div class="placar-wrap">
-          <div class="placar-item placar-pro">
-            <span class="placar-num" id="placar-pro-n">0</span>
-            <span class="placar-lbl">Prós</span>
-          </div>
-          <div class="placar-vs">VS</div>
-          <div class="placar-item placar-contra">
-            <span class="placar-num" id="placar-contra-n">0</span>
-            <span class="placar-lbl">Contras</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- colunas prós / contras -->
-      <div id="decisao-cols" style="display:none">
-        <div class="decisao-grid">
-          <div class="decisao-col col-pro">
-            <div class="col-header">
-              <span class="col-title">👍 Prós</span>
-              <button class="btn btn-dark" style="font-size:12px;padding:5px 12px" onclick="openDecisaoModal('pro')">+ Adicionar</button>
-            </div>
-            <div id="pros-list" class="decisao-list"></div>
-          </div>
-          <div class="decisao-col col-contra">
-            <div class="col-header">
-              <span class="col-title">👎 Contras</span>
-              <button class="btn btn-red" style="font-size:12px;padding:5px 12px" onclick="openDecisaoModal('contra')">+ Adicionar</button>
-            </div>
-            <div id="contras-list" class="decisao-list"></div>
-          </div>
-        </div>
-      </div>
-
-      <div id="decisao-empty" style="text-align:center;padding:60px 20px;color:#ccc;font-size:14px">
-        Selecione um país para começar a análise 🌍
-      </div>
-
+```
+  <!-- filtro de país + status decisão -->
+  <div class="decisao-header">
+    <div class="decisao-select-wrap">
+      <label style="font-size:11px;font-weight:600;color:#aaa;text-transform:uppercase;letter-spacing:.4px">País em análise</label>
+      <select id="decisao-pais-sel" onchange="selectDecisaoPais(this.value)" style="margin-top:6px;max-width:260px">
+        <option value="">— Selecione um país —</option>
+      </select>
     </div>
+    <div id="decisao-status-wrap" style="display:none">
+      <label style="font-size:11px;font-weight:600;color:#aaa;text-transform:uppercase;letter-spacing:.4px">Decisão final</label>
+      <div style="display:flex;gap:8px;margin-top:6px">
+        <button class="btn-decisao" id="btn-dec-vai" onclick="setDecisao('vai')">✅ Vamos!</button>
+        <button class="btn-decisao" id="btn-dec-analise" onclick="setDecisao('analise')">🤔 Em análise</button>
+        <button class="btn-decisao" id="btn-dec-nao" onclick="setDecisao('nao')">❌ Descartado</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- summary cards do país -->
+  <div id="decisao-pais-info" style="display:none;margin-bottom:20px"></div>
+
+  <div id="decisao-placar" style="display:none;margin-bottom:20px">
+    <div class="placar-wrap">
+      <div class="placar-scores">
+        <div class="placar-item placar-pro">
+          <span class="placar-num" id="placar-pro-pts">0</span>
+          <div class="placar-sub" id="placar-pro-count">0 itens</div>
+          <div class="placar-lbl">👍 Prós</div>
+        </div>
+        <div class="placar-vs">VS</div>
+        <div class="placar-item placar-contra">
+          <span class="placar-num" id="placar-contra-pts">0</span>
+          <div class="placar-sub" id="placar-contra-count">0 itens</div>
+          <div class="placar-lbl">👎 Contras</div>
+        </div>
+      </div>
+      <div>
+        <div class="placar-bar-wrap">
+          <div class="placar-bar-pro" id="placar-bar-pro" style="width:50%"></div>
+        </div>
+        <div class="placar-bar-label">
+          <span>Prós</span><span>Contras</span>
+        </div>
+      </div>
+      <div class="placar-result" id="placar-result"></div>
+    </div>
+  </div>
+
+  <!-- colunas prós / contras -->
+  <div id="decisao-cols" style="display:none">
+    <div class="decisao-grid">
+      <div class="decisao-col col-pro">
+        <div class="col-header">
+          <span class="col-title">👍 Prós</span>
+          <button class="btn btn-dark" style="font-size:12px;padding:5px 12px" onclick="openDecisaoModal('pro')">+ Adicionar</button>
+        </div>
+        <div id="pros-list" class="decisao-list"></div>
+      </div>
+      <div class="decisao-col col-contra">
+        <div class="col-header">
+          <span class="col-title">👎 Contras</span>
+          <button class="btn btn-red" style="font-size:12px;padding:5px 12px" onclick="openDecisaoModal('contra')">+ Adicionar</button>
+        </div>
+        <div id="contras-list" class="decisao-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="decisao-empty" style="text-align:center;padding:60px 20px;color:#ccc;font-size:14px">
+    Selecione um país para começar a análise 🌍
+  </div>
+
+</div>
+```
+
   </div>
 </div>
 
 <!-- MODAL CARD -->
+
 <div class="overlay" id="overlay">
   <div class="modal">
     <h2 id="m-title">Novo card</h2>
@@ -625,6 +679,7 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
 </div>
 
 <!-- MODAL PAÍS -->
+
 <div class="overlay" id="pais-overlay">
   <div class="modal" style="width:440px">
     <h2 id="p-title">🌍 Novo país</h2>
@@ -687,6 +742,7 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
 </div>
 
 <!-- MODAL DECISÃO CARD -->
+
 <div class="overlay" id="decisao-overlay">
   <div class="modal" style="width:400px">
     <h2 id="decisao-modal-title">👍 Novo Pró</h2>
@@ -717,6 +773,15 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
         </select>
       </div>
     </div>
+    <label class="lbl" style="margin-top:14px">Peso / importância</label>
+    <div class="peso-selector" id="peso-selector">
+      <button type="button" class="peso-btn" data-peso="1" onclick="selectPeso(1)">1<span>Detalhe</span></button>
+      <button type="button" class="peso-btn" data-peso="2" onclick="selectPeso(2)">2<span>Menor</span></button>
+      <button type="button" class="peso-btn" data-peso="3" onclick="selectPeso(3)">3<span>Importa</span></button>
+      <button type="button" class="peso-btn" data-peso="4" onclick="selectPeso(4)">4<span>Importante</span></button>
+      <button type="button" class="peso-btn" data-peso="5" onclick="selectPeso(5)">5<span>Decisivo</span></button>
+    </div>
+    <input type="hidden" id="dc-peso" value="3">
     <div class="m-row">
       <button class="btn btn-ghost" onclick="closeDecisaoModal()">Cancelar</button>
       <button class="btn btn-dark" id="dc-save" onclick="saveDecisaoCard()">Adicionar</button>
@@ -725,6 +790,7 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
 </div>
 
 <!-- MODAL MOVER CARD -->
+
 <div class="overlay" id="move-overlay">
   <div class="modal" style="width:320px">
     <h2>↪️ Mover card para...</h2>
@@ -737,6 +803,7 @@ header h1{font-size:16px;font-weight:600;white-space:nowrap}
 </div>
 
 <!-- MODAL DATA -->
+
 <div class="overlay" id="date-overlay">
   <div class="modal" style="width:320px">
     <h2>📅 Data de partida</h2>
@@ -1354,394 +1421,418 @@ function cardHTML(c,sec){
       <div class="forum-input-row">
         <textarea class="forum-input" id="forum-input-${c.id}" placeholder="Escreva um comentário..." rows="1"
           onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();postComment('${sec}','${c.id}')}"></textarea>
-        <button class="forum-send" onclick="postComment('${sec}','${c.id}')">Enviar</button>
-      </div>
-    </div>
+
+```
+    <button class="forum-send" onclick="postComment('${sec}','${c.id}')">Enviar</button>
+  </div>
+</div>
+```
+
   </div>`;
 
-  return `<div class="card${c.done?' done':''}${isDM?' dm':''} ${c.prio?'prio-'+c.prio:''}">
-    <div class="c-top">
-      <div class="c-title">${esc(c.title)}</div>
-      <div class="menu-wrap">
-        <button class="menu-btn" onclick="toggleCtx(event,'${c.id}')">⋯</button>
-        <div class="ctx" id="ctx-${c.id}">${menuItems}</div>
-      </div>
-    </div>
-    ${meta}${ans}${comment}
-    ${approvalHTML}
-    <div class="c-actions">${acts}</div>
-    ${forum}
+return `<div class="card${c.done?' done':''}${isDM?' dm':''} ${c.prio?'prio-'+c.prio:''}">
+<div class="c-top">
+<div class="c-title">${esc(c.title)}</div>
+<div class="menu-wrap">
+<button class="menu-btn" onclick="toggleCtx(event,'${c.id}')">⋯</button>
+<div class="ctx" id="ctx-${c.id}">${menuItems}</div>
+</div>
+</div>
+${meta}${ans}${comment}
+${approvalHTML}
+<div class="c-actions">${acts}</div>
+${forum}
+
   </div>`;
 }
 
-function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function esc(s){ return String(s).replace(/&/g,’&’).replace(/</g,’<’).replace(/>/g,’>’); }
 
 // ── CONTEXT MENU ─────────────────────────────────
 function toggleCtx(e,id){
-  e.stopPropagation();
-  const ctx=document.getElementById('ctx-'+id);
-  const was=ctx.classList.contains('open');
-  closeCtx();
-  if(!was) ctx.classList.add('open');
+e.stopPropagation();
+const ctx=document.getElementById(‘ctx-’+id);
+const was=ctx.classList.contains(‘open’);
+closeCtx();
+if(!was) ctx.classList.add(‘open’);
 }
-function closeCtx(){ document.querySelectorAll('.ctx.open').forEach(c=>c.classList.remove('open')); }
-document.addEventListener('click',closeCtx);
+function closeCtx(){ document.querySelectorAll(’.ctx.open’).forEach(c=>c.classList.remove(‘open’)); }
+document.addEventListener(‘click’,closeCtx);
 
 // ── MODAL ─────────────────────────────────────────
 function openModal(tabArg,id=null){
-  modalTab=tabArg||curTab; editId=id;
-  const isDM=modalTab==='deu-merda';
-  document.getElementById('m-title').textContent=id?'Editar card':(isDM?'Registrar problema':'Novo card');
-  document.getElementById('m-save').textContent=id?'Salvar':'Criar';
-  populatePaisSelects();
-  if(id){
-    const c=(state[modalTab]||[]).find(x=>x.id===id);
-    document.getElementById('m-q').value=c?.title||'';
-    document.getElementById('m-a').value=c?.answer||'';
-    document.getElementById('m-c').value=c?.comment||'';
-    document.getElementById('m-resp').value=c?.resp||'';
-    document.getElementById('m-prio').value=c?.prio||'';
-    document.getElementById('m-tipo').value=c?.tipo||'';
-    document.getElementById('m-pais').value=c?.pais||'';
-  } else {
-    document.getElementById('m-q').value='';
-    document.getElementById('m-a').value='';
-    document.getElementById('m-c').value='';
-    document.getElementById('m-resp').value=curUser||'';
-    document.getElementById('m-prio').value='';
-    document.getElementById('m-tipo').value='';
-    document.getElementById('m-pais').value=curFilter.startsWith('pais:')?curFilter.slice(5):'';
-  }
-  document.getElementById('overlay').classList.add('open');
-  setTimeout(()=>document.getElementById('m-q').focus(),80);
+modalTab=tabArg||curTab; editId=id;
+const isDM=modalTab===‘deu-merda’;
+document.getElementById(‘m-title’).textContent=id?‘Editar card’:(isDM?‘Registrar problema’:‘Novo card’);
+document.getElementById(‘m-save’).textContent=id?‘Salvar’:‘Criar’;
+populatePaisSelects();
+if(id){
+const c=(state[modalTab]||[]).find(x=>x.id===id);
+document.getElementById(‘m-q’).value=c?.title||’’;
+document.getElementById(‘m-a’).value=c?.answer||’’;
+document.getElementById(‘m-c’).value=c?.comment||’’;
+document.getElementById(‘m-resp’).value=c?.resp||’’;
+document.getElementById(‘m-prio’).value=c?.prio||’’;
+document.getElementById(‘m-tipo’).value=c?.tipo||’’;
+document.getElementById(‘m-pais’).value=c?.pais||’’;
+} else {
+document.getElementById(‘m-q’).value=’’;
+document.getElementById(‘m-a’).value=’’;
+document.getElementById(‘m-c’).value=’’;
+document.getElementById(‘m-resp’).value=curUser||’’;
+document.getElementById(‘m-prio’).value=’’;
+document.getElementById(‘m-tipo’).value=’’;
+document.getElementById(‘m-pais’).value=curFilter.startsWith(‘pais:’)?curFilter.slice(5):’’;
+}
+document.getElementById(‘overlay’).classList.add(‘open’);
+setTimeout(()=>document.getElementById(‘m-q’).focus(),80);
 }
 
-function closeModal(){ document.getElementById('overlay').classList.remove('open'); editId=null; }
-document.getElementById('overlay').addEventListener('click',e=>{ if(e.target===document.getElementById('overlay'))closeModal(); });
+function closeModal(){ document.getElementById(‘overlay’).classList.remove(‘open’); editId=null; }
+document.getElementById(‘overlay’).addEventListener(‘click’,e=>{ if(e.target===document.getElementById(‘overlay’))closeModal(); });
 
 async function saveCard(){
-  const title=document.getElementById('m-q').value.trim();
-  if(!title){ document.getElementById('m-q').style.borderColor='#e05555'; return; }
-  document.getElementById('m-q').style.borderColor='#e0e0d8';
-  const answer=document.getElementById('m-a').value.trim();
-  const comment=document.getElementById('m-c').value.trim();
-  const resp=document.getElementById('m-resp').value;
-  const prio=document.getElementById('m-prio').value;
-  const tipo=document.getElementById('m-tipo').value;
-  const pais=document.getElementById('m-pais').value;
-  ensurePaisExists(pais);
-  if(editId){
-    const c=(state[modalTab]||[]).find(x=>x.id===editId);
-    if(c){ c.title=title; c.answer=answer; c.comment=comment; c.resp=resp; c.prio=prio; c.tipo=tipo; c.pais=pais; }
-  } else {
-    if(!state[modalTab]) state[modalTab]=[];
-    state[modalTab].push({ id:uid(), title, answer, comment, resp, prio, tipo, pais, done:false, ts:Date.now() });
-  }
-  closeModal(); populatePaisSelects(); renderAll(); await persist();
+const title=document.getElementById(‘m-q’).value.trim();
+if(!title){ document.getElementById(‘m-q’).style.borderColor=’#e05555’; return; }
+document.getElementById(‘m-q’).style.borderColor=’#e0e0d8’;
+const answer=document.getElementById(‘m-a’).value.trim();
+const comment=document.getElementById(‘m-c’).value.trim();
+const resp=document.getElementById(‘m-resp’).value;
+const prio=document.getElementById(‘m-prio’).value;
+const tipo=document.getElementById(‘m-tipo’).value;
+const pais=document.getElementById(‘m-pais’).value;
+ensurePaisExists(pais);
+if(editId){
+const c=(state[modalTab]||[]).find(x=>x.id===editId);
+if(c){ c.title=title; c.answer=answer; c.comment=comment; c.resp=resp; c.prio=prio; c.tipo=tipo; c.pais=pais; }
+} else {
+if(!state[modalTab]) state[modalTab]=[];
+state[modalTab].push({ id:uid(), title, answer, comment, resp, prio, tipo, pais, done:false, ts:Date.now() });
+}
+closeModal(); populatePaisSelects(); renderAll(); await persist();
 }
 
 async function toggle(sec,id){
-  const c=(state[sec]||[]).find(x=>x.id===id);
-  if(c) c.done=!c.done;
-  renderAll(); await persist();
+const c=(state[sec]||[]).find(x=>x.id===id);
+if(c) c.done=!c.done;
+renderAll(); await persist();
 }
 
 async function approve(sec,id){
-  const c=(state[sec]||[]).find(x=>x.id===id);
-  if(!c||!curUser) return;
-  if(!c.approvals) c.approvals={};
-  // toggle própria aprovação
-  c.approvals[curUser] = !c.approvals[curUser];
-  // se os dois aprovaram, marca como done
-  if(c.approvals['Rodrigo'] && c.approvals['Samy']) c.done=true;
-  else c.done=false;
-  renderAll(); await persist();
+const c=(state[sec]||[]).find(x=>x.id===id);
+if(!c||!curUser) return;
+if(!c.approvals) c.approvals={};
+// toggle própria aprovação
+c.approvals[curUser] = !c.approvals[curUser];
+// se os dois aprovaram, marca como done
+if(c.approvals[‘Rodrigo’] && c.approvals[‘Samy’]) c.done=true;
+else c.done=false;
+renderAll(); await persist();
 }
 
 async function delCard(sec,id){
-  if(!confirm('Excluir esse card?')) return;
-  state[sec]=(state[sec]||[]).filter(x=>x.id!==id);
-  renderAll(); await persist();
+if(!confirm(‘Excluir esse card?’)) return;
+state[sec]=(state[sec]||[]).filter(x=>x.id!==id);
+renderAll(); await persist();
 }
 
 // ── FÓRUM ─────────────────────────────────────────
 function toggleForum(id){
-  const body=document.getElementById('forum-'+id);
-  if(!body) return;
-  const isOpen=body.classList.contains('open');
-  if(isOpen){ body.classList.remove('open'); openForums.delete(id); }
-  else { body.classList.add('open'); openForums.add(id); focusForum(id); }
+const body=document.getElementById(‘forum-’+id);
+if(!body) return;
+const isOpen=body.classList.contains(‘open’);
+if(isOpen){ body.classList.remove(‘open’); openForums.delete(id); }
+else { body.classList.add(‘open’); openForums.add(id); focusForum(id); }
 }
 
 function focusForum(id){
-  setTimeout(()=>{
-    const inp=document.getElementById('forum-input-'+id);
-    if(inp) inp.focus();
-    const msgs=document.getElementById('forum-msgs-'+id);
-    if(msgs) msgs.scrollTop=msgs.scrollHeight;
-  },50);
+setTimeout(()=>{
+const inp=document.getElementById(‘forum-input-’+id);
+if(inp) inp.focus();
+const msgs=document.getElementById(‘forum-msgs-’+id);
+if(msgs) msgs.scrollTop=msgs.scrollHeight;
+},50);
 }
 
 function restoreForums(){
-  openForums.forEach(id=>{
-    const body=document.getElementById('forum-'+id);
-    if(body){ body.classList.add('open'); const msgs=document.getElementById('forum-msgs-'+id); if(msgs) msgs.scrollTop=msgs.scrollHeight; }
-  });
+openForums.forEach(id=>{
+const body=document.getElementById(‘forum-’+id);
+if(body){ body.classList.add(‘open’); const msgs=document.getElementById(‘forum-msgs-’+id); if(msgs) msgs.scrollTop=msgs.scrollHeight; }
+});
 }
 
 async function postComment(sec,id){
-  const inp=document.getElementById('forum-input-'+id);
-  if(!inp) return;
-  const texto=inp.value.trim();
-  if(!texto) return;
-  const c=(state[sec]||[]).find(x=>x.id===id);
-  if(!c) return;
-  if(!c.forum) c.forum=[];
-  c.forum.push({ autor:curUser, texto, ts:Date.now() });
-  openForums.add(id);
-  inp.value='';
-  renderAll();
-  focusForum(id);
-  await persist();
+const inp=document.getElementById(‘forum-input-’+id);
+if(!inp) return;
+const texto=inp.value.trim();
+if(!texto) return;
+const c=(state[sec]||[]).find(x=>x.id===id);
+if(!c) return;
+if(!c.forum) c.forum=[];
+c.forum.push({ autor:curUser, texto, ts:Date.now() });
+openForums.add(id);
+inp.value=’’;
+renderAll();
+focusForum(id);
+await persist();
 }
 
 // ── BACKUP / RESTORE ──────────────────────────────
 function exportBackup(){
-  const data = JSON.stringify(state, null, 2);
-  const blob = new Blob([data], { type:'application/json' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  const date = new Date().toISOString().slice(0,10);
-  a.href = url;
-  a.download = `viagem-backup-${date}.json`;
-  a.click();
-  URL.revokeObjectURL(url);
-  showToast('Backup salvo! 💾');
+const data = JSON.stringify(state, null, 2);
+const blob = new Blob([data], { type:‘application/json’ });
+const url = URL.createObjectURL(blob);
+const a = document.createElement(‘a’);
+const date = new Date().toISOString().slice(0,10);
+a.href = url;
+a.download = `viagem-backup-${date}.json`;
+a.click();
+URL.revokeObjectURL(url);
+showToast(‘Backup salvo! 💾’);
 }
 
 async function importBackup(event){
-  const file = event.target.files[0];
-  if(!file) return;
-  try {
-    const text = await file.text();
-    const data = JSON.parse(text);
-    // validação básica
-    if(typeof data !== 'object' || Array.isArray(data)) throw new Error('Formato inválido');
-    if(!confirm(`Importar backup de ${file.name}?\n\nIsso vai SUBSTITUIR todos os dados atuais. Tem certeza?`)){
-      event.target.value = '';
-      return;
-    }
-    state = { viagem:[], financeiro:[], estadia:[], saude:[], documentos:[], roteiro:[], brasil:[], 'deu-merda':[], _meta:{}, paises:[], decisao:{}, ...data };
-    populatePaisSelects();
-    renderAll();
-    updateCountdown();
-    await persist();
-    showToast('Backup importado com sucesso! ✅');
-  } catch(e) {
-    showToast('Erro ao importar: arquivo inválido.');
-  }
-  event.target.value = '';
+const file = event.target.files[0];
+if(!file) return;
+try {
+const text = await file.text();
+const data = JSON.parse(text);
+// validação básica
+if(typeof data !== ‘object’ || Array.isArray(data)) throw new Error(‘Formato inválido’);
+if(!confirm(`Importar backup de ${file.name}?\n\nIsso vai SUBSTITUIR todos os dados atuais. Tem certeza?`)){
+event.target.value = ‘’;
+return;
+}
+state = { viagem:[], financeiro:[], estadia:[], saude:[], documentos:[], roteiro:[], brasil:[], ‘deu-merda’:[], _meta:{}, paises:[], decisao:{}, …data };
+populatePaisSelects();
+renderAll();
+updateCountdown();
+await persist();
+showToast(‘Backup importado com sucesso! ✅’);
+} catch(e) {
+showToast(‘Erro ao importar: arquivo inválido.’);
+}
+event.target.value = ‘’;
 }
 
 // ── DECISÃO ───────────────────────────────────────
-const CAT_ICONS = { Financeira:'💰', Burocracia:'📋', 'Alimentação':'🍽️', 'Locomoção':'🚌', Visto:'🛂', Clima:'☀️', Cultura:'🎭', 'Segurança':'🔒' };
-let decisaoPaisAtual = '';
-let decisaoTipo = 'pro'; // 'pro' ou 'contra'
+const CAT_ICONS = { Financeira:‘💰’, Burocracia:‘📋’, ‘Alimentação’:‘🍽️’, ‘Locomoção’:‘🚌’, Visto:‘🛂’, Clima:‘☀️’, Cultura:‘🎭’, ‘Segurança’:‘🔒’ };
+let decisaoPaisAtual = ‘’;
+let decisaoTipo = ‘pro’; // ‘pro’ ou ‘contra’
 let decisaoEditId = null;
 
-function getDecisao(pais){ return (state.decisao && state.decisao[pais]) || { pros:[], contras:[], status:'' }; }
+function getDecisao(pais){ return (state.decisao && state.decisao[pais]) || { pros:[], contras:[], status:’’ }; }
 function setDecisaoState(pais, d){ if(!state.decisao) state.decisao={}; state.decisao[pais]=d; }
 
 function populateDecisaoSelect(){
-  const sel = document.getElementById('decisao-pais-sel');
-  if(!sel) return;
-  const cur = sel.value;
-  const paises = (state.paises||[]).slice().sort((a,b)=>a.nome.localeCompare(b.nome,'pt-BR'));
-  sel.innerHTML = '<option value="">— Selecione um país —</option>'
-    + paises.map(p=>`<option value="${esc(p.nome)}">${p.iso?'':''}${esc(p.nome)}</option>`).join('');
-  if(cur) sel.value = cur;
+const sel = document.getElementById(‘decisao-pais-sel’);
+if(!sel) return;
+const cur = sel.value;
+const paises = (state.paises||[]).slice().sort((a,b)=>a.nome.localeCompare(b.nome,‘pt-BR’));
+sel.innerHTML = ‘<option value="">— Selecione um país —</option>’
++ paises.map(p=>`<option value="${esc(p.nome)}">${p.iso?'':''}${esc(p.nome)}</option>`).join(’’);
+if(cur) sel.value = cur;
 }
 
 function selectDecisaoPais(nome){
-  decisaoPaisAtual = nome;
-  renderDecisao();
+decisaoPaisAtual = nome;
+renderDecisao();
 }
 
 function renderDecisao(){
-  const empty = document.getElementById('decisao-empty');
-  const cols  = document.getElementById('decisao-cols');
-  const placar= document.getElementById('decisao-placar');
-  const infoEl= document.getElementById('decisao-pais-info');
-  const swrap = document.getElementById('decisao-status-wrap');
+const empty = document.getElementById(‘decisao-empty’);
+const cols  = document.getElementById(‘decisao-cols’);
+const placar= document.getElementById(‘decisao-placar’);
+const infoEl= document.getElementById(‘decisao-pais-info’);
+const swrap = document.getElementById(‘decisao-status-wrap’);
 
-  if(!decisaoPaisAtual){
-    empty.style.display='block'; cols.style.display='none';
-    placar.style.display='none'; infoEl.style.display='none'; swrap.style.display='none';
-    return;
-  }
-  empty.style.display='none'; cols.style.display='block';
-  placar.style.display='block'; infoEl.style.display='block'; swrap.style.display='flex';
+if(!decisaoPaisAtual){
+empty.style.display=‘block’; cols.style.display=‘none’;
+placar.style.display=‘none’; infoEl.style.display=‘none’; swrap.style.display=‘none’;
+return;
+}
+empty.style.display=‘none’; cols.style.display=‘block’;
+placar.style.display=‘block’; infoEl.style.display=‘block’; swrap.style.display=‘flex’;
 
-  const d = getDecisao(decisaoPaisAtual);
-  const p = findPais(decisaoPaisAtual);
+const d = getDecisao(decisaoPaisAtual);
+const p = findPais(decisaoPaisAtual);
 
-  // info rápida do país
-  if(p){
-    infoEl.innerHTML=`<div class="decisao-pais-info">
-      <div class="dp-info-card"><div class="dp-info-lbl">Schengen</div><div class="dp-info-val">${p.schengen==='sim'?'Sim':'Não'}</div></div>
-      <div class="dp-info-card"><div class="dp-info-lbl">Tempo turista</div><div class="dp-info-val">${esc(p.tempo||'—')}</div></div>
-      <div class="dp-info-card"><div class="dp-info-lbl">Custo/mês</div><div class="dp-info-val">${esc(p.custo||'—')}</div></div>
-      <div class="dp-info-card"><div class="dp-info-lbl">Visto</div><div class="dp-info-val">${esc(p.visto||'—')}</div></div>
-      <div class="dp-info-card"><div class="dp-info-lbl">Imigração</div><div class="dp-info-val">${esc(p.imigracao||'—')}</div></div>
-    </div>`;
-  }
+// info rápida do país
+if(p){
+infoEl.innerHTML=`<div class="decisao-pais-info"> <div class="dp-info-card"><div class="dp-info-lbl">Schengen</div><div class="dp-info-val">${p.schengen==='sim'?'Sim':'Não'}</div></div> <div class="dp-info-card"><div class="dp-info-lbl">Tempo turista</div><div class="dp-info-val">${esc(p.tempo||'—')}</div></div> <div class="dp-info-card"><div class="dp-info-lbl">Custo/mês</div><div class="dp-info-val">${esc(p.custo||'—')}</div></div> <div class="dp-info-card"><div class="dp-info-lbl">Visto</div><div class="dp-info-val">${esc(p.visto||'—')}</div></div> <div class="dp-info-card"><div class="dp-info-lbl">Imigração</div><div class="dp-info-val">${esc(p.imigracao||'—')}</div></div> </div>`;
+}
 
-  // status buttons
-  ['vai','analise','nao'].forEach(s=>{
-    const btn=document.getElementById('btn-dec-'+s);
-    btn.className='btn-decisao'+(d.status===s?' ativo-'+s:'');
-  });
+// status buttons
+[‘vai’,‘analise’,‘nao’].forEach(s=>{
+const btn=document.getElementById(‘btn-dec-’+s);
+btn.className=‘btn-decisao’+(d.status===s?’ ativo-’+s:’’);
+});
 
-  // placar
-  document.getElementById('placar-pro-n').textContent = (d.pros||[]).length;
-  document.getElementById('placar-contra-n').textContent = (d.contras||[]).length;
+// placar ponderado
+const pros = d.pros||[], contras = d.contras||[];
+const ptsPro    = pros.reduce((sum,x)=>sum+(x.peso||1),0);
+const ptsContra = contras.reduce((sum,x)=>sum+(x.peso||1),0);
+const total = ptsPro + ptsContra;
+const pctPro = total ? Math.round((ptsPro/total)*100) : 50;
 
-  // listas
-  document.getElementById('pros-list').innerHTML    = renderDcList(d.pros||[], 'pro');
-  document.getElementById('contras-list').innerHTML = renderDcList(d.contras||[], 'contra');
+document.getElementById(‘placar-pro-pts’).textContent = ptsPro;
+document.getElementById(‘placar-contra-pts’).textContent = ptsContra;
+document.getElementById(‘placar-pro-count’).textContent = pros.length+’ item’+(pros.length!==1?‘s’:’’);
+document.getElementById(‘placar-contra-count’).textContent = contras.length+’ item’+(contras.length!==1?‘s’:’’);
+document.getElementById(‘placar-bar-pro’).style.width = pctPro+’%’;
+
+const resultEl = document.getElementById(‘placar-result’);
+if(!total){ resultEl.textContent=’’; }
+else if(ptsPro > ptsContra){ resultEl.innerHTML=`<span style="color:#2e7d32">👍 Prós lideram por ${ptsPro - ptsContra} pontos</span>`; }
+else if(ptsContra > ptsPro){ resultEl.innerHTML=`<span style="color:#e05555">👎 Contras lideram por ${ptsContra - ptsPro} pontos</span>`; }
+else { resultEl.innerHTML=`<span style="color:#f57f17">🤔 Empate técnico!</span>`; }
+
+// listas
+document.getElementById(‘pros-list’).innerHTML    = renderDcList(pros, ‘pro’);
+document.getElementById(‘contras-list’).innerHTML = renderDcList(contras, ‘contra’);
 }
 
 function renderDcList(items, tipo){
-  if(!items.length) return `<div class="dc-empty">${tipo==='pro'?'Nenhum pró ainda':'Nenhum contra ainda'}</div>`;
-  return items.map(item=>{
-    const catIcon = CAT_ICONS[item.cat]||'';
-    const catBadge = item.cat ? `<span class="dc-cat">${catIcon} ${esc(item.cat)}</span>` : '';
-    const respChip = item.resp ? `<span class="dc-resp-chip">${avatarHTML(item.resp,13)} ${esc(item.resp)}</span>` : '';
-    return `<div class="dc-card">
-      <div class="dc-card-top">
-        <div class="dc-card-text">${esc(item.texto)}</div>
-        <button class="dc-del" onclick="delDcCard('${tipo}','${item.id}')">✕</button>
-      </div>
-      <div class="dc-meta">${catBadge}${respChip}</div>
-    </div>`;
-  }).join('');
+if(!items.length) return `<div class="dc-empty">${tipo==='pro'?'Nenhum pró ainda':'Nenhum contra ainda'}</div>`;
+// ordena por peso desc
+const sorted = […items].sort((a,b)=>(b.peso||1)-(a.peso||1));
+return sorted.map(item=>{
+const catIcon = CAT_ICONS[item.cat]||’’;
+const catBadge = item.cat ? `<span class="dc-cat">${catIcon} ${esc(item.cat)}</span>` : ‘’;
+const respChip = item.resp ? `<span class="dc-resp-chip">${avatarHTML(item.resp,13)} ${esc(item.resp)}</span>` : ‘’;
+const peso = item.peso||1;
+const pesoBadge = `<span class="dc-peso-badge dc-peso-${peso}" title="Peso ${peso}">${peso}</span>`;
+return `<div class="dc-card" style="border-left:3px solid ${tipo==='pro'?'#a5d6a7':'#ef9a9a'}"> <div class="dc-card-top"> <div class="dc-card-text">${esc(item.texto)}</div> <div style="display:flex;align-items:center;gap:4px;flex-shrink:0"> ${pesoBadge} <button class="dc-del" onclick="openDecisaoModal('${tipo}','${item.id}')">✏️</button> <button class="dc-del" onclick="delDcCard('${tipo}','${item.id}')">✕</button> </div> </div> <div class="dc-meta">${catBadge}${respChip}</div> </div>`;
+}).join(’’);
 }
 
 async function setDecisao(status){
-  if(!decisaoPaisAtual) return;
-  const d = getDecisao(decisaoPaisAtual);
-  d.status = d.status === status ? '' : status; // toggle
-  setDecisaoState(decisaoPaisAtual, d);
-  // sincroniza status no objeto do país
-  const p = (state.paises||[]).find(x=>x.nome===decisaoPaisAtual);
-  if(p) p.decisao = d.status;
-  renderDecisao();
-  renderPaises();
-  await persist();
+if(!decisaoPaisAtual) return;
+const d = getDecisao(decisaoPaisAtual);
+d.status = d.status === status ? ‘’ : status; // toggle
+setDecisaoState(decisaoPaisAtual, d);
+// sincroniza status no objeto do país
+const p = (state.paises||[]).find(x=>x.nome===decisaoPaisAtual);
+if(p) p.decisao = d.status;
+renderDecisao();
+renderPaises();
+await persist();
 }
 
 function openDecisaoModal(tipo, id=null){
-  decisaoTipo=tipo; decisaoEditId=id;
-  const isEdit = id!==null;
-  document.getElementById('decisao-modal-title').textContent = isEdit ? '✏️ Editar' : (tipo==='pro'?'👍 Novo Pró':'👎 Novo Contra');
-  document.getElementById('dc-save').textContent = isEdit ? 'Salvar' : 'Adicionar';
-  if(isEdit){
-    const d=getDecisao(decisaoPaisAtual);
-    const list=tipo==='pro'?d.pros:d.contras;
-    const item=list.find(x=>x.id===id);
-    if(item){ document.getElementById('dc-texto').value=item.texto||''; document.getElementById('dc-cat').value=item.cat||''; document.getElementById('dc-resp').value=item.resp||''; }
-  } else {
-    document.getElementById('dc-texto').value='';
-    document.getElementById('dc-cat').value='';
-    document.getElementById('dc-resp').value=curUser||'';
-  }
-  document.getElementById('decisao-overlay').classList.add('open');
-  setTimeout(()=>document.getElementById('dc-texto').focus(),80);
+decisaoTipo=tipo; decisaoEditId=id;
+const isEdit = id!==null;
+document.getElementById(‘decisao-modal-title’).textContent = isEdit ? ‘✏️ Editar’ : (tipo===‘pro’?‘👍 Novo Pró’:‘👎 Novo Contra’);
+document.getElementById(‘dc-save’).textContent = isEdit ? ‘Salvar’ : ‘Adicionar’;
+let pesoInicial = 3;
+if(isEdit){
+const d=getDecisao(decisaoPaisAtual);
+const list=tipo===‘pro’?d.pros:d.contras;
+const item=list.find(x=>x.id===id);
+if(item){
+document.getElementById(‘dc-texto’).value=item.texto||’’;
+document.getElementById(‘dc-cat’).value=item.cat||’’;
+document.getElementById(‘dc-resp’).value=item.resp||’’;
+pesoInicial = item.peso||3;
+}
+} else {
+document.getElementById(‘dc-texto’).value=’’;
+document.getElementById(‘dc-cat’).value=’’;
+document.getElementById(‘dc-resp’).value=curUser||’’;
+}
+selectPeso(pesoInicial);
+document.getElementById(‘decisao-overlay’).classList.add(‘open’);
+setTimeout(()=>document.getElementById(‘dc-texto’).focus(),80);
 }
 
-function closeDecisaoModal(){ document.getElementById('decisao-overlay').classList.remove('open'); decisaoEditId=null; }
-document.getElementById('decisao-overlay').addEventListener('click',e=>{ if(e.target===document.getElementById('decisao-overlay'))closeDecisaoModal(); });
+function selectPeso(p){
+document.getElementById(‘dc-peso’).value=p;
+document.querySelectorAll(’.peso-btn’).forEach(btn=>{
+btn.className=‘peso-btn’+(parseInt(btn.dataset.peso)===p?’ selected-’+p:’’);
+});
+}
+
+function closeDecisaoModal(){ document.getElementById(‘decisao-overlay’).classList.remove(‘open’); decisaoEditId=null; }
+document.getElementById(‘decisao-overlay’).addEventListener(‘click’,e=>{ if(e.target===document.getElementById(‘decisao-overlay’))closeDecisaoModal(); });
 
 async function saveDecisaoCard(){
-  const texto=document.getElementById('dc-texto').value.trim();
-  if(!texto){ document.getElementById('dc-texto').style.borderColor='#e05555'; return; }
-  document.getElementById('dc-texto').style.borderColor='#e0e0d8';
-  const cat=document.getElementById('dc-cat').value;
-  const resp=document.getElementById('dc-resp').value;
-  const d=getDecisao(decisaoPaisAtual);
-  const list=decisaoTipo==='pro'?d.pros:d.contras;
-  if(decisaoEditId){
-    const item=list.find(x=>x.id===decisaoEditId);
-    if(item){ item.texto=texto; item.cat=cat; item.resp=resp; }
-  } else {
-    list.push({ id:uid(), texto, cat, resp, ts:Date.now() });
-  }
-  setDecisaoState(decisaoPaisAtual, d);
-  closeDecisaoModal();
-  renderDecisao();
-  await persist();
+const texto=document.getElementById(‘dc-texto’).value.trim();
+if(!texto){ document.getElementById(‘dc-texto’).style.borderColor=’#e05555’; return; }
+document.getElementById(‘dc-texto’).style.borderColor=’#e0e0d8’;
+const cat=document.getElementById(‘dc-cat’).value;
+const resp=document.getElementById(‘dc-resp’).value;
+const peso=parseInt(document.getElementById(‘dc-peso’).value)||3;
+const d=getDecisao(decisaoPaisAtual);
+const list=decisaoTipo===‘pro’?d.pros:d.contras;
+if(decisaoEditId){
+const item=list.find(x=>x.id===decisaoEditId);
+if(item){ item.texto=texto; item.cat=cat; item.resp=resp; item.peso=peso; }
+} else {
+list.push({ id:uid(), texto, cat, resp, peso, ts:Date.now() });
+}
+setDecisaoState(decisaoPaisAtual, d);
+closeDecisaoModal();
+renderDecisao();
+await persist();
 }
 
 async function delDcCard(tipo, id){
-  const d=getDecisao(decisaoPaisAtual);
-  const list=tipo==='pro'?d.pros:d.contras;
-  const idx=list.findIndex(x=>x.id===id);
-  if(idx===-1) return;
-  list.splice(idx,1);
-  setDecisaoState(decisaoPaisAtual, d);
-  renderDecisao();
-  await persist();
+const d=getDecisao(decisaoPaisAtual);
+const list=tipo===‘pro’?d.pros:d.contras;
+const idx=list.findIndex(x=>x.id===id);
+if(idx===-1) return;
+list.splice(idx,1);
+setDecisaoState(decisaoPaisAtual, d);
+renderDecisao();
+await persist();
 }
 
 // ── MOVER CARD ────────────────────────────────────
 let moveCardId=null, moveCardSec=null;
 
 function openMoveModal(sec, id){
-  moveCardSec=sec; moveCardId=id;
-  const c=(state[sec]||[]).find(x=>x.id===id);
-  document.getElementById('move-card-title').textContent = c?.title || '';
-  const opts = SECTIONS.filter(s=>s!==sec).map(s=>`
-    <button onclick="moveCard('${s}')" style="text-align:left;padding:10px 14px;border:1px solid #e8e8e3;border-radius:8px;background:#fff;cursor:pointer;font-size:13px;font-family:inherit;width:100%;transition:background .12s"
-      onmouseover="this.style.background='#f5f5f0'" onmouseout="this.style.background='#fff'">
-      ${LABELS[s]}
-    </button>`).join('');
-  document.getElementById('move-options').innerHTML=opts;
-  document.getElementById('move-overlay').classList.add('open');
+moveCardSec=sec; moveCardId=id;
+const c=(state[sec]||[]).find(x=>x.id===id);
+document.getElementById(‘move-card-title’).textContent = c?.title || ‘’;
+const opts = SECTIONS.filter(s=>s!==sec).map(s=>` <button onclick="moveCard('${s}')" style="text-align:left;padding:10px 14px;border:1px solid #e8e8e3;border-radius:8px;background:#fff;cursor:pointer;font-size:13px;font-family:inherit;width:100%;transition:background .12s" onmouseover="this.style.background='#f5f5f0'" onmouseout="this.style.background='#fff'"> ${LABELS[s]} </button>`).join(’’);
+document.getElementById(‘move-options’).innerHTML=opts;
+document.getElementById(‘move-overlay’).classList.add(‘open’);
 }
 
 function closeMoveModal(){
-  document.getElementById('move-overlay').classList.remove('open');
-  moveCardId=null; moveCardSec=null;
+document.getElementById(‘move-overlay’).classList.remove(‘open’);
+moveCardId=null; moveCardSec=null;
 }
 
 async function moveCard(destSec){
-  if(!moveCardId||!moveCardSec) return;
-  const cards = state[moveCardSec]||[];
-  const idx = cards.findIndex(x=>x.id===moveCardId);
-  if(idx===-1) return;
-  const [card] = cards.splice(idx,1);
-  if(!state[destSec]) state[destSec]=[];
-  state[destSec].push(card);
-  closeMoveModal();
-  // navega pra aba de destino
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-  const destTab = document.querySelector(`.tab[data-tab="${destSec}"]`);
-  if(destTab) destTab.classList.add('active');
-  curTab=destSec;
-  renderAll();
-  await persist();
-  showToast(`Card movido para ${LABELS[destSec]}`);
+if(!moveCardId||!moveCardSec) return;
+const cards = state[moveCardSec]||[];
+const idx = cards.findIndex(x=>x.id===moveCardId);
+if(idx===-1) return;
+const [card] = cards.splice(idx,1);
+if(!state[destSec]) state[destSec]=[];
+state[destSec].push(card);
+closeMoveModal();
+// navega pra aba de destino
+document.querySelectorAll(’.tab’).forEach(t=>t.classList.remove(‘active’));
+const destTab = document.querySelector(`.tab[data-tab="${destSec}"]`);
+if(destTab) destTab.classList.add(‘active’);
+curTab=destSec;
+renderAll();
+await persist();
+showToast(`Card movido para ${LABELS[destSec]}`);
 }
 
-document.getElementById('move-overlay').addEventListener('click',e=>{
-  if(e.target===document.getElementById('move-overlay')) closeMoveModal();
+document.getElementById(‘move-overlay’).addEventListener(‘click’,e=>{
+if(e.target===document.getElementById(‘move-overlay’)) closeMoveModal();
 });
 
 function showToast(msg){
-  const t=document.getElementById('toast');
-  t.textContent=msg; t.style.display='block';
-  setTimeout(()=>t.style.display='none',3500);
+const t=document.getElementById(‘toast’);
+t.textContent=msg; t.style.display=‘block’;
+setTimeout(()=>t.style.display=‘none’,3500);
 }
 </script>
+
 </body>
 </html>
