@@ -1130,6 +1130,19 @@
         }
       ],
       "status": "vai"
+    },
+    "Albânia": {
+      "pros": [],
+      "contras": [
+        {
+          "id": "mrfpz8shwdh7z1surhq",
+          "texto": "Não tem Uber",
+          "cat": "Locomoção",
+          "resp": "Samy",
+          "ts": 1783735360577
+        }
+      ],
+      "status": ""
     }
   }
 }
