@@ -1132,7 +1132,15 @@
       "status": "vai"
     },
     "Albânia": {
-      "pros": [],
+      "pros": [
+        {
+          "id": "mrgvj44ozohon03hxu",
+          "texto": "Geograficamente bem localizado (Eurotrip)",
+          "cat": "Financeira",
+          "resp": "Rodrigo",
+          "ts": 1783805151913
+        }
+      ],
       "contras": [
         {
           "id": "mrfpz8shwdh7z1surhq",
