@@ -826,7 +826,7 @@
       "answer": "",
       "comment": "Quais documentos pedir, leis, etc.",
       "resp": "",
-      "prio": "",
+      "prio": "alta",
       "tipo": "info",
       "pais": "Todos",
       "done": false,
@@ -909,8 +909,7 @@
       "custo": "R$ 12.000 - 15.000",
       "cotacao": "1 GBP = R$ 7,00",
       "obs": "",
-      "id": "mr13e9b4rce1uxb285",
-      "iso": "es"
+      "id": "mr13e9b4rce1uxb285"
     },
     {
       "nome": "Irlanda",
@@ -1020,7 +1019,7 @@
       "cotacao": "1 IDR ≈ R$ 0,00034",
       "obs": "",
       "id": "mr13e9b47196bf4l8d",
-      "iso": "id"
+      "iso": "in"
     },
     {
       "nome": "China",
