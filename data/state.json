@@ -1159,7 +1159,8 @@
           "texto": "Não tem Uber",
           "cat": "Locomoção",
           "resp": "Samy",
-          "ts": 1783735360577
+          "ts": 1783735360577,
+          "peso": 4
         }
       ],
       "status": ""
