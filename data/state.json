@@ -1151,6 +1151,14 @@
           "resp": "Rodrigo",
           "ts": 1783805151913,
           "peso": 4
+        },
+        {
+          "id": "mrhzlncwvqqfzundiiq",
+          "texto": "Moradia mais em conta",
+          "cat": "Financeira",
+          "resp": "Rodrigo",
+          "peso": 5,
+          "ts": 1783872454784
         }
       ],
       "contras": [
