@@ -164,7 +164,10 @@
       "done": false,
       "ts": 1782681651538,
       "tipo": "acao",
-      "pais": "Itália"
+      "pais": "Itália",
+      "approvals": {
+        "Rodrigo": true
+      }
     },
     {
       "id": "mqyaojbnz4urhf7u7bq",
