@@ -1216,6 +1216,20 @@
         }
       ],
       "status": ""
+    },
+    "Tailândia": {
+      "pros": [
+        {
+          "id": "mri03vakh34pb25c4rp",
+          "texto": "Comida em conta",
+          "cat": "",
+          "resp": "Rodrigo",
+          "peso": 5,
+          "ts": 1783873304876
+        }
+      ],
+      "contras": [],
+      "status": ""
     }
   }
 }
