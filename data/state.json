@@ -899,7 +899,8 @@
       "custo": "R$ 10.800",
       "cotacao": "1 EUR = R$ 6,00",
       "obs": "",
-      "id": "mr13e9b40055iy5umdhab"
+      "id": "mr13e9b40055iy5umdhab",
+      "iso": "it"
     },
     {
       "nome": "Escócia (UK)",
@@ -925,7 +926,7 @@
       "cotacao": "1 EUR = R$ 6,00",
       "obs": "",
       "id": "mr13e9b4nqqa4d453fg",
-      "iso": "ie"
+      "iso": "ir"
     },
     {
       "nome": "Geórgia",
