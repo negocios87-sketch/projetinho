@@ -1290,6 +1290,14 @@
           "resp": "Rodrigo",
           "peso": 3,
           "ts": 1783985071091
+        },
+        {
+          "id": "mrjuo6qet4kcl9000f",
+          "texto": "Internet lenta fora dos centros",
+          "cat": "Locomoção",
+          "resp": "Rodrigo",
+          "peso": 3,
+          "ts": 1783985107478
         }
       ],
       "status": ""
