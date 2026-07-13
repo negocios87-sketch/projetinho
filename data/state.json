@@ -905,7 +905,8 @@
       "cotacao": "1 EUR = R$ 6,00",
       "obs": "",
       "id": "mr13e9b40055iy5umdhab",
-      "iso": "it"
+      "iso": "it",
+      "decisao": "analise"
     },
     {
       "nome": "Escócia (UK)",
@@ -1308,7 +1309,7 @@
           "ts": 1783985125102
         }
       ],
-      "status": ""
+      "status": "analise"
     }
   }
 }
