@@ -1238,6 +1238,20 @@
       ],
       "contras": [],
       "status": ""
+    },
+    "Itália": {
+      "pros": [
+        {
+          "id": "mrjukrn53xxaoo3fj1o",
+          "texto": "Sul da Italia - Custo bem abaixo",
+          "cat": "Financeira",
+          "resp": "Rodrigo",
+          "peso": 5,
+          "ts": 1783984947954
+        }
+      ],
+      "contras": [],
+      "status": ""
     }
   }
 }
