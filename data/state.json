@@ -1298,6 +1298,14 @@
           "resp": "Rodrigo",
           "peso": 3,
           "ts": 1783985107478
+        },
+        {
+          "id": "mrjuokbylqkk00wsmi",
+          "texto": "Burocracia italiana posta qualquer coisa",
+          "cat": "Burocracia",
+          "resp": "Rodrigo",
+          "peso": 2,
+          "ts": 1783985125102
         }
       ],
       "status": ""
