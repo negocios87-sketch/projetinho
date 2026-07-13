@@ -1282,6 +1282,14 @@
           "resp": "Rodrigo",
           "peso": 5,
           "ts": 1783985054636
+        },
+        {
+          "id": "mrjunennr352cxpfuxk",
+          "texto": "Barreira de Idioma",
+          "cat": "Cultura",
+          "resp": "Rodrigo",
+          "peso": 3,
+          "ts": 1783985071091
         }
       ],
       "status": ""
