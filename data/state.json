@@ -1248,6 +1248,14 @@
           "resp": "Rodrigo",
           "peso": 5,
           "ts": 1783984947954
+        },
+        {
+          "id": "mrjuldudpxmfn0qwhb",
+          "texto": "Clima mediterrâneo litorâneo e verão longo",
+          "cat": "Clima",
+          "resp": "Rodrigo",
+          "peso": 4,
+          "ts": 1783984976725
         }
       ],
       "contras": [],
