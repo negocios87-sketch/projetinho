@@ -893,7 +893,7 @@ window.onunhandledrejection=function(e){ dbg('PROMISE ERRO: '+(e.reason?.message
 
 function flagImg(p, size=20){
   const iso = p?.iso || (p?.flag?.length <= 4 ? null : null);
-  if(!iso) return '<span style="font-size:'+size+'px">🏳️</span>';
+  if(!iso) return '<span style="font-size:'+size+'px">\u{1F3F3}️</span>';
   return `<img src="https://flagcdn.com/w40/${iso}.png" width="${size}" height="${Math.round(size*0.67)}" style="border-radius:2px;object-fit:cover;vertical-align:middle" alt="${esc(p.nome||'')}" onerror="this.style.display='none'">`;
 }
 
@@ -926,7 +926,7 @@ function tryLogin(){
     dbg('API ERRO: '+e.message);
     setSyncBadge('ok','● Sync');
     const err=document.getElementById('lerr');
-    err.textContent=e.message.includes('401')?'Senha errada, meu chapa. 🙃':'Erro de conexão. Tenta de novo.';
+    err.textContent=e.message.includes('401')?'Senha errada, meu chapa. \u{1F643}':'Erro de conexão. Tenta de novo.';
     err.style.display='block';
     setTimeout(()=>err.style.display='none',3000);
   });
@@ -1004,7 +1004,7 @@ function updateCountdown(){
   const hoje=new Date(); hoje.setHours(0,0,0,0);
   const data=new Date(meta.partida+'T00:00:00');
   const diff=Math.ceil((data-hoje)/(1000*60*60*24));
-  const txt=diff>0?diff:diff===0?'🛫':'✓';
+  const txt=diff>0?diff:diff===0?'\u{1F6EB}':'✓';
   daysEl.textContent=txt; cbDays.textContent=txt;
   const destTxt=meta.destino?`para ${meta.destino}`:'para a viagem';
   destEl.textContent=destTxt;
@@ -1091,7 +1091,7 @@ function populatePaisSelects(){
   const mSel=document.getElementById('m-pais');
   if(mSel){
     const cur=mSel.value;
-    mSel.innerHTML='<option value="">— Nenhum —</option><option value="Todos">🌍 Todos os países</option>'
+    mSel.innerHTML='<option value="">— Nenhum —</option><option value="Todos">\u{1F30D} Todos os países</option>'
       + paises.map(p=>`<option value="${esc(p.nome)}">${p.nome}</option>`).join('');
     mSel.value=cur;
   }
@@ -1099,7 +1099,7 @@ function populatePaisSelects(){
   const fSel=document.getElementById('f-pais-select');
   if(fSel){
     const cur=fSel.value;
-    fSel.innerHTML='<option value="">🌍 Filtrar por país...</option>'
+    fSel.innerHTML='<option value="">\u{1F30D} Filtrar por país...</option>'
       + paises.map(p=>`<option value="${esc(p.nome)}">${p.nome}</option>`).join('');
     fSel.value=cur;
   }
@@ -1219,7 +1219,7 @@ function renderCards(){
   if(!cards.length){
     grid.innerHTML='';
     empty.style.display='block';
-    empty.textContent=isDM?'Nenhuma merda registrada. 🍀':'Nenhum card ainda. Cria o primeiro! 👆';
+    empty.textContent=isDM?'Nenhuma merda registrada. \u{1F340}':'Nenhum card ainda. Cria o primeiro! \u{1F446}';
   } else {
     empty.style.display='none';
     grid.innerHTML=cards.map(c=>cardHTML(c,curTab)).join('');
@@ -1269,7 +1269,7 @@ function renderPaises(){
     const dec = state.decisao && state.decisao[p.nome];
     const decBadge = dec?.status==='vai'    ? '<span class="pt-badge" style="background:#e8f5e9;color:#2e7d32;margin-left:6px">✅ Vamos</span>'
                    : dec?.status==='nao'    ? '<span class="pt-badge" style="background:#fff0f0;color:#e05555;margin-left:6px">❌ Descartado</span>'
-                   : dec?.status==='analise'? '<span class="pt-badge" style="background:#fff8e1;color:#f57f17;margin-left:6px">🤔 Em análise</span>' : '';
+                   : dec?.status==='analise'? '<span class="pt-badge" style="background:#fff8e1;color:#f57f17;margin-left:6px">\u{1F914} Em análise</span>' : '';
     return `<tr>
       <td><div class="pt-pais">${flagImg(p,22)} ${esc(p.nome)}${decBadge}</div></td>
       <td><span class="pt-badge ${p.schengen==='sim'?'sim':'nao'}">${p.schengen==='sim'?'Sim':'Não'}</span></td>
@@ -1283,7 +1283,7 @@ function renderPaises(){
       <td>
         <div class="pt-actions">
           <button onclick="openPaisModal('${p.id}')" title="Editar">✏️</button>
-          <button class="pt-del" onclick="delPais('${p.id}')" title="Excluir">🗑️</button>
+          <button class="pt-del" onclick="delPais('${p.id}')" title="Excluir">\u{1F5D1}️</button>
         </div>
       </td>
     </tr>`;
@@ -1306,7 +1306,7 @@ function openPaisModal(id=null){
     document.getElementById('p-cotacao').value=p.cotacao||'';
     document.getElementById('p-obs').value=p.obs||'';
   } else {
-    document.getElementById('p-title').textContent='🌍 Novo país';
+    document.getElementById('p-title').textContent='\u{1F30D} Novo país';
     ['p-nome','p-iso','p-tempo','p-visto','p-custo','p-cotacao','p-obs'].forEach(id=>document.getElementById(id).value='');
     document.getElementById('p-schengen').value='nao';
     document.getElementById('p-imigracao').value='';
@@ -1396,7 +1396,7 @@ function cardHTML(c,sec){
   const myApproval = approvals[curUser];
   const bothApproved = approvals['Rodrigo'] && approvals['Samy'];
   const ans = c.answer ? `<div class="c-ans">${esc(c.answer)}</div>` : `<div class="c-ans empty">Sem resposta ainda</div>`;
-  const comment = c.comment ? `<div class="c-comment">💬 ${esc(c.comment)}</div>` : '';
+  const comment = c.comment ? `<div class="c-comment">\u{1F4AC} ${esc(c.comment)}</div>` : '';
 
   // chip de responsável
   let respChip = '';
@@ -1406,10 +1406,10 @@ function cardHTML(c,sec){
     respChip = `<span class="resp-chip">${avatarHTML(c.resp,16)} ${esc(c.resp)}</span>`;
   }
 
-  const prioBadge = c.prio ? `<span class="prio-badge">${c.prio==='alta'?'🔴 Alta':c.prio==='media'?'🟡 Média':'🟢 Baixa'}</span>` : '';
+  const prioBadge = c.prio ? `<span class="prio-badge">${c.prio==='alta'?'\u{1F534} Alta':c.prio==='media'?'\u{1F7E1} Média':'\u{1F7E2} Baixa'}</span>` : '';
   const tipoBadge = c.tipo ? `<span class="tag-chip ${c.tipo==='acao'?'tag-acao':'tag-info'}">${c.tipo==='acao'?'⚡ Ação':'ℹ️ Info'}</span>` : '';
   const paisInfo = c.pais ? findPais(c.pais) : null;
-  const paisBadge = c.pais ? `<span class="tag-chip tag-pais">${c.pais==='Todos'?'🌍':flagImg(paisInfo,14)} ${esc(c.pais)}</span>` : '';
+  const paisBadge = c.pais ? `<span class="tag-chip tag-pais">${c.pais==='Todos'?'\u{1F30D}':flagImg(paisInfo,14)} ${esc(c.pais)}</span>` : '';
   const meta = (prioBadge||respChip||tipoBadge||paisBadge) ? `<div class="c-meta">${prioBadge}${tipoBadge}${paisBadge}${respChip}</div>` : '';
   const lockTip = isOwner ? '' : 'Apenas '+esc(c.resp||'o responsável')+' pode editar';
 
@@ -1461,10 +1461,10 @@ function cardHTML(c,sec){
   const menuItems = isOwner
     ? `<div class="ci" onclick="closeCtx();openModal('${sec}','${c.id}')">✏️ Editar</div>
        <div class="ci" onclick="closeCtx();openMoveModal('${sec}','${c.id}')">↪️ Mover para...</div>
-       <div class="ci danger" onclick="closeCtx();delCard('${sec}','${c.id}')">🗑️ Excluir</div>`
+       <div class="ci danger" onclick="closeCtx();delCard('${sec}','${c.id}')">\u{1F5D1}️ Excluir</div>`
     : `<div class="ci disabled" title="${lockTip}">✏️ Editar</div>
        <div class="ci" onclick="closeCtx();openMoveModal('${sec}','${c.id}')">↪️ Mover para...</div>
-       <div class="ci disabled" title="${lockTip}">🗑️ Excluir</div>`;
+       <div class="ci disabled" title="${lockTip}">\u{1F5D1}️ Excluir</div>`;
 
   const msgs = (c.forum||[]);
   const msgCount = msgs.length;
@@ -1483,7 +1483,7 @@ function cardHTML(c,sec){
 
   const forum = `<div class="forum-wrap">
     <button class="forum-toggle" onclick="toggleForum('${c.id}')">
-      💬 ${msgCount ? msgCount+' comentário'+(msgCount>1?'s':'') : 'Comentar'}
+      \u{1F4AC} ${msgCount ? msgCount+' comentário'+(msgCount>1?'s':'') : 'Comentar'}
     </button>
     <div class="forum-body" id="forum-${c.id}">
       <div class="forum-msgs" id="forum-msgs-${c.id}">${msgsHTML}</div>
@@ -1662,7 +1662,7 @@ a.href = url;
 a.download = `viagem-backup-${date}.json`;
 a.click();
 URL.revokeObjectURL(url);
-showToast(‘Backup salvo! 💾’);
+showToast(‘Backup salvo! \u{1F4BE}’);
 }
 
 async function importBackup(event){
@@ -1756,9 +1756,9 @@ document.getElementById(‘placar-bar-pro’).style.width = pctPro+’%’;
 
 const resultEl = document.getElementById(‘placar-result’);
 if(!total){ resultEl.textContent=’’; }
-else if(ptsPro > ptsContra){ resultEl.innerHTML=`<span style="color:#2e7d32">👍 Prós lideram por ${ptsPro - ptsContra} pontos</span>`; }
-else if(ptsContra > ptsPro){ resultEl.innerHTML=`<span style="color:#e05555">👎 Contras lideram por ${ptsContra - ptsPro} pontos</span>`; }
-else { resultEl.innerHTML=`<span style="color:#f57f17">🤔 Empate técnico!</span>`; }
+else if(ptsPro > ptsContra){ resultEl.innerHTML=`<span style="color:#2e7d32">\u{1F44D} Prós lideram por ${ptsPro - ptsContra} pontos</span>`; }
+else if(ptsContra > ptsPro){ resultEl.innerHTML=`<span style="color:#e05555">\u{1F44E} Contras lideram por ${ptsContra - ptsPro} pontos</span>`; }
+else { resultEl.innerHTML=`<span style="color:#f57f17">\u{1F914} Empate técnico!</span>`; }
 
 // listas
 document.getElementById(‘pros-list’).innerHTML    = renderDcList(pros, ‘pro’);
