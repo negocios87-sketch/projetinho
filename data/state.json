@@ -466,6 +466,18 @@
       "ts": 1782848057281,
       "tipo": "info",
       "pais": "Todos"
+    },
+    {
+      "id": "mrmxd94ve7wy8ymwe5",
+      "title": "Vacina",
+      "answer": "",
+      "comment": "Febre amarela? precisa?",
+      "resp": "Rodrigo",
+      "prio": "media",
+      "tipo": "acao",
+      "pais": "Tailândia",
+      "done": false,
+      "ts": 1784171034751
     }
   ],
   "documentos": [
