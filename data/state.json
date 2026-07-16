@@ -476,7 +476,7 @@
       "prio": "media",
       "tipo": "acao",
       "pais": "Tailândia",
-      "done": false,
+      "done": true,
       "ts": 1784171034751
     }
   ],
