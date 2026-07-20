@@ -594,7 +594,7 @@
     {
       "id": "mr0xjwg7fh89o3ebo84",
       "title": "Deicidir País inicial",
-      "answer": "Rodrigo: Malta",
+      "answer": "Tailândia",
       "comment": "Decidir também o Tempo",
       "resp": "Ambos",
       "prio": "alta",
@@ -622,7 +622,7 @@
         "Samy": true
       },
       "tipo": "acao",
-      "pais": "Itália"
+      "pais": "Tailândia"
     },
     {
       "id": "mr2h32d2e5wzgckz3yi",
@@ -1337,6 +1337,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Samy",
+      "acao": "editou",
+      "descricao": "editou \"Deicidir País inicial\" em Roteiro",
+      "ts": 1784554741131
+    },
     {
       "user": "Rodrigo",
       "acao": "editou",
