@@ -490,6 +490,18 @@
       "pais": "",
       "done": false,
       "ts": 1784171111161
+    },
+    {
+      "id": "mrt9xyricf6bm6bdno8",
+      "title": "Marcar consulta no Ambulatório do Viajante",
+      "answer": "",
+      "comment": "Agendar no Hospital das Clínicas",
+      "resp": "Ambos",
+      "prio": "media",
+      "tipo": "acao",
+      "pais": "Brasil",
+      "done": false,
+      "ts": 1784554953536
     }
   ],
   "documentos": [
@@ -1342,6 +1354,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Samy",
+      "acao": "criou",
+      "descricao": "criou \"Marcar consulta no Ambulatório do Viajante\" em Saude",
+      "ts": 1784554953536
+    },
     {
       "user": "Samy",
       "acao": "aprovou",
