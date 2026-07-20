@@ -610,7 +610,7 @@
       "comment": "Decidir também o Tempo",
       "resp": "Ambos",
       "prio": "alta",
-      "done": false,
+      "done": true,
       "ts": 1782841089031,
       "forum": [
         {
@@ -640,7 +640,7 @@
         }
       ],
       "approvals": {
-        "Rodrigo": false,
+        "Rodrigo": true,
         "Samy": true
       },
       "tipo": "acao",
@@ -1359,6 +1359,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Rodrigo",
+      "acao": "concluiu",
+      "descricao": "aprovou \"Deicidir País inicial\" — card concluido",
+      "ts": 1784579069363
+    },
     {
       "user": "Samy",
       "acao": "criou",
