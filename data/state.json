@@ -632,6 +632,11 @@
           "autor": "Samy",
           "texto": "Tailândia!",
           "ts": 1784554763050
+        },
+        {
+          "autor": "Rodrigo",
+          "texto": "Tailandia!",
+          "ts": 1784579064333
         }
       ],
       "approvals": {
