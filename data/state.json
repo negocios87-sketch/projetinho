@@ -624,7 +624,7 @@
       ],
       "approvals": {
         "Rodrigo": false,
-        "Samy": true
+        "Samy": false
       },
       "tipo": "acao",
       "pais": "Tailândia"
@@ -1342,6 +1342,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Samy",
+      "acao": "aprovou",
+      "descricao": "aprovou sua parte em \"Deicidir País inicial\"",
+      "ts": 1784554764878
+    },
     {
       "user": "Samy",
       "acao": "editou",
