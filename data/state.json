@@ -801,6 +801,18 @@
           "ts": 1782876732911
         }
       ]
+    },
+    {
+      "id": "mru5mtduu53h5i93mz",
+      "title": "Aprender a usar o hashi",
+      "answer": "",
+      "comment": "Necessário, né",
+      "resp": "Samy",
+      "prio": "baixa",
+      "tipo": "acao",
+      "pais": "Brasil",
+      "done": false,
+      "ts": 1784608181058
     }
   ],
   "deu-merda": [
@@ -1364,6 +1376,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Samy",
+      "acao": "criou",
+      "descricao": "criou \"Aprender a usar o hashi\" em Brasil",
+      "ts": 1784608181058
+    },
     {
       "user": "Rodrigo",
       "acao": "concluiu",
