@@ -820,6 +820,18 @@
           "ts": 1784663027016
         }
       ]
+    },
+    {
+      "id": "ms2g1q5lrd7hrgcpqb",
+      "title": "Aprender andar de bicicleta",
+      "answer": "",
+      "comment": "",
+      "resp": "Ambos",
+      "prio": "alta",
+      "tipo": "acao",
+      "pais": "Albânia",
+      "done": false,
+      "ts": 1785109402281
     }
   ],
   "deu-merda": [
@@ -1383,6 +1395,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Rodrigo",
+      "acao": "criou",
+      "descricao": "criou \"Aprender andar de bicicleta\" em Brasil",
+      "ts": 1785109402282
+    },
     {
       "user": "Samy",
       "acao": "criou",
