@@ -923,6 +923,18 @@
       "pais": "Todos",
       "done": false,
       "ts": 1783872829588
+    },
+    {
+      "id": "ms4yxr6rk5toycw4uv",
+      "title": "Cancelamento do AirBnB",
+      "answer": "",
+      "comment": "Ter sempre uma lista com algumas opções de hotel para emergência?",
+      "resp": "",
+      "prio": "",
+      "tipo": "",
+      "pais": "Todos",
+      "done": false,
+      "ts": 1785262062051
     }
   ],
   "_meta": {
@@ -1402,6 +1414,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Samy",
+      "acao": "criou",
+      "descricao": "criou \"Cancelamento do AirBnB\" em Deu Merda",
+      "ts": 1785262062051
+    },
     {
       "user": "Rodrigo",
       "acao": "criou",
