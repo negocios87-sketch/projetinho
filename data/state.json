@@ -93,6 +93,18 @@
       "ts": 1782847902832,
       "tipo": "info",
       "pais": "Todos"
+    },
+    {
+      "id": "ms6kkmzx3miynkjxl3o",
+      "title": "Pesquisar sobre sites de compra de milhas",
+      "answer": "",
+      "comment": "Ver se vale a pena e o quão mais barato pode sair",
+      "resp": "",
+      "prio": "alta",
+      "tipo": "info",
+      "pais": "Todos",
+      "done": false,
+      "ts": 1785358867821
     }
   ],
   "financeiro": [
@@ -1426,6 +1438,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Samy",
+      "acao": "criou",
+      "descricao": "criou \"Pesquisar sobre sites de compra de milhas\" em Viagem",
+      "ts": 1785358867821
+    },
     {
       "user": "Samy",
       "acao": "criou",
