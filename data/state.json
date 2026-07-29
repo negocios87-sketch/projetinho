@@ -1347,6 +1347,14 @@
           "resp": "Samy",
           "ts": 1783735360577,
           "peso": 4
+        },
+        {
+          "id": "ms6nu9ricl52ec62u6p",
+          "texto": "Não falamos a lingua",
+          "cat": "",
+          "resp": "Samy",
+          "peso": 4,
+          "ts": 1785364356078
         }
       ],
       "status": ""
@@ -1446,6 +1454,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Samy",
+      "acao": "adicionou",
+      "descricao": "adicionou contra em Albânia: \"Não falamos a lingua\"",
+      "ts": 1785364356078
+    },
     {
       "user": "Samy",
       "acao": "adicionou",
