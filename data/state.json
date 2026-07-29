@@ -13,7 +13,14 @@
       "pais": "Tailândia",
       "approvals": {
         "Rodrigo": false
-      }
+      },
+      "forum": [
+        {
+          "autor": "Samy",
+          "texto": "Nos sites só dá para visualizar com até um ano de antecedência, então temos que ver a partir de novembro desse ano",
+          "ts": 1785357381970
+        }
+      ]
     },
     {
       "id": "mqyaqmksvhy4p6ihwv",
