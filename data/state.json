@@ -1335,7 +1335,7 @@
           "texto": "Praias",
           "cat": "Clima",
           "resp": "Samy",
-          "peso": 4,
+          "peso": 3,
           "ts": 1785364341678
         }
       ],
@@ -1454,6 +1454,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Samy",
+      "acao": "editou",
+      "descricao": "editou pro em Albânia: \"Praias\"",
+      "ts": 1785364408492
+    },
     {
       "user": "Samy",
       "acao": "editou",
