@@ -1457,6 +1457,12 @@
     {
       "user": "Samy",
       "acao": "editou",
+      "descricao": "editou contra em Albânia: \"Não falamos a lingua\"",
+      "ts": 1785364369437
+    },
+    {
+      "user": "Samy",
+      "acao": "editou",
       "descricao": "editou contra em Albânia: \"Não tem Uber\"",
       "ts": 1785364361060
     },
