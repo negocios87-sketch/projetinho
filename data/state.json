@@ -49,6 +49,11 @@
           "autor": "Rodrigo",
           "texto": "Italia",
           "ts": 1783349950234
+        },
+        {
+          "autor": "Samy",
+          "texto": "nova data oficial: 12/11/2027",
+          "ts": 1785357142173
         }
       ],
       "tipo": "info",
