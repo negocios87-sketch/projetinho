@@ -1346,7 +1346,7 @@
           "cat": "Locomoção",
           "resp": "Samy",
           "ts": 1783735360577,
-          "peso": 4
+          "peso": 3
         },
         {
           "id": "ms6nu9ricl52ec62u6p",
@@ -1454,6 +1454,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Samy",
+      "acao": "editou",
+      "descricao": "editou contra em Albânia: \"Não tem Uber\"",
+      "ts": 1785364361060
+    },
     {
       "user": "Samy",
       "acao": "adicionou",
