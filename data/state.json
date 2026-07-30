@@ -869,12 +869,14 @@
     {
       "id": "mqyat9qbf84v7g5fhp",
       "title": "Não conseguir o mesmo anticoncepcional",
-      "answer": "",
+      "answer": "Vou levar o suficiente para 9 meses (3 caixas) junto com uma receita em inglês. Em caso de imprevistos, posso comprar na Tailândia, Vietnã ou Albânia o Yasmin, que tem o mesmo composto do meu atual.",
       "comment": "",
       "resp": "Samy",
-      "prio": "",
+      "prio": "media",
       "done": false,
-      "ts": 1782681962627
+      "ts": 1782681962627,
+      "tipo": "info",
+      "pais": "Todos"
     },
     {
       "id": "mr11uwkkowp5an8idkb",
@@ -1454,6 +1456,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Samy",
+      "acao": "editou",
+      "descricao": "editou \"Não conseguir o mesmo anticoncepcional\" em Deu Merda",
+      "ts": 1785438585922
+    },
     {
       "user": "Samy",
       "acao": "editou",
