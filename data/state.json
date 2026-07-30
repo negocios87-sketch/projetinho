@@ -873,7 +873,7 @@
       "comment": "",
       "resp": "Samy",
       "prio": "media",
-      "done": false,
+      "done": true,
       "ts": 1782681962627,
       "tipo": "info",
       "pais": "Todos"
@@ -1456,6 +1456,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Samy",
+      "acao": "concluiu",
+      "descricao": "concluiu \"Não conseguir o mesmo anticoncepcional\" em Deu Merda",
+      "ts": 1785438591780
+    },
     {
       "user": "Samy",
       "acao": "editou",
