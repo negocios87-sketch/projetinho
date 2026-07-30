@@ -868,6 +868,18 @@
           "ts": 1785109421048
         }
       ]
+    },
+    {
+      "id": "ms7w4wdvbk43pmqbtv",
+      "title": "Pensar onde o Rodrigo vai morar de agosto de 2027 até novembro de 2027",
+      "answer": "",
+      "comment": "",
+      "resp": "",
+      "prio": "alta",
+      "tipo": "acao",
+      "pais": "Brasil",
+      "done": false,
+      "ts": 1785438755059
     }
   ],
   "deu-merda": [
@@ -1461,6 +1473,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Samy",
+      "acao": "criou",
+      "descricao": "criou \"Pensar onde o Rodrigo vai morar de agosto de 2027 até novembro de 2027\" em Brasil",
+      "ts": 1785438755059
+    },
     {
       "user": "Samy",
       "acao": "concluiu",
