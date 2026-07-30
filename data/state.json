@@ -816,7 +816,7 @@
       "prio": "",
       "tipo": "acao",
       "pais": "Todos",
-      "done": false,
+      "done": true,
       "ts": 1782876691352,
       "forum": [
         {
@@ -1461,6 +1461,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Samy",
+      "acao": "concluiu",
+      "descricao": "concluiu \"Procurar notebook\" em Brasil",
+      "ts": 1785438674615
+    },
     {
       "user": "Samy",
       "acao": "concluiu",
