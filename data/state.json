@@ -115,12 +115,13 @@
       "comment": "",
       "resp": "Ambos",
       "prio": "alta",
-      "done": false,
+      "done": true,
       "ts": 1782681467162,
       "tipo": "acao",
       "pais": "Brasil",
       "approvals": {
-        "Rodrigo": true
+        "Rodrigo": true,
+        "Samy": true
       },
       "forum": [
         {
@@ -1473,6 +1474,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Samy",
+      "acao": "concluiu",
+      "descricao": "aprovou \"Juntar R$ 1000,00\" — card concluido",
+      "ts": 1785523358196
+    },
     {
       "user": "Samy",
       "acao": "criou",
