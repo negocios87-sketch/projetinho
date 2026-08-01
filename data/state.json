@@ -881,6 +881,18 @@
       "pais": "Brasil",
       "done": false,
       "ts": 1785438755059
+    },
+    {
+      "id": "msapug0awu4ld1wlz68",
+      "title": "Ir no dentista",
+      "answer": "",
+      "comment": "",
+      "resp": "Ambos",
+      "prio": "media",
+      "tipo": "acao",
+      "pais": "Brasil",
+      "done": false,
+      "ts": 1785609588106
     }
   ],
   "deu-merda": [
@@ -1474,6 +1486,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Rodrigo",
+      "acao": "criou",
+      "descricao": "criou \"Ir no dentista\" em Brasil",
+      "ts": 1785609588106
+    },
     {
       "user": "Samy",
       "acao": "concluiu",
