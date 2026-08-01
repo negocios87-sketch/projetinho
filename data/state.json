@@ -893,6 +893,18 @@
       "pais": "Brasil",
       "done": false,
       "ts": 1785609588106
+    },
+    {
+      "id": "msapwbe6l3b3j5ftct",
+      "title": "Pesquisar e comprar Power bank",
+      "answer": "",
+      "comment": "Tem alguns que não podem no avião",
+      "resp": "Ambos",
+      "prio": "media",
+      "tipo": "acao",
+      "pais": "Brasil",
+      "done": false,
+      "ts": 1785609675438
     }
   ],
   "deu-merda": [
@@ -1486,6 +1498,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Rodrigo",
+      "acao": "criou",
+      "descricao": "criou \"Pesquisar e comprar Power bank\" em Brasil",
+      "ts": 1785609675438
+    },
     {
       "user": "Rodrigo",
       "acao": "criou",
