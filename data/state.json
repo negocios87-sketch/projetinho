@@ -515,6 +515,18 @@
       "pais": "Brasil",
       "done": false,
       "ts": 1784554953536
+    },
+    {
+      "id": "msvttj5s6gfmdba1e4k",
+      "title": "Pesquisar sistema de saúde",
+      "answer": "",
+      "comment": "Como funciona para turistas",
+      "resp": "Ambos",
+      "prio": "media",
+      "tipo": "info",
+      "pais": "Tailândia",
+      "done": false,
+      "ts": 1786886053696
     }
   ],
   "documentos": [
@@ -1486,6 +1498,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Rodrigo",
+      "acao": "criou",
+      "descricao": "criou \"Pesquisar sistema de saúde\" em Saude",
+      "ts": 1786886053696
+    },
     {
       "user": "Rodrigo",
       "acao": "criou",
