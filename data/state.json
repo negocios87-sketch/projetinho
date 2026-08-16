@@ -917,6 +917,18 @@
       "pais": "Brasil",
       "done": false,
       "ts": 1785609675438
+    },
+    {
+      "id": "mswdibroae6yhjz6vyb",
+      "title": "Pesquisar e comprar sapatilhas aquáticas",
+      "answer": "",
+      "comment": "",
+      "resp": "",
+      "prio": "media",
+      "tipo": "acao",
+      "pais": "Brasil",
+      "done": false,
+      "ts": 1786919123220
     }
   ],
   "deu-merda": [
@@ -1510,6 +1522,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Samy",
+      "acao": "criou",
+      "descricao": "criou \"Pesquisar e comprar sapatilhas aquáticas\" em Brasil",
+      "ts": 1786919123220
+    },
     {
       "user": "Rodrigo",
       "acao": "criou",
