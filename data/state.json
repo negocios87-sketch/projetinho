@@ -774,6 +774,18 @@
       "pais": "França",
       "done": false,
       "ts": 1789569347218
+    },
+    {
+      "id": "mu47hwuqffk9f6iurje",
+      "title": "Estudar logistica da Disney para Cidade e vice e versa",
+      "answer": "",
+      "comment": "Será que não vale a pena um Translado?",
+      "resp": "Rodrigo",
+      "prio": "media",
+      "tipo": "info",
+      "pais": "França",
+      "done": false,
+      "ts": 1789569537938
     }
   ],
   "brasil": [
@@ -1575,6 +1587,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Rodrigo",
+      "acao": "criou",
+      "descricao": "criou \"Estudar logistica da Disney para Cidade e vice e versa\" em Roteiro",
+      "ts": 1789569537938
+    },
     {
       "user": "Rodrigo",
       "acao": "editou",
