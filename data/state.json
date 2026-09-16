@@ -763,7 +763,7 @@
         }
       ],
       "tipo": "acao",
-      "pais": "Todos"
+      "pais": "Brasil"
     },
     {
       "id": "mr0xs1k3mmip7ewpozr",
@@ -1534,6 +1534,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Rodrigo",
+      "acao": "editou",
+      "descricao": "editou \"Conseguir o home office\" em Brasil",
+      "ts": 1789568976423
+    },
     {
       "user": "Rodrigo",
       "acao": "criou",
