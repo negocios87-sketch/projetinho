@@ -762,6 +762,18 @@
       "pais": "Todos",
       "done": false,
       "ts": 1783684105197
+    },
+    {
+      "id": "mu47dtoyza1vsdezxek",
+      "title": "Comprar ingressos para Disney de Paris",
+      "answer": "",
+      "comment": "",
+      "resp": "Rodrigo",
+      "prio": "media",
+      "tipo": "acao",
+      "pais": "França",
+      "done": false,
+      "ts": 1789569347218
     }
   ],
   "brasil": [
@@ -1563,6 +1575,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Rodrigo",
+      "acao": "criou",
+      "descricao": "criou \"Comprar ingressos para Disney de Paris\" em Roteiro",
+      "ts": 1789569347218
+    },
     {
       "user": "Rodrigo",
       "acao": "criou",
