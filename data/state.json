@@ -705,7 +705,7 @@
         "Samy": false
       },
       "tipo": "acao",
-      "pais": "Tailândia"
+      "pais": ""
     },
     {
       "id": "mr2h32d2e5wzgckz3yi",
@@ -1587,6 +1587,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Rodrigo",
+      "acao": "editou",
+      "descricao": "editou \"Deicidir País inicial\" em Roteiro",
+      "ts": 1789569568281
+    },
     {
       "user": "Rodrigo",
       "acao": "editou",
