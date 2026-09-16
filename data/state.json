@@ -284,15 +284,15 @@
   "estadia": [
     {
       "id": "mqyavfh3fihaikwq30q",
-      "title": "Encontrar Airbnb Para 2 primeiras semanas",
+      "title": "Encontrar Airbnb Para a primeira semana",
       "answer": "",
-      "comment": "",
+      "comment": "Paris",
       "resp": "Ambos",
       "prio": "alta",
       "done": false,
       "ts": 1782682063383,
       "tipo": "acao",
-      "pais": "Holanda"
+      "pais": "França"
     },
     {
       "id": "mr0xpqmpehcq3ngqlw",
@@ -1544,6 +1544,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Rodrigo",
+      "acao": "editou",
+      "descricao": "editou \"Encontrar Airbnb Para a primeira semana\" em Estadia",
+      "ts": 1789569162665
+    },
     {
       "user": "Samy",
       "acao": "aprovou",
