@@ -429,6 +429,18 @@
       ],
       "tipo": "acao",
       "pais": "Tailândia"
+    },
+    {
+      "id": "mu47c3vtydac9ecu0ta",
+      "title": "Decidir bairros/regiões",
+      "answer": "",
+      "comment": "",
+      "resp": "Rodrigo",
+      "prio": "alta",
+      "tipo": "acao",
+      "pais": "Vietnã",
+      "done": false,
+      "ts": 1789569267113
     }
   ],
   "saude": [
@@ -1544,6 +1556,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Rodrigo",
+      "acao": "criou",
+      "descricao": "criou \"Decidir bairros/regiões\" em Estadia",
+      "ts": 1789569267113
+    },
     {
       "user": "Rodrigo",
       "acao": "editou",
