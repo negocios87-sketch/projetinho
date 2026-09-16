@@ -871,7 +871,7 @@
       "resp": "Ambos",
       "prio": "alta",
       "tipo": "acao",
-      "pais": "Albânia",
+      "pais": "Brasil",
       "done": false,
       "ts": 1785109402281,
       "forum": [
@@ -1534,6 +1534,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Rodrigo",
+      "acao": "editou",
+      "descricao": "editou \"Aprender andar de bicicleta\" em Brasil",
+      "ts": 1789568984146
+    },
     {
       "user": "Rodrigo",
       "acao": "editou",
