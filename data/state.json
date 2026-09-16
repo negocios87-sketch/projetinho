@@ -647,7 +647,7 @@
       "comment": "Decidir também o Tempo",
       "resp": "Ambos",
       "prio": "alta",
-      "done": true,
+      "done": false,
       "ts": 1782841089031,
       "forum": [
         {
@@ -1539,6 +1539,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Rodrigo",
+      "acao": "reabriu",
+      "descricao": "reabriu \"Deicidir País inicial\" em Roteiro",
+      "ts": 1789569058406
+    },
     {
       "user": "Rodrigo",
       "acao": "concluiu",
