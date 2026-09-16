@@ -72,7 +72,7 @@
     },
     {
       "id": "mr0xywjpvpgb4vvm3ho",
-      "title": "Malas",
+      "title": "Comprar Malas",
       "answer": "",
       "comment": "Comprar malas? Pegar emprestado?",
       "resp": "Ambos",
@@ -1575,6 +1575,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Rodrigo",
+      "acao": "editou",
+      "descricao": "editou \"Comprar Malas\" em Viagem",
+      "ts": 1789569459762
+    },
     {
       "user": "Rodrigo",
       "acao": "editou",
