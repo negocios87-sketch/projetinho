@@ -10,7 +10,7 @@
       "done": false,
       "ts": 1782681422992,
       "tipo": "acao",
-      "pais": "Tailândia",
+      "pais": "França",
       "approvals": {
         "Rodrigo": false
       },
@@ -1575,6 +1575,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Rodrigo",
+      "acao": "editou",
+      "descricao": "editou \"Pesquisar passagem do primeiro destino e comprar\" em Viagem",
+      "ts": 1789569431873
+    },
     {
       "user": "Rodrigo",
       "acao": "criou",
