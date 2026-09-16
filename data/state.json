@@ -794,7 +794,7 @@
         }
       ],
       "tipo": "acao",
-      "pais": "Todos"
+      "pais": "Brasil"
     },
     {
       "id": "mr11ydnkrv2yqk3qrrd",
@@ -1534,6 +1534,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Rodrigo",
+      "acao": "editou",
+      "descricao": "editou \"Comprar segunda Tela portátil\" em Brasil",
+      "ts": 1789568994759
+    },
     {
       "user": "Rodrigo",
       "acao": "editou",
