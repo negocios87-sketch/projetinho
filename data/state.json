@@ -929,6 +929,18 @@
       "pais": "Brasil",
       "done": false,
       "ts": 1786919123220
+    },
+    {
+      "id": "mu475nsxl08y383mdui",
+      "title": "Contador - Rodrigo",
+      "answer": "",
+      "comment": "",
+      "resp": "Rodrigo",
+      "prio": "media",
+      "tipo": "acao",
+      "pais": "Brasil",
+      "done": false,
+      "ts": 1789568966337
     }
   ],
   "deu-merda": [
@@ -1522,6 +1534,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Rodrigo",
+      "acao": "criou",
+      "descricao": "criou \"Contador - Rodrigo\" em Brasil",
+      "ts": 1789568966337
+    },
     {
       "user": "Samy",
       "acao": "criou",
