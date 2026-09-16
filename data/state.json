@@ -939,7 +939,7 @@
       "prio": "media",
       "tipo": "acao",
       "pais": "Brasil",
-      "done": false,
+      "done": true,
       "ts": 1789568966337
     }
   ],
@@ -1534,6 +1534,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Rodrigo",
+      "acao": "concluiu",
+      "descricao": "concluiu \"Contador - Rodrigo\" em Brasil",
+      "ts": 1789568999169
+    },
     {
       "user": "Rodrigo",
       "acao": "editou",
