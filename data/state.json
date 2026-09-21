@@ -1145,7 +1145,8 @@
       "cotacao": "1 EUR = R$ 6,00",
       "obs": "",
       "id": "mr13e9b4sxmzn30p9ik",
-      "iso": "fr"
+      "iso": "fr",
+      "decisao": "vai"
     },
     {
       "nome": "Portugal",
@@ -1606,9 +1607,20 @@
         }
       ],
       "status": "analise"
+    },
+    "França": {
+      "pros": [],
+      "contras": [],
+      "status": "vai"
     }
   },
   "eventos": [
+    {
+      "user": "Samy",
+      "acao": "decidiu",
+      "descricao": "marcou França como \"Vamos!\"",
+      "ts": 1789981183565
+    },
     {
       "user": "Samy",
       "acao": "decidiu",
@@ -1902,12 +1914,6 @@
       "acao": "editou",
       "descricao": "editou pro em Malta: \"Idioma falado é o Ingles\"",
       "ts": 1784315690169
-    },
-    {
-      "user": "Rodrigo",
-      "acao": "editou",
-      "descricao": "editou \"Tomar a Vacina da Febre Amarela\" em Saude",
-      "ts": 1784235969179
     }
   ]
 }
