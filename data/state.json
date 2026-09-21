@@ -754,7 +754,10 @@
           "texto": "Depois de Pesquisar sobre o TET:\n\nParis (Disney) >> Vietnam >> Thailandia >> Albania",
           "ts": 1789569049684
         }
-      ]
+      ],
+      "approvals": {
+        "Rodrigo": true
+      }
     },
     {
       "id": "mrevgnvxpk34pygi8xq",
@@ -1592,6 +1595,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Rodrigo",
+      "acao": "aprovou",
+      "descricao": "aprovou sua parte em \"Planjear Roteiro - Visão Geral\"",
+      "ts": 1789980932208
+    },
     {
       "user": "Rodrigo",
       "acao": "editou",
