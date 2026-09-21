@@ -1291,7 +1291,8 @@
       "cotacao": "1 THB ≈ R$ 0,16",
       "obs": "",
       "id": "mr13e9b4zotazpbwkno",
-      "iso": "th"
+      "iso": "th",
+      "decisao": "vai"
     },
     {
       "nome": "Vietnã",
@@ -1535,7 +1536,7 @@
         }
       ],
       "contras": [],
-      "status": ""
+      "status": "vai"
     },
     "Itália": {
       "pros": [
@@ -1615,6 +1616,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Samy",
+      "acao": "decidiu",
+      "descricao": "marcou Tailândia como \"Vamos!\"",
+      "ts": 1789981205406
+    },
     {
       "user": "Samy",
       "acao": "decidiu",
@@ -1908,12 +1915,6 @@
       "acao": "editou",
       "descricao": "editou \"Deicidir País inicial\" em Roteiro",
       "ts": 1784554741131
-    },
-    {
-      "user": "Rodrigo",
-      "acao": "editou",
-      "descricao": "editou pro em Malta: \"Idioma falado é o Ingles\"",
-      "ts": 1784315690169
     }
   ]
 }
