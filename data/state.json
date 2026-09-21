@@ -1263,7 +1263,8 @@
       "cotacao": "1 ALL ≈ R$ 0,06",
       "obs": "",
       "id": "mr13e9b4l45e0obrcd8",
-      "iso": "al"
+      "iso": "al",
+      "decisao": "vai"
     },
     {
       "nome": "Marrocos",
@@ -1511,7 +1512,7 @@
           "ts": 1785364356078
         }
       ],
-      "status": ""
+      "status": "vai"
     },
     "Tailândia": {
       "pros": [
@@ -1608,6 +1609,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Samy",
+      "acao": "decidiu",
+      "descricao": "marcou Albânia como \"Vamos!\"",
+      "ts": 1789981175488
+    },
     {
       "user": "Samy",
       "acao": "criou",
