@@ -795,6 +795,18 @@
       "pais": "França",
       "done": false,
       "ts": 1789569537938
+    },
+    {
+      "id": "mub0gyr0odg3nos0yzq",
+      "title": "Tempo de estadia em cada país",
+      "answer": "",
+      "comment": "França - Paris = 1 semana",
+      "resp": "Ambos",
+      "prio": "alta",
+      "tipo": "acao",
+      "pais": "Todos",
+      "done": false,
+      "ts": 1789980999660
     }
   ],
   "brasil": [
@@ -1596,6 +1608,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Samy",
+      "acao": "criou",
+      "descricao": "criou \"Tempo de estadia em cada país\" em Roteiro",
+      "ts": 1789980999660
+    },
     {
       "user": "Samy",
       "acao": "concluiu",
