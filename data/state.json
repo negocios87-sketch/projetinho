@@ -715,7 +715,7 @@
     {
       "id": "mr2h32d2e5wzgckz3yi",
       "title": "Planjear Roteiro - Visão Geral",
-      "answer": "",
+      "answer": "Brasil >> França >> Tailândia >> Vietnã >> Albânia >> Brasil",
       "comment": "Ordem dos países e tempo de estadia em cada um",
       "resp": "Ambos",
       "prio": "alta",
@@ -1592,6 +1592,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Rodrigo",
+      "acao": "editou",
+      "descricao": "editou \"Planjear Roteiro - Visão Geral\" em Roteiro",
+      "ts": 1789980928617
+    },
     {
       "user": "Rodrigo",
       "acao": "editou",
