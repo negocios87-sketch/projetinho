@@ -706,7 +706,7 @@
         }
       ],
       "approvals": {
-        "Rodrigo": false,
+        "Rodrigo": true,
         "Samy": false
       },
       "tipo": "acao",
@@ -1592,6 +1592,12 @@
     }
   },
   "eventos": [
+    {
+      "user": "Rodrigo",
+      "acao": "aprovou",
+      "descricao": "aprovou sua parte em \"Deicidir País inicial\"",
+      "ts": 1789980856112
+    },
     {
       "user": "Rodrigo",
       "acao": "editou",
