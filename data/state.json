@@ -1305,7 +1305,8 @@
       "cotacao": "1 VND ≈ R$ 0,00022",
       "obs": "",
       "id": "mr13e9b41ay4qwbv2pz",
-      "iso": "vn"
+      "iso": "vn",
+      "decisao": "vai"
     },
     {
       "nome": "Bali (Indonésia)",
@@ -1613,9 +1614,20 @@
       "pros": [],
       "contras": [],
       "status": "vai"
+    },
+    "Vietnã": {
+      "pros": [],
+      "contras": [],
+      "status": "vai"
     }
   },
   "eventos": [
+    {
+      "user": "Samy",
+      "acao": "decidiu",
+      "descricao": "marcou Vietnã como \"Vamos!\"",
+      "ts": 1789981210765
+    },
     {
       "user": "Samy",
       "acao": "decidiu",
@@ -1909,12 +1921,6 @@
       "acao": "aprovou",
       "descricao": "aprovou sua parte em \"Deicidir País inicial\"",
       "ts": 1784554764878
-    },
-    {
-      "user": "Samy",
-      "acao": "editou",
-      "descricao": "editou \"Deicidir País inicial\" em Roteiro",
-      "ts": 1784554741131
     }
   ]
 }
